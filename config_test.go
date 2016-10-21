@@ -8,6 +8,10 @@ import (
 	"testing"
 )
 
+const (
+	homeDir string = "/path/to/home"
+)
+
 type testDecoder struct {
 	r io.Reader
 }
@@ -30,17 +34,16 @@ func (m mockFileReader) mockOpen(name string) (io.ReadCloser, error) {
 	}
 
 	b := []byte(`{
-        "ConsumerKey"      : "CONSUMER_KEY",
-        "ConsumerSecret"   : "CONSUMER_SECRET",
-        "AccessToken"      : "ACCESS_TOKEN",
-        "AccessTokenSecret": "ACCESS_TOKEN_SECRET"
-    }`)
+	"nvim": "/path/to/init.vim",
+	"zsh": "/path/to/.zshrc",
+	"git": "/path/to/.gitconfig"
+}`)
 	return ioutil.NopCloser(bytes.NewReader(b)), nil
 }
 
 func TestFileOpenError(t *testing.T) {
 	mock := mockFileReader{true}
-	_, err := newConfig(mock.mockOpen, newJSONDecoder)
+	_, err := newConfig(mock.mockOpen, newJSONDecoder, homeDir)
 	if err == nil {
 		t.Error("expected file open error, got: nil")
 	}
@@ -48,7 +51,7 @@ func TestFileOpenError(t *testing.T) {
 
 func TestDecodeError(t *testing.T) {
 	mock := mockFileReader{false}
-	_, err := newConfig(mock.mockOpen, mockDecoder)
+	_, err := newConfig(mock.mockOpen, mockDecoder, homeDir)
 	if err == nil {
 		t.Error("expected file decode error, got: nil")
 	}
@@ -56,7 +59,7 @@ func TestDecodeError(t *testing.T) {
 
 func TestConfigSuccess(t *testing.T) {
 	mock := mockFileReader{false}
-	_, err := newConfig(mock.mockOpen, newJSONDecoder)
+	_, err := newConfig(mock.mockOpen, newJSONDecoder, homeDir)
 	if err != nil {
 		t.Errorf("expected nil error, got: %v", err)
 	}

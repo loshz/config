@@ -1,5 +1,5 @@
 {
-	"nvim": "",
-	"zsh": "",
-	"git": ""
+	"nvim": "/path/to/init.vim",
+	"zsh": "/path/to/.zshrc",
+	"git": "/path/to/.gitconfig"
 }
