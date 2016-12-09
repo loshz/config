@@ -1,4 +1,4 @@
-NAME = setup
+NAME = dotfiles
 
 build:
 	go build -o $(NAME)
@@ -10,4 +10,4 @@ setup:
 	cp config.json.example config.json
 
 test:
-	go test ./... -cover
+	go test ./... -race -cover
