@@ -4,6 +4,8 @@ import (
 	"errors"
 	"fmt"
 	"os"
+	"os/exec"
+	"path/filepath"
 
 	"github.com/danbondd/dotfiles/config"
 	"github.com/danbondd/dotfiles/helpers"
@@ -35,17 +37,23 @@ func Run(configFile string) error {
 }
 
 func createSymLink(loc, file, goPath string) error {
-	if err := fileExists(loc); err != nil {
-		return err
+	if !exists(loc) {
+		return errors.New("destination folder does not exist")
 	}
 
-	return os.Symlink(loc, fmt.Sprintf("%s/dotfiles/files/%s", goPath, file))
+	_, err := os.Readlink(filepath.Join(loc, file))
+	if err == nil {
+		return nil
+	}
+
+	root := filepath.Join(goPath, "/github.com/danbondd/dotfiles/files/", file)
+	cmd := exec.Command("ln", "-s", root, loc)
+	return cmd.Run()
 }
 
-func fileExists(path string) error {
+func exists(path string) bool {
 	if _, err := os.Stat(path); os.IsNotExist(err) {
-		return fmt.Errorf("file does not exist: %s", path)
+		return false
 	}
-
-	return nil
+	return true
 }
