@@ -1,4 +1,4 @@
-export ZSH=/Users/daniel.bond/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="arrow"
 
@@ -42,20 +42,27 @@ HIST_STAMPS="dd/mm/yyyy"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
 plugins=(git npm pip python docker brew vagrant golang sudo history sublime composer)
 
+# User configuration
+
 export PATH="$HOME/.cargo/bin:/usr/local/php5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/.composer/vendor/bin:/usr/local/go/bin:/usr/local/MacGPG2/bin"
-fpath=($HOME/.oh-my-zsh/custom/plugins $fpath)
 
 source $ZSH/oh-my-zsh.sh
 
-export GOPATH=$HOME/Code/go
-export RUST_SRC_PATH=$HOME/Code/rust/rust/src
+export GOPATH=/Users/daniel.bond/Code/go
+export RUST_SRC_PATH=/Users/daniel.bond/Code/rust/rust/src
 export PATH=$GOPATH/bin:$PATH
-export GITHUB=$GOPATH/src/github.com
 
 alias zshconfig="nvim ~/.zshrc"
 alias nvimconfig="nvim ~/.config/nvim/init.vim"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias homestead="cd ~/VMs/homestead && vagrant up"
 alias rm=$GOPATH/bin/rm-catcher
 alias src="source ~/.zshrc"
 alias cl="clear"
+alias a="atom ."
+alias gtc="go test ./... --cover"
+alias grm="go run main.go"
