@@ -23,7 +23,6 @@ func Run(configFile string) error {
 	}
 
 	var success int
-
 	for file, loc := range files {
 		if err := createSymLink(loc, file, goPath); err != nil {
 			fmt.Fprintf(os.Stderr, "error copying %s config: %v\n", file, err)
@@ -48,7 +47,12 @@ func createSymLink(loc, file, goPath string) error {
 
 	root := filepath.Join(goPath, "/github.com/danbondd/dotfiles/files/", file)
 	cmd := exec.Command("ln", "-s", root, loc)
-	return cmd.Run()
+
+	err = cmd.Run()
+	if err != nil {
+		return err
+	}
+	return nil
 }
 
 func exists(path string) bool {
