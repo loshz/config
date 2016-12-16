@@ -36,16 +36,12 @@ func Run(configFile string) error {
 }
 
 func createSymLink(loc, file, goPath string) error {
-	if !exists(loc) {
-		return errors.New("destination folder does not exist")
-	}
-
 	_, err := os.Readlink(filepath.Join(loc, file))
 	if err == nil {
 		return nil
 	}
 
-	root := filepath.Join(goPath, "/github.com/danbondd/dotfiles/files/", file)
+	root := filepath.Join(goPath, "/src/github.com/danbondd/dotfiles/files/", file)
 	cmd := exec.Command("ln", "-s", root, loc)
 
 	err = cmd.Run()
@@ -53,11 +49,4 @@ func createSymLink(loc, file, goPath string) error {
 		return err
 	}
 	return nil
-}
-
-func exists(path string) bool {
-	if _, err := os.Stat(path); os.IsNotExist(err) {
-		return false
-	}
-	return true
 }

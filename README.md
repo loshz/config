@@ -12,7 +12,7 @@ A simple tool to help setup config files for my personal development environment
 
 ## Config
 
-The config file contains the key value pairs of the config files and the destination they should be aliased to.
+The config file contains the key value pairs of the config files and the destination they should be symlinked to (paths must be absolute).
 
 ```
 {
