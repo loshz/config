@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/danbondd/dotfiles/config"
+	"github.com/danbondd/dotfiles/helpers"
 	"github.com/danbondd/dotfiles/setup"
 )
 
@@ -13,7 +15,13 @@ func main() {
 	flag.StringVar(&configFile, "config", "config.json", "/path/to/config.json")
 	flag.Parse()
 
-	err := setup.Run(configFile)
+	files, err := config.New(helpers.FileReader, helpers.JSONDecoder, configFile)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "error reading config file: %v", err)
+		return
+	}
+
+	err = setup.Run(files)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "error installing config files: %v", err)
 		return

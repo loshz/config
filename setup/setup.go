@@ -8,18 +8,13 @@ import (
 	"path/filepath"
 
 	"github.com/danbondd/dotfiles/config"
-	"github.com/danbondd/dotfiles/helpers"
 )
 
-func Run(configFile string) error {
+// Run takes the location of a config file, reads it's contents, and creates a symlink for every config file.
+func Run(files config.Files) error {
 	goPath := os.Getenv("GOPATH")
 	if len(goPath) == 0 {
 		return errors.New("error getting $GOPATH env variable")
-	}
-
-	files, err := config.New(helpers.FileReader, helpers.JSONDecoder, configFile)
-	if err != nil {
-		return err
 	}
 
 	var success int
