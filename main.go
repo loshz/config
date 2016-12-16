@@ -10,13 +10,8 @@ import (
 
 func main() {
 	var configFile string
-	flag.StringVar(&configFile, "config", "", "/path/to/config.json")
+	flag.StringVar(&configFile, "config", "config.json", "/path/to/config.json")
 	flag.Parse()
-
-	if len(configFile) == 0 {
-		fmt.Println("Please choose a config file.")
-		return
-	}
 
 	err := setup.Run(configFile)
 	if err != nil {
