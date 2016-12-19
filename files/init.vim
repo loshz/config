@@ -11,6 +11,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 Plug 'davidhalter/jedi-vim'
 Plug 'zchee/deoplete-jedi'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
