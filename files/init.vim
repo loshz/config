@@ -4,6 +4,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'fatih/molokai'
 Plug 'fatih/vim-go'
+Plug 'fatih/vim-hclfmt'
 Plug 'Shougo/deoplete.nvim'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'vim-airline/vim-airline'
