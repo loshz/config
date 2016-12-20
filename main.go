@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/danbondd/dotfiles/cmd"
 	"github.com/danbondd/dotfiles/config"
 	"github.com/danbondd/dotfiles/helpers"
 	"github.com/danbondd/dotfiles/setup"
@@ -21,7 +22,8 @@ func main() {
 		return
 	}
 
-	err = setup.Run(files)
+	s := setup.New(cmd.DefaultCommands)
+	err = s.Run(files)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "error installing config files: %v", err)
 		return
