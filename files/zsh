@@ -56,13 +56,11 @@ export GOPATH=/Users/daniel.bond/Code/go
 export RUST_SRC_PATH=/Users/daniel.bond/Code/rust/rust/src
 export PATH=$GOPATH/bin:$PATH
 
-alias zshconfig="nvim ~/.zshrc"
-alias nvimconfig="nvim ~/.config/nvim/init.vim"
-alias ohmyzsh="nvim ~/.oh-my-zsh"
-alias homestead="cd ~/VMs/homestead && vagrant up"
+alias zshconfig="nvim $HOME/.zshrc"
+alias nvimconfig="nvim $HOME/.config/nvim/init.vim"
+alias ohmyzsh="nvim $HOME/.oh-my-zsh"
 alias rm=$GOPATH/bin/rm-catcher
-alias src="source ~/.zshrc"
+alias src="source $HOME/.zshrc"
 alias cl="clear"
 alias a="atom ."
 alias gtc="go test ./... --cover"
-alias grm="go run main.go"
