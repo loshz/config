@@ -9,14 +9,22 @@ import (
 )
 
 type mockCommands struct {
-	err bool
+	readLinkErr,
+	symlinkErr bool
 }
 
-func (m *mockCommands) Run(command string, args ...string) (b []byte, err error) {
-	if m.err {
-		return b, errors.New("error running command")
+func (m *mockCommands) Readlink(name string) (string, error) {
+	if m.readLinkErr {
+		return "", errors.New("error reading symlink")
 	}
-	return
+	return "", nil
+}
+
+func (m *mockCommands) Symlink(oldname, newname string) error {
+	if m.symlinkErr {
+		return errors.New("error creating symlink")
+	}
+	return nil
 }
 
 func TestSetupRun(t *testing.T) {
@@ -24,6 +32,14 @@ func TestSetupRun(t *testing.T) {
 	files["some.file"] = "/path/to/some.file"
 
 	t.Run("TestSuccess", func(t *testing.T) {
+		s := setup.New(&mockCommands{true, false})
+		err := s.Run(files)
+		if err != nil {
+			t.Errorf("expected error: nil, got: %v", err)
+		}
+	})
+
+	t.Run("TestRunLinksExist", func(t *testing.T) {
 		s := setup.New(&mockCommands{})
 		err := s.Run(files)
 		if err != nil {
@@ -31,8 +47,8 @@ func TestSetupRun(t *testing.T) {
 		}
 	})
 
-	t.Run("TestRunCommandError", func(t *testing.T) {
-		s := setup.New(&mockCommands{true})
+	t.Run("TestRunSymlinkError", func(t *testing.T) {
+		s := setup.New(&mockCommands{true, true})
 		err := s.Run(files)
 		if err != nil {
 			t.Errorf("expected error: nil, got: %v", err)

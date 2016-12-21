@@ -16,8 +16,8 @@ The config file contains the key value pairs of the config files and the destina
 
 ```
 {
-	"init.vim": "/path/to/init.vim",
-	".zshrc": "/path/to/.zshrc",
-	".gitconfig": "/path/to/.gitconfig"
+	"nvim": "/path/to/init.vim",
+	"zsh": "/path/to/.zshrc",
+	"git": "/path/to/.gitconfig"
 }
 ```

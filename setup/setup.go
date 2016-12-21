@@ -15,12 +15,12 @@ var (
 )
 
 type setup struct {
-	cmd cmd.RunCommand
+	cmds cmd.LinkCommands
 }
 
 // New returns a new setup with a given command interface.
-func New(cmd cmd.RunCommand) setup {
-	return setup{cmd}
+func New(cmds cmd.LinkCommands) setup {
+	return setup{cmds}
 }
 
 type file struct {
@@ -53,7 +53,7 @@ func (s setup) Run(files config.Files) error {
 	for a := 1; a <= len(files); a++ {
 		err := <-results
 		if err != nil {
-			fmt.Fprintf(os.Stderr, "%v\n", err)
+			fmt.Fprintf(os.Stderr, "%v", err)
 			continue
 		}
 		success++
@@ -64,13 +64,13 @@ func (s setup) Run(files config.Files) error {
 }
 
 func (s setup) createSymLink(location, file string) error {
-	_, err := os.Readlink(filepath.Join(location, file))
+	_, err := s.cmds.Readlink(location)
 	if err == nil {
 		return nil
 	}
 
 	destination := filepath.Join(filesSrc, file)
-	_, err = s.cmd.Run("ln", "-s", destination, location)
+	err = s.cmds.Symlink(destination, location)
 	if err != nil {
 		return fmt.Errorf("error copying %s config: %v\n", file, err)
 	}
