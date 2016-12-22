@@ -44,16 +44,16 @@ HIST_STAMPS="dd/mm/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git npm pip python docker brew vagrant golang sudo history sublime composer)
+plugins=(git npm pip python docker docker-compose rust brew vagrant golang sudo history composer terraform)
 
 # User configuration
 
-export PATH="$HOME/.cargo/bin:/usr/local/php5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/.composer/vendor/bin:/usr/local/go/bin:/usr/local/MacGPG2/bin"
+export PATH="$HOME/.cargo/bin:/usr/local/php5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.composer/vendor/bin:/usr/local/go/bin:/usr/local/MacGPG2/bin"
 
 source $ZSH/oh-my-zsh.sh
 
-export GOPATH=/Users/daniel.bond/Code/go
-export RUST_SRC_PATH=/Users/daniel.bond/Code/rust/rust/src
+export GOPATH=$HOME/Code/go
+export RUST_SRC_PATH=$HOME/Code/rust/rust/src
 export PATH=$GOPATH/bin:$PATH
 
 alias zshconfig="nvim $HOME/.zshrc"
