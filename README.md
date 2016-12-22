@@ -6,9 +6,9 @@ A simple tool to help setup config files for my personal development environment
 
 - Download source code `go get github.com/danbondd/dotfiles`
 - Navigate to project `cd $GOPATH/src/github.com/danbondd/dotfiles`
-- `make setup`
+- Run `make setup`
 - Add relevant paths to `config.json`
-- Run `make run`
+- Go! `make run` (add optional `-config` flag to point to a config file in another location)
 
 ## Config
 
