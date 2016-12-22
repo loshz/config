@@ -2,8 +2,9 @@ package cmd
 
 import "os"
 
-// LinkCommands defines the interface for the required file linking functions.
-type LinkCommands interface {
+// OSCommands defines the interface for the required file linking functions.
+type OSCommands interface {
+	Getenv(key string) string
 	Readlink(name string) (string, error)
 	Symlink(oldname, newname string) error
 }
@@ -11,8 +12,13 @@ type LinkCommands interface {
 // DefaultCommands defines the default commands used by the application.
 var DefaultCommands commands
 
-// Commands contains a custom implementation of the Run func.
 type commands struct{}
+
+// Getenv retrieves the value of the environment variable named by the key. It returns the value, which will be empty if the variable is not present.
+func (c commands) Getenv(key string) string {
+	env := os.Getenv(key)
+	return env
+}
 
 // Readlink returns the destination of the named symbolic link. If there is an error, it will be of type *PathError.
 func (c commands) Readlink(name string) (string, error) {

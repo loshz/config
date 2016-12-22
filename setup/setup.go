@@ -15,11 +15,11 @@ var (
 )
 
 type setup struct {
-	cmds cmd.LinkCommands
+	cmds cmd.OSCommands
 }
 
 // New returns a new setup with a given command interface.
-func New(cmds cmd.LinkCommands) setup {
+func New(cmds cmd.OSCommands) setup {
 	return setup{cmds}
 }
 
@@ -30,7 +30,7 @@ type file struct {
 
 // Run takes the location of a config file, reads it's contents, and creates a symlink for every config file.
 func (s setup) Run(files config.Files) error {
-	goPath := os.Getenv("GOPATH")
+	goPath := s.cmds.Getenv("GOPATH")
 	if len(goPath) == 0 {
 		return errors.New("error getting $GOPATH env variable")
 	}
@@ -65,14 +65,12 @@ func (s setup) Run(files config.Files) error {
 
 func (s setup) createSymLink(location, file string) error {
 	_, err := s.cmds.Readlink(location)
-	if err == nil {
-		return nil
-	}
-
-	destination := filepath.Join(filesSrc, file)
-	err = s.cmds.Symlink(destination, location)
 	if err != nil {
-		return fmt.Errorf("error copying %s config: %v\n", file, err)
+		destination := filepath.Join(filesSrc, file)
+		err = s.cmds.Symlink(destination, location)
+		if err != nil {
+			return fmt.Errorf("error copying %s config: %v\n", file, err)
+		}
 	}
 	return nil
 }

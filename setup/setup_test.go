@@ -9,8 +9,16 @@ import (
 )
 
 type mockCommands struct {
+	envErr,
 	readLinkErr,
 	symlinkErr bool
+}
+
+func (m *mockCommands) Getenv(key string) string {
+	if m.envErr {
+		return ""
+	}
+	return "/go/path"
 }
 
 func (m *mockCommands) Readlink(name string) (string, error) {
@@ -32,10 +40,18 @@ func TestSetupRun(t *testing.T) {
 	files["some.file"] = "/path/to/some.file"
 
 	t.Run("TestSuccess", func(t *testing.T) {
-		s := setup.New(&mockCommands{true, false})
+		s := setup.New(&mockCommands{false, true, false})
 		err := s.Run(files)
 		if err != nil {
 			t.Errorf("expected error: nil, got: %v", err)
+		}
+	})
+
+	t.Run("TestInvalidGoPathError", func(t *testing.T) {
+		s := setup.New(&mockCommands{true, false, false})
+		err := s.Run(files)
+		if err == nil {
+			t.Error("expected error getting $GOPATH, got: nil")
 		}
 	})
 
@@ -48,7 +64,7 @@ func TestSetupRun(t *testing.T) {
 	})
 
 	t.Run("TestRunSymlinkError", func(t *testing.T) {
-		s := setup.New(&mockCommands{true, true})
+		s := setup.New(&mockCommands{false, true, true})
 		err := s.Run(files)
 		if err != nil {
 			t.Errorf("expected error: nil, got: %v", err)
