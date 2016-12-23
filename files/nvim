@@ -18,6 +18,7 @@ call plug#end()
 set number
 set clipboard=unnamed
 
+let mapleader = ","
 let g:go_fmt_command = "goimports"
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
@@ -33,5 +34,8 @@ let g:rehash256 = 1
 let g:molokai_original = 1
 let g:airline#extensions#branch#enabled = 1
 let g:jedi#force_py_version=3
+
+autocmd FileType go nmap <leader>t <Plug>(go-test)
+autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
 
 colorscheme molokai
