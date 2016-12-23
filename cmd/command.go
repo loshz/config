@@ -16,18 +16,15 @@ type commands struct{}
 
 // Getenv retrieves the value of the environment variable named by the key. It returns the value, which will be empty if the variable is not present.
 func (c commands) Getenv(key string) string {
-	env := os.Getenv(key)
-	return env
+	return os.Getenv(key)
 }
 
 // Readlink returns the destination of the named symbolic link. If there is an error, it will be of type *PathError.
 func (c commands) Readlink(name string) (string, error) {
-	link, err := os.Readlink(name)
-	return link, err
+	return os.Readlink(name)
 }
 
 // Symlink creates newname as a symbolic link to oldname. If there is an error, it will be of type *LinkError.
 func (c commands) Symlink(oldname, newname string) error {
-	err := os.Symlink(oldname, newname)
-	return err
+	return os.Symlink(oldname, newname)
 }
