@@ -47,19 +47,16 @@ HIST_STAMPS="dd/mm/yyyy"
 plugins=(git npm pip python docker docker-compose rust brew vagrant golang sudo history composer terraform gem)
 
 # User configuration
-
-export PATH="$HOME/.cargo/bin:/usr/local/php5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.composer/vendor/bin:/usr/local/go/bin:/usr/local/MacGPG2/bin"
-
 source $ZSH/oh-my-zsh.sh
 
-export GOPATH=$HOME/Code/go
-export RUST_SRC_PATH=$HOME/Code/rust/rust/src
-export PATH=$GOPATH/bin:$PATH
+export GOPATH="$HOME/Code/go"
+export RUST_SRC_PATH="$HOME/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src"
+export PATH="$HOME/.cargo/bin:$GOPATH/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/MacGPG2/bin"
 
 alias zshconfig="nvim $HOME/.zshrc"
 alias nvimconfig="nvim $HOME/.config/nvim/init.vim"
 alias ohmyzsh="nvim $HOME/.oh-my-zsh"
-alias rm=$GOPATH/bin/rm-catcher
+alias rm="$GOPATH/bin/rm-catcher"
 alias src="source $HOME/.zshrc"
 alias cl="clear"
 alias a="atom ."

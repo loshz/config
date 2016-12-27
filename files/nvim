@@ -12,6 +12,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'davidhalter/jedi-vim'
 Plug 'zchee/deoplete-jedi'
 Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
 
 call plug#end()
 
@@ -34,6 +35,7 @@ let g:rehash256 = 1
 let g:molokai_original = 1
 let g:airline#extensions#branch#enabled = 1
 let g:jedi#force_py_version=3
+let g:rustfmt_autosave = 1
 
 map <leader>n :NERDTreeToggle<CR>
 
