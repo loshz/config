@@ -12,5 +12,3 @@
 	insteadOf = https://github.com/
 [gpg]
 	program = gpg1
-[commit]
-	gpgsign = true
