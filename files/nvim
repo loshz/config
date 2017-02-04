@@ -20,6 +20,7 @@ set number
 set clipboard=unnamed
 
 let mapleader = ","
+let NERDTreeIgnore = ['\.pyc$', '.DS_STORE']
 let g:go_fmt_command = "goimports"
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
