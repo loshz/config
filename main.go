@@ -19,13 +19,13 @@ func main() {
 	files, err := config.New(helpers.FileReader, helpers.JSONDecoder, configFile)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "error reading config file: %v", err)
-		return
+		os.Exit(-1)
 	}
 
 	s := setup.New(cmd.DefaultCommands)
 	err = s.Run(files)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "error installing config files: %v", err)
-		return
+		os.Exit(-1)
 	}
 }
