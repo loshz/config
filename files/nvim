@@ -18,6 +18,7 @@ call plug#end()
 
 set number
 set clipboard=unnamed
+set mouse=a
 
 let mapleader = ","
 let NERDTreeIgnore = ['\.pyc$', '.DS_STORE']

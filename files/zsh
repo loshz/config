@@ -42,7 +42,7 @@ HIST_STAMPS="dd/mm/yyyy"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git pip python docker docker-compose rust brew golang sudo terraform gem)
+plugins=(git pip python docker docker-compose rust brew golang sudo terraform gem rust)
 
 # User configuration
 source $ZSH/oh-my-zsh.sh
@@ -56,4 +56,4 @@ alias nvimconfig="nvim $HOME/.config/nvim/init.vim"
 alias ohmyzsh="nvim $HOME/.oh-my-zsh"
 alias rm="$GOPATH/bin/rm-catcher"
 alias src="source $HOME/.zshrc"
-alias cl="clear"
+
