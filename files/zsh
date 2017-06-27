@@ -20,4 +20,4 @@ alias zshconfig="nvim $HOME/.zshrc"
 alias nvimconfig="nvim $HOME/.config/nvim/init.vim"
 alias rm="$GOPATH/bin/rm-catcher"
 alias src="source $HOME/.zshrc"
-
+alias git=hub
