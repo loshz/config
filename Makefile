@@ -10,4 +10,4 @@ setup:
 	cp config.json.example config.json
 
 test:
-	go test ./... -race -cover
+	go test ./... -cover
