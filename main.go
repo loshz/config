@@ -18,9 +18,10 @@ func main() {
 	}
 
 	s := NewSetup(DefaultCommands)
-	err = s.Run(files)
+	output, err := s.Run(files)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "error installing config files: %v", err)
 		os.Exit(-1)
 	}
+	fmt.Println(output)
 }

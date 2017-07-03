@@ -22,10 +22,10 @@ func NewSetup(cmds OSCommands) Setup {
 }
 
 // Run takes the location of a config file, reads it's contents, and creates a symlink for every config file.
-func (s Setup) Run(files Dotfiles) error {
+func (s Setup) Run(files Dotfiles) (string, error) {
 	goPath := s.cmds.Getenv("GOPATH")
 	if len(goPath) == 0 {
-		return errors.New("error getting $GOPATH env variable")
+		return "", errors.New("error getting $GOPATH env variable")
 	}
 	filesSrc = filepath.Join(goPath, filesSrc)
 
@@ -38,9 +38,7 @@ func (s Setup) Run(files Dotfiles) error {
 		}
 		success++
 	}
-
-	fmt.Printf("Successfully copied %d out of %d config files.\n", success, len(files))
-	return nil
+	return fmt.Sprintf("Successfully copied %d out of %d config files.", success, len(files)), nil
 }
 
 func (s Setup) createSymLink(location, file string) error {

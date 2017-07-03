@@ -34,7 +34,7 @@ func TestSetupRun(t *testing.T) {
 			return ""
 		}
 		s := NewSetup(cmds)
-		err := s.Run(files)
+		_, err := s.Run(files)
 		if err == nil {
 			t.Error("expected error getting $GOPATH, got: nil")
 		}
@@ -48,7 +48,7 @@ func TestSetupRun(t *testing.T) {
 			return "", nil
 		}
 		s := NewSetup(cmds)
-		err := s.Run(files)
+		_, err := s.Run(files)
 		if err != nil {
 			t.Errorf("expected error: nil, got: %v", err)
 		}
@@ -65,7 +65,7 @@ func TestSetupRun(t *testing.T) {
 			return errors.New("error creating symlink")
 		}
 		s := NewSetup(cmds)
-		err := s.Run(files)
+		_, err := s.Run(files)
 		if err != nil {
 			t.Errorf("expected error: nil, got: %v", err)
 		}
@@ -82,7 +82,7 @@ func TestSetupRun(t *testing.T) {
 			return nil
 		}
 		s := NewSetup(cmds)
-		err := s.Run(files)
+		_, err := s.Run(files)
 		if err != nil {
 			t.Errorf("expected error: nil, got: %v", err)
 		}
