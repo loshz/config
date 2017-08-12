@@ -19,6 +19,7 @@ hub
 icu4c
 jemalloc
 jq
+kops
 kubernetes-cli
 libassuan
 libffi
