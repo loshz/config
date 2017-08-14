@@ -21,3 +21,7 @@ alias nvimconfig="nvim $HOME/.config/nvim/init.vim"
 alias rm="$GOPATH/bin/rm2"
 alias src="source $HOME/.zshrc"
 alias git=hub
+
+if [ -f ~/.zsh/zshalias ]; then
+	source ~/.zsh/zshalias
+fi
