@@ -8,12 +8,11 @@ DISABLE_AUTO_TITLE="true"
 ENABLE_CORRECTION="false"
 HIST_STAMPS="dd/mm/yyyy"
 
-plugins=(aws git pip python docker docker-compose rust brew golang sudo terraform httpie kubectl)
+plugins=(aws git pip python docker docker-compose rust brew golang sudo httpie kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
 export GOPATH="$HOME/Code/go"
-export RUST_SRC_PATH="$HOME/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src"
 export PATH="$HOME/.cargo/bin:$GOPATH/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/bin/google-cloud-sdk/bin"
 
 alias zshconfig="nvim $HOME/.zshrc"

@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 )
 
-var filesSrc = "/src/github.com/danbondd/dotfiles/files/"
+var filesSrc = "/src/src.danbond.io/dotfiles/files/"
 
 // Setup is composed of a default set of OS commands.
 type Setup struct {
