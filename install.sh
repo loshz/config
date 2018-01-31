@@ -1,6 +1,11 @@
 #!/bin/bash
 
-declare -A FILES=( ["nvim"]="$HOME/.config/nvim/init.vim" ["zsh"]="$HOME/.zshrc" ["zsh-theme"]="$HOME/.oh-my-zsh/themes/terminal.zsh-theme" )
+declare -A FILES
+FILES["nvim"]="$HOME/.config/nvim/init.vim"
+FILES["zsh"]="$HOME/.zshrc"
+FILES["zsh-theme"]="$HOME/.oh-my-zsh/themes/terminal.zsh-theme"
+FILES["Xresources"]="$HOME/.Xresources"
+
 COUNT=0
 TOTAL=${#FILES[@]}
 

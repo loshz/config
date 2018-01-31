@@ -1,0 +1,31 @@
+xterm*background: #1A1A1A
+xterm*foreground: #9F9FA1
+
+! Black
+xterm*color0:     #1A1A1A
+xterm*color8:     #1A1A1A
+! Red
+xterm*color1:     #F02233
+xterm*color9:     #F02233
+! Green
+xterm*color2:     #A6F909
+xterm*color10:    #A6F909
+! Yellow
+xterm*color3:     #FFCE7C
+xterm*color11:    #FFCE7C
+! Blue
+xterm*color4:     #6479FF
+xterm*color12:    #6479FF
+! Purple
+xterm*color5:     #A57CFF
+xterm*color13:    #A57CFF
+! Cyan
+xterm*color6:     #53D3FB
+xterm*color14:    #53D3FB
+! White
+xterm*color7:     #FFFFFF
+xterm*color15:    #FFFFFF
+
+! Font
+xterm*renderFont: true
+xterm*faceName:   Menlo-9
