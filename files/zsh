@@ -12,7 +12,7 @@ plugins=(aws git pip python docker docker-compose rust brew golang sudo httpie k
 
 source $ZSH/oh-my-zsh.sh
 
-export GOPATH="$HOME/Code/go"
+export GOPATH="$HOME/code/go"
 export PATH="$HOME/.cargo/bin:$GOPATH/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/bin/google-cloud-sdk/bin"
 
 alias zshconfig="nvim $HOME/.zshrc"
