@@ -4,16 +4,17 @@ declare -A FILES
 FILES["nvim"]=".config/nvim/init.vim"
 FILES["zsh"]=".zshrc"
 FILES["zsh-theme"]=".oh-my-zsh/themes/terminal.zsh-theme"
-FILES["Xresources"]=".Xresources"
+
+if [[ "$OSTYPE" == "linux"* ]]; then
+	FILES["Xresources"]=".Xresources"
+fi
 
 COUNT=0
 TOTAL=${#FILES[@]}
 
-for i in "${!FILES[@]}"
-do
+for i in "${!FILES[@]}"; do
   ln -sf $HOME/.dotfiles/files/$i $HOME/${FILES[$i]}
-  if [ $? -eq 0 ]
-  then
+  if [ $? -eq 0 ]; then
 	  ((COUNT++))
   fi
 done
