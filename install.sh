@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 declare -A FILES
 FILES["nvim"]=".config/nvim/init.vim"
@@ -11,7 +11,7 @@ TOTAL=${#FILES[@]}
 
 for i in "${!FILES[@]}"
 do
-  ln -sf $PWD/files/$i $HOME/${FILES[$i]}
+  ln -sf $HOME/.dotfiles/files/$i $HOME/${FILES[$i]}
   if [ $? -eq 0 ]
   then
 	  ((COUNT++))
