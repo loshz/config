@@ -1,17 +1,17 @@
 #!/bin/bash
 
 declare -A FILES
-FILES["nvim"]="$HOME/.config/nvim/init.vim"
-FILES["zsh"]="$HOME/.zshrc"
-FILES["zsh-theme"]="$HOME/.oh-my-zsh/themes/terminal.zsh-theme"
-FILES["Xresources"]="$HOME/.Xresources"
+FILES["nvim"]=".config/nvim/init.vim"
+FILES["zsh"]=".zshrc"
+FILES["zsh-theme"]=".oh-my-zsh/themes/terminal.zsh-theme"
+FILES["Xresources"]=".Xresources"
 
 COUNT=0
 TOTAL=${#FILES[@]}
 
 for i in "${!FILES[@]}"
 do
-  ln -sf $PWD/files/$i ${FILES[$i]}
+  ln -sf $PWD/files/$i $HOME/${FILES[$i]}
   if [ $? -eq 0 ]
   then
 	  ((COUNT++))
