@@ -8,8 +8,8 @@ xterm*color8:     #1A1A1A
 xterm*color1:     #F02233
 xterm*color9:     #F02233
 ! Green
-xterm*color2:     #A6F909
-xterm*color10:    #A6F909
+xterm*color2:     #00FF00
+xterm*color10:    #00FF00
 ! Yellow
 xterm*color3:     #FFCE7C
 xterm*color11:    #FFCE7C
@@ -28,4 +28,6 @@ xterm*color15:    #FFFFFF
 
 ! Font
 xterm*renderFont: true
-xterm*faceName:   Menlo-9
+xterm*faceName:   Menlo-8
+
+xterm*saveLines:  1000000
