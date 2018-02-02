@@ -1,26 +1,25 @@
 export ZSH=$HOME/.oh-my-zsh
-
-ZSH_THEME="terminal"
-
 export UPDATE_ZSH_DAYS=7
 
+ZSH_THEME="terminal"
 DISABLE_AUTO_TITLE="true"
 ENABLE_CORRECTION="false"
 HIST_STAMPS="dd/mm/yyyy"
 
-plugins=(aws git pip python docker docker-compose brew golang sudo httpie kubectl)
+plugins=(aws git python docker docker-compose brew golang sudo httpie kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
+export EDITOR="nvim"
 export GOPATH="$HOME/code/go"
 export PATH="$GOPATH/bin:/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin"
 
-alias zshconfig="nvim $HOME/.zshrc"
-alias nvimconfig="nvim $HOME/.config/nvim/init.vim"
+alias zshconfig="$EDITOR $HOME/.zshrc"
+alias nvimconfig="$EDITOR $HOME/.config/nvim/init.vim"
 alias rm="$GOPATH/bin/rm2"
 alias src="source $HOME/.zshrc"
 alias git=hub
 
-if [ -f ~/.zsh/zshalias ]; then
-	source ~/.zsh/zshalias
+if [ -f ~/.zsh/local ]; then
+	source ~/.zsh/local
 fi
