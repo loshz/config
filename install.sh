@@ -4,6 +4,7 @@ declare -A FILES
 FILES["nvim"]=".config/nvim/init.vim"
 FILES["zsh"]=".zshrc"
 FILES["zsh-theme"]=".oh-my-zsh/themes/terminal.zsh-theme"
+FILES["gitconfig"]=".gitconfig"
 
 if [[ "$OSTYPE" == "linux"* ]]; then
 	FILES["Xresources"]=".Xresources"

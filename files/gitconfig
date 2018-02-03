@@ -1,0 +1,11 @@
+[user]
+	email = danbondd@gmail.com
+	name = Dan Bond
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[push]
+	default = simple
+[url "git@github.com:"]
+	insteadOf = https://github.com/
