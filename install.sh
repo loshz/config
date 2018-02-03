@@ -8,6 +8,8 @@ FILES["gitconfig"]=".gitconfig"
 
 if [[ "$OSTYPE" == "linux"* ]]; then
 	FILES["Xresources"]=".Xresources"
+	FILES["i3"]=".config/i3/config"
+	FILES["i3blocks"]=".config/i3/i3blocks.conf"
 fi
 
 COUNT=0
