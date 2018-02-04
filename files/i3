@@ -18,12 +18,6 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -126,7 +120,7 @@ bindsym $mod+r mode "resize"
 
 hide_edge_borders both
 
-gaps inner 25
+gaps inner 15
 gaps outer 0
 
 bar {
@@ -146,6 +140,8 @@ bar {
 # Remove all application borders
 for_window [class=".*"] border pixel 0
 
-exec_always sh ~/.fehbg  
+# Desktop wallpaper
+exec_always sh ~/.fehbg
+
 exec_always xrdb -merge $HOME/.Xresources
 
