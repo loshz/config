@@ -36,6 +36,14 @@ color=#00FF00
 interval=5
 signal=10
 
+# Media player volume
+#
+# This displays "VOL N%".
+[volume]
+label=VOL
+interval=5
+signal=10
+
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
