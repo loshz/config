@@ -15,7 +15,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # dmenu
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -nb '#1A1A1A' -sb '#1A1A1A' -sf '#00FF00' -nf '#9F9FA1'"
 
 # change focus
 bindsym $mod+Left focus left
