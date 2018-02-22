@@ -62,6 +62,12 @@ label=HOME
 #instance=/mnt/data
 interval=30
 
+# Nvidia GPU temperature
+[nvidia]
+label=GPU
+interval=5
+signal=10
+
 # CPU usage
 #
 # The script may be called with -w and -c switches to specify thresholds,
