@@ -8,8 +8,6 @@ HIST_STAMPS="dd/mm/yyyy"
 
 plugins=(aws git python docker docker-compose brew golang sudo httpie kubectl)
 
-source $ZSH/oh-my-zsh.sh
-
 export EDITOR="nvim"
 export GOPATH="$HOME/code/go"
 export PATH="$HOME/.cargo/bin:$GOPATH/bin:/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin"
@@ -19,6 +17,8 @@ alias nvimconfig="$EDITOR $HOME/.config/nvim/init.vim"
 alias rm="$GOPATH/bin/rm2"
 alias src="source $HOME/.zshrc"
 alias git=hub
+
+source $ZSH/oh-my-zsh.sh
 
 if [ -f ~/.zsh/local ]; then
 	source ~/.zsh/local
