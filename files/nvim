@@ -1,5 +1,5 @@
+" ============= vim-plug =============
 call plug#begin('~/.vim/plugged')
-
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'fatih/molokai'
@@ -13,36 +13,67 @@ Plug 'davidhalter/jedi-vim'
 Plug 'zchee/deoplete-jedi'
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
-
 call plug#end()
 
-set number
-set clipboard=unnamed
-set mouse=a
+" ============= clipboard =============
+set clipboard^=unnamed,unnamedplus
 
-let mapleader = ","
-let NERDTreeIgnore = ['\.pyc$', '.DS_STORE']
-let g:go_fmt_command = "goimports"
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_generate_tags = 1
-let g:go_metalinter_autosave = 1
-let g:go_metalinter_autosave_enabled = ['vet', 'golint']
-let g:deoplete#enable_at_startup = 1
-let g:rehash256 = 1
-let g:molokai_original = 1
-let g:airline#extensions#branch#enabled = 1
-let g:jedi#force_py_version=3
-let g:rustfmt_autosave = 1
+" ============= UI =============
+let g:rehash256=1
+let g:molokai_original=1
+colorscheme molokai
+
+set number
+set cursorline
+set showmatch
+set matchtime=2
+set mouse=a
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
+" ============= Search =============
+set ignorecase
+set smartcase
+
+" ============= Mappings =============
+let mapleader=","
 
 map <leader>n :NERDTreeToggle<CR>
 
-autocmd FileType go nmap <leader>t <Plug>(go-test)
-autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
-autocmd FileType go nmap <Leader>d <Plug>(go-def)
+augroup go
+  autocmd!
+  autocmd FileType go nmap <silent> <Leader>x <Plug>(go-doc-vertical)
+  autocmd FileType go nmap <silent> <leader>t <Plug>(go-test)
+  autocmd FileType go nmap <silent> <Leader>c <Plug>(go-coverage-toggle)
+  autocmd FileType go nmap <silent> <leader>r <Plug>(go-run)
+  autocmd FileType go nmap <silent> <leader>i <Plug>(go-install)
+augroup END
 
-colorscheme molokai
+" ============= NERDTree =============
+let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.pyc$', '.DS_STORE']
+
+" ============= vim-go =============
+let g:go_fmt_command="goimports"
+let g:go_highlight_fields=1
+let g:go_highlight_functions=1
+let g:go_highlight_methods=1
+let g:go_highlight_operators=1
+let g:go_highlight_extra_types=1
+let g:go_highlight_build_constraints=1
+let g:go_highlight_generate_tags=1
+let g:go_metalinter_autosave=1
+let g:go_metalinter_autosave_enabled=['vet', 'golint']
+
+" ============= deoplete =============
+let g:deoplete#enable_at_startup=1
+
+" ============= airline =============
+let g:airline#extensions#branch#enabled=1
+
+" ============= jedi =============
+let g:jedi#force_py_version=3
+
+" ============= rust =============
+let g:rustfmt_autosave=1
