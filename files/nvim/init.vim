@@ -2,7 +2,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'fatih/molokai'
 Plug 'fatih/vim-go'
 Plug 'fatih/vim-hclfmt'
 Plug 'Shougo/deoplete.nvim'
@@ -19,9 +18,7 @@ call plug#end()
 set clipboard^=unnamed,unnamedplus
 
 " ============= UI =============
-let g:rehash256=1
-let g:molokai_original=1
-colorscheme molokai
+colorscheme dark
 
 set number
 set cursorline
@@ -48,6 +45,7 @@ augroup go
   autocmd FileType go nmap <silent> <Leader>c <Plug>(go-coverage-toggle)
   autocmd FileType go nmap <silent> <leader>r <Plug>(go-run)
   autocmd FileType go nmap <silent> <leader>i <Plug>(go-install)
+  autocmd FileType go nmap <silent> <leader>d <Plug>(go-def)
 augroup END
 
 " ============= NERDTree =============
