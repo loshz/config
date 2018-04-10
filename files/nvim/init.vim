@@ -39,13 +39,12 @@ let mapleader=","
 map <leader>n :NERDTreeToggle<CR>
 
 augroup go
-  autocmd!
   autocmd FileType go nmap <silent> <Leader>x <Plug>(go-doc-vertical)
   autocmd FileType go nmap <silent> <leader>t <Plug>(go-test)
   autocmd FileType go nmap <silent> <Leader>c <Plug>(go-coverage-toggle)
   autocmd FileType go nmap <silent> <leader>r <Plug>(go-run)
   autocmd FileType go nmap <silent> <leader>i <Plug>(go-install)
-  autocmd FileType go nmap <silent> <leader>d <Plug>(go-def)
+  autocmd FileType go nmap <leader>d <Plug>(go-def)
 augroup END
 
 " ============= NERDTree =============
