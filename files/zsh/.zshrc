@@ -10,7 +10,7 @@ plugins=(aws git python docker docker-compose brew golang sudo httpie kubectl)
 
 export EDITOR="nvim"
 export GOPATH="$HOME/code/go"
-export PATH="$HOME/.cargo/bin:$GOPATH/bin:/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin"
+export PATH="$HOME/.cargo/bin:$GOPATH/bin:$HOME/bin:/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin"
 
 alias zshconfig="$EDITOR $HOME/.zshrc"
 alias nvimconfig="$EDITOR $HOME/.config/nvim/init.vim"
