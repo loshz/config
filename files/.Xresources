@@ -28,6 +28,6 @@ xterm*color15:    #FFFFFF
 
 ! Font
 xterm*renderFont: true
-xterm*faceName:   Menlo-8
+xterm*faceName:   Menlo-9
 
 xterm*saveLines:  1000000
