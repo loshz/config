@@ -3,7 +3,7 @@ set $mod Mod4
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
-font pango:Menlo 8
+font pango:Menlo 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -125,7 +125,7 @@ bar {
 		inactive_workspace #1A1A1A #1A1A1A #888888
 	}
 
-	font pango:Menlo 8
+	font pango:Menlo 9
 
 	separator_symbol "/"
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
