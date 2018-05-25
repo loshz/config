@@ -6,7 +6,7 @@ DISABLE_AUTO_TITLE="true"
 ENABLE_CORRECTION="false"
 HIST_STAMPS="dd/mm/yyyy"
 
-plugins=(aws git python docker docker-compose brew golang sudo httpie kubectl)
+plugins=(aws git python docker golang sudo kubectl)
 
 export EDITOR="nvim"
 export GOPATH="$HOME/code/go"
@@ -16,6 +16,7 @@ alias zshconfig="$EDITOR $HOME/.zshrc"
 alias nvimconfig="$EDITOR $HOME/.config/nvim/init.vim"
 alias rm="$GOPATH/bin/rm2"
 alias src="source $HOME/.zshrc"
+alias vim=nvim
 alias git=hub
 
 source $ZSH/oh-my-zsh.sh
