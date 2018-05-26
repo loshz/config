@@ -12,12 +12,12 @@ set fillchars+=vert:│
 hi Normal          ctermfg=252  ctermbg=234
 hi CursorLine                   ctermbg=236   cterm=none
 hi CursorLineNr    ctermfg=208                cterm=none
-hi Boolean         ctermfg=141
+hi Boolean         ctermfg=135
 hi Character       ctermfg=222
-hi Number          ctermfg=141
+hi Number          ctermfg=135
 hi String          ctermfg=222
 hi Conditional     ctermfg=197                cterm=bold
-hi Constant        ctermfg=141                cterm=bold
+hi Constant        ctermfg=135                cterm=bold
 hi Cursor          ctermfg=16   ctermbg=253
 hi Debug           ctermfg=225                cterm=bold
 hi Define          ctermfg=81
@@ -26,11 +26,11 @@ hi DiffAdd                      ctermbg=24
 hi DiffChange      ctermfg=181  ctermbg=239
 hi DiffDelete      ctermfg=125  ctermbg=233
 hi DiffText                     ctermbg=102   cterm=bold
-hi Directory       ctermfg=154                cterm=bold
+hi Directory       ctermfg=46                 cterm=bold
 hi Error           ctermfg=222  ctermbg=233
-hi Exception       ctermfg=154                cterm=bold
-hi Float           ctermfg=141
-hi Function        ctermfg=154
+hi Exception       ctermfg=46                 cterm=bold
+hi Float           ctermfg=135
+hi Function        ctermfg=46
 hi Identifier      ctermfg=208
 hi ErrorMsg        ctermfg=199  ctermbg=16    cterm=bold
 hi FoldColumn      ctermfg=67   ctermbg=16
@@ -39,8 +39,8 @@ hi Ignore          ctermfg=244  ctermbg=232
 hi IncSearch       ctermfg=193  ctermbg=16
 hi Keyword         ctermfg=197                cterm=bold
 hi Operator        ctermfg=197
-hi PreCondit       ctermfg=154                cterm=bold
-hi PreProc         ctermfg=154
+hi PreCondit       ctermfg=46                 cterm=bold
+hi PreProc         ctermfg=46
 hi Repeat          ctermfg=197                cterm=bold
 hi Label           ctermfg=229                cterm=none
 hi Macro           ctermfg=193

@@ -18,6 +18,7 @@ alias rm="$GOPATH/bin/rm2"
 alias src="source $HOME/.zshrc"
 alias vim=nvim
 alias git=hub
+alias op=1p
 
 source $ZSH/oh-my-zsh.sh
 
