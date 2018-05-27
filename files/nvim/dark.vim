@@ -6,11 +6,10 @@ endif
 
 let g:colors_name="dark"
 
-set background=dark
 set fillchars+=vert:│
 
-hi Normal          ctermfg=252  ctermbg=234
-hi CursorLine                   ctermbg=236   cterm=none
+hi Normal          ctermfg=252  ctermbg=233
+hi CursorLine                   ctermbg=234   cterm=none
 hi CursorLineNr    ctermfg=208                cterm=none
 hi Boolean         ctermfg=135
 hi Character       ctermfg=222
@@ -21,7 +20,7 @@ hi Constant        ctermfg=135                cterm=bold
 hi Cursor          ctermfg=16   ctermbg=253
 hi Debug           ctermfg=225                cterm=bold
 hi Define          ctermfg=81
-hi Delimiter       ctermfg=241
+hi Delimiter       ctermfg=246
 hi DiffAdd                      ctermbg=24
 hi DiffChange      ctermfg=181  ctermbg=239
 hi DiffDelete      ctermfg=125  ctermbg=233
@@ -42,7 +41,7 @@ hi Operator        ctermfg=197
 hi PreCondit       ctermfg=46                 cterm=bold
 hi PreProc         ctermfg=46
 hi Repeat          ctermfg=197                cterm=bold
-hi Label           ctermfg=229                cterm=none
+hi Label           ctermfg=222                cterm=none
 hi Macro           ctermfg=193
 hi SpecialKey      ctermfg=81
 hi MatchParen      ctermfg=208  ctermbg=233   cterm=bold
@@ -79,7 +78,7 @@ hi VisualNOS                    ctermbg=238
 hi WarningMsg      ctermfg=231  ctermbg=238   cterm=bold
 hi WildMenu        ctermfg=81   ctermbg=16
 hi Comment         ctermfg=245
-hi LineNr          ctermfg=239  ctermbg=234
+hi LineNr          ctermfg=239  ctermbg=233
 hi NonText         ctermfg=239
 hi SpecialKey      ctermfg=239
 hi CursorColumn                 ctermbg=236

@@ -15,7 +15,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # dmenu
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -nb '#1A1A1A' -sb '#1A1A1A' -sf '#00FF00' -nf '#9F9FA1'"
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -nb '#121212' -sb '#121212' -sf '#00FF00' -nf '#9F9FA1'"
 
 # change focus
 bindsym $mod+Left focus left
@@ -123,9 +123,9 @@ gaps outer 0
 
 bar {
 	colors {
-		background         #1A1A1A
-		focused_workspace  #1A1A1A #1A1A1A #00FF00
-		inactive_workspace #1A1A1A #1A1A1A #888888
+		background         #121212
+		focused_workspace  #121212 #121212 #00FF00
+		inactive_workspace #121212 #121212 #888888
 	}
 
 	font pango:Menlo 9
