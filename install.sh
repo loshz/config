@@ -3,6 +3,7 @@
 declare -A FILES
 FILES["nvim/init.vim"]="$HOME/.config/nvim"
 FILES["nvim/dark.vim"]="$HOME/.config/nvim/colors"
+FILES["tmux/.tmux.conf"]="$HOME"
 FILES["zsh/.zshrc"]="$HOME"
 FILES["zsh/terminal.zsh-theme"]="$HOME/.oh-my-zsh/themes"
 FILES["git/.gitconfig"]="$HOME"
