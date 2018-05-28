@@ -8,13 +8,13 @@ let g:colors_name="dark"
 
 set fillchars+=vert:│
 
-hi Normal          ctermfg=252  ctermbg=233
+hi Normal          ctermfg=251  ctermbg=233
 hi CursorLine                   ctermbg=234   cterm=none
 hi CursorLineNr    ctermfg=208                cterm=none
 hi Boolean         ctermfg=135
-hi Character       ctermfg=222
+hi Character       ctermfg=221
 hi Number          ctermfg=135
-hi String          ctermfg=222
+hi String          ctermfg=221
 hi Conditional     ctermfg=197                cterm=bold
 hi Constant        ctermfg=135                cterm=bold
 hi Cursor          ctermfg=16   ctermbg=253
@@ -26,7 +26,7 @@ hi DiffChange      ctermfg=181  ctermbg=239
 hi DiffDelete      ctermfg=125  ctermbg=233
 hi DiffText                     ctermbg=102   cterm=bold
 hi Directory       ctermfg=46                 cterm=bold
-hi Error           ctermfg=222  ctermbg=233
+hi Error           ctermfg=221  ctermbg=233
 hi Exception       ctermfg=46                 cterm=bold
 hi Float           ctermfg=135
 hi Function        ctermfg=46
@@ -41,7 +41,7 @@ hi Operator        ctermfg=197
 hi PreCondit       ctermfg=46                 cterm=bold
 hi PreProc         ctermfg=46
 hi Repeat          ctermfg=197                cterm=bold
-hi Label           ctermfg=222                cterm=none
+hi Label           ctermfg=221                cterm=none
 hi Macro           ctermfg=193
 hi SpecialKey      ctermfg=81
 hi MatchParen      ctermfg=208  ctermbg=233   cterm=bold
@@ -52,7 +52,7 @@ hi PmenuSel        ctermfg=255  ctermbg=242
 hi PmenuSbar                    ctermbg=232
 hi PmenuThumb      ctermfg=81
 hi Question        ctermfg=81
-hi Search          ctermfg=0    ctermbg=222   cterm=NONE
+hi Search          ctermfg=0    ctermbg=221   cterm=NONE
 hi SignColumn      ctermfg=118  ctermbg=235
 hi SpecialChar     ctermfg=161                cterm=bold
 hi SpecialComment  ctermfg=245                cterm=bold

@@ -3,7 +3,7 @@ set $mod Mod4
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
-font pango:Menlo 9
+font pango:Hack 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -97,7 +97,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # lock i3
-bindsym $mod+Shift+l exec --no-startup-id i3lock -u -e -i $HOME/Pictures/background.jpg
+bindsym $mod+Shift+l exec --no-startup-id lock
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exit i3
 
@@ -128,7 +128,7 @@ bar {
 		inactive_workspace #121212 #121212 #888888
 	}
 
-	font pango:Menlo 9
+	font pango:Hack 9
 
 	separator_symbol "/"
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
