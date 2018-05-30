@@ -118,14 +118,16 @@ gaps outer 0
 bar {
 	colors {
 		background         #121212
+		binding_mode       #6479FF #6479FF #FFFFFF
 		focused_workspace  #121212 #121212 #00FF00
 		inactive_workspace #121212 #121212 #888888
+		urgent_workspace   #FF0000 #FF0000 #FFFFFF
 	}
 
 	font pango:Hack 9
 
 	separator_symbol "/"
-    status_command i3blocks -c ~/.config/i3/i3blocks.conf
+	status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	position top
 }
 
