@@ -135,7 +135,7 @@ bar {
 for_window [class=".*"] border pixel 0
 
 # Desktop wallpaper
-exec_always --no-startup-id sh ~/.fehbg
+exec_always --no-startup-id xsetroot -solid "#8E9EAB"
 
 exec_always --no-startup-id xrdb -merge $HOME/.Xresources
 
