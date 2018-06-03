@@ -14,7 +14,7 @@ export PATH="$HOME/.cargo/bin:$GOPATH/bin:$HOME/bin:/usr/local/bin:/bin:/usr/bin
 
 alias zshconf="$EDITOR $HOME/.zshrc"
 alias nvimconf="$EDITOR $HOME/.config/nvim/init.vim"
-alias rm="$GOPATH/bin/rm2"
+alias rm=rm2
 alias src="source $HOME/.zshrc"
 alias vim=nvim
 alias git=hub
