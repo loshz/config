@@ -124,8 +124,6 @@ bar {
 		urgent_workspace   #FF0000 #FF0000 #FFFFFF
 	}
 
-	font pango:Hack 9
-
 	separator_symbol "/"
 	status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	position top
