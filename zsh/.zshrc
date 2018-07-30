@@ -17,7 +17,6 @@ alias nvimconf="$EDITOR $HOME/.config/nvim/init.vim"
 alias rm=rm2
 alias src="source $HOME/.zshrc"
 alias vim=nvim
-alias git=hub
 alias op=1p
 alias t=tmux
 
