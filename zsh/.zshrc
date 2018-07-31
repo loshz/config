@@ -9,7 +9,8 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(aws git python docker golang sudo kubectl)
 
 export EDITOR="nvim"
-export GOPATH="$HOME/code/go"
+export DEVPATH="$HOME/dev"
+export GOPATH="$DEVPATH/go"
 export PATH="$HOME/.cargo/bin:$GOPATH/bin:$HOME/bin:/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin"
 
 alias zshconf="$EDITOR $HOME/.zshrc"
