@@ -62,6 +62,9 @@ bindsym XF86AudioPrev exec playerctl previous
 # Print Screen
 bindcode 107 exec --no-startup-id scrot $HOME/Pictures/Screenshots/%Y-%m-%d_%H:%M:%S.png
 
+# Toogle primary display
+bindsym $mod+Shift+p exec --no-startup-id displayctl primary
+
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
