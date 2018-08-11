@@ -6,7 +6,6 @@ Plug 'fatih/vim-go'
 Plug 'fatih/vim-hclfmt'
 Plug 'Shougo/deoplete.nvim'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
-Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 Plug 'davidhalter/jedi-vim'
 Plug 'zchee/deoplete-jedi'
