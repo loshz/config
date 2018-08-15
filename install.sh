@@ -7,13 +7,11 @@ FILES["tmux/.tmux.conf"]="$HOME"
 FILES["zsh/.zshrc"]="$HOME"
 FILES["zsh/terminal.zsh-theme"]="$HOME/.oh-my-zsh/themes"
 FILES["git/.gitconfig"]="$HOME"
-
-if [[ "$OSTYPE" == "linux"* ]]; then
-	FILES["X/.Xresources"]="$HOME"
-	FILES["X/.xinitrc"]="$HOME"
-	FILES["i3/config"]="$HOME/.config/i3"
-	FILES["i3/i3blocks.conf"]="$HOME/.config/i3"
-fi
+FILES["X/.Xresources"]="$HOME"
+FILES["X/.xinitrc"]="$HOME"
+FILES["i3/config"]="$HOME/.config/i3"
+FILES["i3/i3blocks.conf"]="$HOME/.config/i3"
+FILES["bash/.bashrc"]="$HOME"
 
 COUNT=0
 TOTAL=${#FILES[@]}
