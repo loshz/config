@@ -10,6 +10,7 @@ FILES["X/.xinitrc"]="$HOME"
 FILES["i3/config"]="$HOME/.config/i3"
 FILES["i3/i3blocks.conf"]="$HOME/.config/i3"
 FILES["bash/.bashrc"]="$HOME"
+FILES["bash/.bash_profile"]="$HOME"
 
 COUNT=0
 TOTAL=${#FILES[@]}

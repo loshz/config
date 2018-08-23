@@ -12,6 +12,15 @@ __prompt_command() {
 
 PROMPT_COMMAND=__prompt_command
 
+shopt -s direxpand
+shopt -s checkwinsize
+
+set show-all-if-unmodified on
+
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
+export TERM="xterm-256color"
 export EDITOR="nvim"
 export DEVPATH="$HOME/dev"
 export GOPATH="$DEVPATH/go"
@@ -25,7 +34,8 @@ alias vim=nvim
 alias op=1p
 alias t=tmux
 alias ls="ls --color=auto"
+alias grep="grep --color=always --exclude-dir=.git"
 
-if [ -f $HOME/.bashrc_local ]; then
-        source $HOME/.bashrc_local
+if [ -f $HOME/.bashrc.local ]; then
+	source $HOME/.bashrc.local
 fi
