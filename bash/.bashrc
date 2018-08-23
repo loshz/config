@@ -1,20 +1,13 @@
 __prompt_command() {
 	local EXIT="$?"
-	local TIME=$(date +%H:%M:%S)
-
-	PS1=""
-	
 	local RESET="\[\e[0m\]"
 	local RED="\[\e[0;31m\]"
 	local GREEN="\[\e[0;32m\]"
 
-	PS1+="${GREEN}[\u@\h] \W \\$ ${RESET}"
-
+	PS1="${GREEN}[\u@\h] \W \\$ ${RESET}"
 	if [ "${EXIT}" -ne 0 ]; then
-		PS1+="${RED}${EXIT}${RESET} "
+		PS1="${RED}${EXIT}${RESET} ${PS1}"
 	fi
-	
-	PS1+="[${TIME}]"
 }
 
 PROMPT_COMMAND=__prompt_command
@@ -31,3 +24,8 @@ alias src="source $HOME/.bashrc"
 alias vim=nvim
 alias op=1p
 alias t=tmux
+alias ls="ls --color=auto"
+
+if [ -f $HOME/.bashrc_local ]; then
+        source $HOME/.bashrc_local
+fi
