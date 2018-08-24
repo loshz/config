@@ -25,6 +25,7 @@ export EDITOR="nvim"
 export DEVPATH="$HOME/dev"
 export GOPATH="$DEVPATH/go"
 export PATH="$HOME/.cargo/bin:$GOPATH/bin:$HOME/bin:/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin"
+export HISTTIMEFORMAT="%d/%m/%y %T  "
 
 alias bashconf="$EDITOR $HOME/.bashrc"
 alias nvimconf="$EDITOR $HOME/.config/nvim/init.vim"
