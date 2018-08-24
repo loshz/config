@@ -31,9 +31,8 @@ alias bashconf="$EDITOR $HOME/.bashrc"
 alias nvimconf="$EDITOR $HOME/.config/nvim/init.vim"
 alias rm=rm2
 alias src="source $HOME/.bashrc"
-alias vim=nvim
+alias vim=$EDITOR
 alias op=1p
-alias t=tmux
 alias ls="ls --color=auto"
 alias grep="grep --color=always --exclude-dir=.git"
 
