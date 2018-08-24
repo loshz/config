@@ -1,8 +1,8 @@
-__prompt_command() {
+function prompt {
 	local EXIT="$?"
 	local RESET="\[\e[0m\]"
-	local RED="\[\e[0;31m\]"
-	local GREEN="\[\e[0;32m\]"
+	local RED="\[\e[1;31m\]"
+	local GREEN="\[\e[1;32m\]"
 
 	PS1="${GREEN}[\u@\h] \W \\$ ${RESET}"
 	if [ "${EXIT}" -ne 0 ]; then
@@ -10,7 +10,7 @@ __prompt_command() {
 	fi
 }
 
-PROMPT_COMMAND=__prompt_command
+PROMPT_COMMAND=prompt
 
 shopt -s direxpand
 shopt -s checkwinsize
