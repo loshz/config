@@ -46,6 +46,11 @@ augroup go
   autocmd FileType go nmap <leader>d <Plug>(go-def)
 augroup END
 
+augroup rust
+  autocmd FileType rust nmap <silent> <Leader>d <Plug>(rust-def)
+  autocmd FileType rust nmap <silent> <Leader>x <Plug>(rust-doc)
+augroup END
+
 " ============= NERDTree =============
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.pyc$', '.DS_STORE']
@@ -76,3 +81,5 @@ let g:jedi#force_py_version=3
 
 " ============= rust =============
 let g:rustfmt_autosave=1
+let g:rust_clip_command='xclip -selection clipboard'
+let g:racer_experimental_completer=1
