@@ -36,6 +36,7 @@ alias vim=$EDITOR
 alias op=1p
 alias ls="ls --color=auto"
 alias grep="grep --color=always --exclude-dir=.git"
+alias diff='diff --color=always'
 
 if [ -f $HOME/.bashrc.local ]; then
 	source $HOME/.bashrc.local
