@@ -1,6 +1,7 @@
 [user]
 	email = danbondd@gmail.com
 	name = Dan Bond
+	signingkey = B7B37036E1B0D70A93C5A748048F66AFF28F96F7
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
