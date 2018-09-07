@@ -55,7 +55,7 @@ augroup END
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.pyc$', '.DS_STORE']
 
-" ============= vim-go =============
+" ============= go =============
 let g:go_fmt_command="goimports"
 let g:go_auto_type_info=1
 let g:go_highlight_fields=1
@@ -72,9 +72,6 @@ let g:go_metalinter_autosave_enabled=['vet', 'golint']
 
 " ============= deoplete =============
 let g:deoplete#enable_at_startup=1
-
-" ============= airline =============
-let g:airline#extensions#branch#enabled=1
 
 " ============= jedi =============
 let g:jedi#force_py_version=3
