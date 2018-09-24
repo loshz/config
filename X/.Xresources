@@ -1,4 +1,4 @@
-Xft.dpi: 144
+Xft.dpi: 96
 
 xterm*background: #121212
 xterm*foreground: #9F9FA1
@@ -13,8 +13,8 @@ xterm*color9:     #F02233
 xterm*color2:     #00FF00
 xterm*color10:    #00FF00
 ! Yellow
-xterm*color3:     #F7CA18
-xterm*color11:    #F7CA18
+xterm*color3:     #FFD75F
+xterm*color11:    #FFD75F
 ! Blue
 xterm*color4:     #6479FF
 xterm*color12:    #6479FF
