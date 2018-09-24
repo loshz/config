@@ -3,13 +3,13 @@ set $mod Mod4
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
-font pango:Hack 9
+font pango:Hack, FontAwesome 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xterm
+bindsym $mod+Return exec uxterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -126,7 +126,7 @@ bar {
 		inactive_workspace #121212 #121212 #9F9FA1
 		urgent_workspace   #FF0000 #FF0000 #FFFFFF
 	}
-
+	
 	status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	position top
 	tray_output none
@@ -140,3 +140,4 @@ exec_always --no-startup-id xsetroot -solid "#757F9A"
 
 exec_always --no-startup-id xrdb -merge $HOME/.Xresources
 
+exec_always --no-startup-id start-pulseaudio-x11
