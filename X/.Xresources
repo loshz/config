@@ -1,4 +1,4 @@
-Xft.dpi: 96
+Xft.dpi: XDPI
 
 xterm*background: #121212
 xterm*foreground: #9F9FA1
