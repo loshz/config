@@ -138,6 +138,6 @@ for_window [class=".*"] border pixel 0
 # Desktop wallpaper
 exec_always --no-startup-id xsetroot -solid "#757F9A"
 
-exec_always --no-startup-id xrdb -DXDPI=$(displayctl dpi print) -merge $HOME/.Xresources
+exec_always --no-startup-id xrdb -DXDPI=$(displayctl dpi) -merge $HOME/.Xresources
 
 exec_always --no-startup-id start-pulseaudio-x11
