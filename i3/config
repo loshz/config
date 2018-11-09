@@ -119,6 +119,13 @@ gaps inner 15
 gaps outer 0
 
 bar {
+	# disable all mouse buttons
+	bindsym button1 nop
+	bindsym button2 nop
+	bindsym button3 nop
+	bindsym button4 nop
+	bindsym button5 nop
+
 	colors {
 		background         #121212
 		binding_mode       #6479FF #6479FF #FFFFFF
