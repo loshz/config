@@ -32,6 +32,7 @@ export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
 alias bashconf="$EDITOR $HOME/.bashrc"
 alias nvimconf="$EDITOR $HOME/.config/nvim/init.vim"
+alias i3conf="$EDITOR $HOME/.config/i3/config"
 alias rm=rm2
 alias src="source $HOME/.bashrc"
 alias vim=$EDITOR
@@ -39,6 +40,11 @@ alias op=1p
 alias ls="ls --color=auto"
 alias grep="grep --color=always --exclude-dir=.git"
 alias diff='diff --color=always'
+alias copy="xclip -sel clipboard"
+alias x=startx
+alias shutdown="shutdown now"
+alias pacman="sudo pacman"
+alias netctl="sudo netctl"
 
 if [ -f $HOME/.bashrc.local ]; then
 	source $HOME/.bashrc.local
