@@ -41,7 +41,7 @@ alias ls="ls --color=auto"
 alias grep="grep --color=always --exclude-dir=.git"
 alias diff='diff --color=always'
 alias copy="xclip -sel clipboard"
-alias x=startx
+alias x="startx && sudo netctl start"
 alias shutdown="shutdown now"
 alias pacman="sudo pacman"
 alias netctl="sudo netctl"
