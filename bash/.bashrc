@@ -12,6 +12,16 @@ function prompt {
 
 PROMPT_COMMAND=prompt
 
+function x {
+	if [[ ! -z $1 ]]; then
+		sudo netctl start $1
+		if [ $? -ne 0 ]; then
+			exit $?
+		fi
+	fi
+	startx
+}
+
 shopt -s direxpand
 shopt -s checkwinsize
 
@@ -41,7 +51,6 @@ alias ls="ls --color=auto"
 alias grep="grep --color=always --exclude-dir=.git"
 alias diff='diff --color=always'
 alias copy="xclip -sel clipboard"
-alias x="startx && sudo netctl start"
 alias shutdown="shutdown now"
 alias pacman="sudo pacman"
 alias netctl="sudo netctl"
