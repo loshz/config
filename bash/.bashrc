@@ -16,10 +16,18 @@ function x {
 	if [[ ! -z $1 ]]; then
 		sudo netctl start $1
 		if [ $? -ne 0 ]; then
-			exit $?
+			return $?
 		fi
 	fi
 	startx
+}
+
+function vpn {
+	if [[ -z $1 ]] || [[ -z $2 ]]; then
+		echo "Usage: vpn [start/stop] [profile]"
+		return 1
+	fi
+	sudo systemctl $1 openvpn-client@$2
 }
 
 shopt -s direxpand
