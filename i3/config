@@ -49,6 +49,9 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
+# toogle headphones
+bindsym $mod+Shift+h exec --no-startup-id headphonectl toggle
+
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id volumectl inc
 bindsym XF86AudioLowerVolume exec --no-startup-id volumectl dec
