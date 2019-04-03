@@ -1,0 +1,137 @@
+[bar/default]
+
+;------------;
+; DIMENSIONS ;
+;------------;
+
+width = 100%
+height = 30
+offset-y = 0
+offset-x = 0
+
+border-top-size = 0
+border-bottom-size = 0
+border-right-size = 0
+border-left-size = 0
+
+;----------;
+; LOCATION ;
+;----------;
+
+bottom = false
+override-redirect = false
+
+;-------;
+; FONTS ;
+;-------;
+
+font-0 = Hack:size=9;3
+font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=9;3"
+font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=9;3"
+font-3 = "Font Awesome 5 Brands:pixelsize=9;3"
+
+;--------;
+; COLORS ;
+;--------;
+
+background = #121212
+foreground = #00FF00
+border-color = 0
+
+;---------------;
+; MISCELLANEOUS ;
+;---------------;
+
+fixed-center = true
+padding-left = 2 
+padding-right = 2
+module-margin = 1.5
+
+modules-left = disk-root disk-home disk-temp mem cpu
+modules-center = i3
+modules-right = openvpn bluetooth volume wlan battery datetime
+
+tray-position = none
+tray-detached = true
+
+;---------;
+; MODULES ;
+;---------;
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+strip-wsnumbers = true
+enable-scroll = false
+enable-click = false
+label-unfocused-foreground = #9F9FA1
+label-focused-foreground = #00FF00
+label-urgent-foreground = #FFFFFF
+label-urgent-background = #FF0000
+label-mode-foreground = #FFFFFF
+label-mode-background = #6479FF
+
+[module/datetime]
+type = internal/date
+date = %a %d %b - %H:%M:%S
+interval = 1
+
+[module/battery]
+type = custom/script
+exec = $HOME/dev/scripts/statusbar/battery
+interval = 3
+
+[module/wlan]
+type = custom/script
+exec = $HOME/dev/scripts/statusbar/wifi
+interval = 5
+label =  %output%
+
+[module/cpu]
+type = custom/script
+exec = $HOME/dev/scripts/statusbar/cpu
+interval = 3
+label =  %output%
+
+[module/mem]
+type = internal/memory
+interval = 10
+label =  %gb_free%
+
+[module/bluetooth]
+type = custom/script
+exec = $HOME/dev/scripts/statusbar/bluetooth
+interval = 3
+label =  %output%
+
+[module/volume]
+type = custom/script
+exec = $HOME/dev/scripts/statusbar/volume
+interval = 3
+
+[module/openvpn]
+type = custom/script
+exec = $HOME/dev/scripts/statusbar/openvpn
+interval = 5
+label =  %output%
+
+[module/disk-root]
+type = custom/script
+exec = $HOME/dev/scripts/statusbar/disk /root
+label = / %output%
+interval = 60
+
+[module/disk-home]
+type = custom/script
+exec = $HOME/dev/scripts/statusbar/disk /home
+label = /home %output%
+interval = 60
+
+[module/disk-temp]
+type = custom/script
+exec = $HOME/dev/scripts/statusbar/nvme /dev/nvme0n1
+label =  %output%
+interval = 10
+
+
+; vim:ft=dosini
