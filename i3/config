@@ -15,7 +15,7 @@ bindsym $mod+Return exec uxterm
 bindsym $mod+Shift+q kill
 
 # dmenu
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -nb '#121212' -sb '#121212' -sf '#00FF00' -nf '#9F9FA1'"
+bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # change focus
 bindsym $mod+Left focus left

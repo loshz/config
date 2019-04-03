@@ -13,6 +13,7 @@ FILES["bash/.bashrc"]="$HOME"
 FILES["bash/.bash_profile"]="$HOME"
 FILES["polybar/config"]="$HOME/.config/polybar"
 FILES["polybar/launch.sh"]="$HOME/.config/polybar"
+FILES["rofi/config"]="$HOME/.config/rofi"
 
 COUNT=0
 TOTAL=${#FILES[@]}
