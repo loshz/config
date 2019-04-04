@@ -1,62 +1,36 @@
 [bar/default]
 
-;------------;
-; DIMENSIONS ;
-;------------;
+# ========== DIMENSIONS ==========
 
 width = 100%
 height = 30
 offset-y = 0
 offset-x = 0
 
-border-top-size = 0
-border-bottom-size = 0
-border-right-size = 0
-border-left-size = 0
-
-;----------;
-; LOCATION ;
-;----------;
-
-bottom = false
-override-redirect = false
-
-;-------;
-; FONTS ;
-;-------;
+# ============ FONTS ============
 
 font-0 = Hack:size=9;3
 font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=9;3"
 font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=9;3"
 font-3 = "Font Awesome 5 Brands:pixelsize=9;3"
 
-;--------;
-; COLORS ;
-;--------;
+# ============ COLORS ============
 
 background = #121212
 foreground = #00FF00
-border-color = 0
 
-;---------------;
-; MISCELLANEOUS ;
-;---------------;
+# ========= MISCELLANEOUS =========
 
 fixed-center = true
 padding-left = 2 
 padding-right = 2
-module-margin = 1.5
+module-margin = 1.75
 
 modules-left = disk-root disk-home disk-temp mem cpu
 modules-center = i3
 modules-right = openvpn bluetooth volume wlan battery datetime
 
-tray-position = none
-tray-detached = true
-
-;---------;
-; MODULES ;
-;---------;
+# ============ MODULES ============
 
 [module/i3]
 type = internal/i3
@@ -94,9 +68,10 @@ interval = 3
 label =  %output%
 
 [module/mem]
-type = internal/memory
+type = custom/script
+exec = $HOME/dev/scripts/statusbar/memory
 interval = 10
-label =  %gb_free%
+label =  %output%
 
 [module/bluetooth]
 type = custom/script
