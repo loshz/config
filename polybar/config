@@ -26,7 +26,7 @@ padding-left = 2
 padding-right = 2
 module-margin = 1.75
 
-modules-left = disk-root disk-home disk-temp mem cpu
+modules-left = disk-temp disk-root disk-home mem cpu
 modules-center = i3
 modules-right = openvpn bluetooth volume wlan battery datetime
 
@@ -47,7 +47,7 @@ label-mode-background = #6479FF
 
 [module/datetime]
 type = internal/date
-date = %a %d %b - %H:%M:%S
+date = %a %d %b %H:%M:%S
 interval = 1
 
 [module/battery]
@@ -93,13 +93,13 @@ label =  %output%
 [module/disk-root]
 type = custom/script
 exec = $HOME/dev/scripts/statusbar/disk /root
-label = / %output%
+label = %output% [root]
 interval = 60
 
 [module/disk-home]
 type = custom/script
 exec = $HOME/dev/scripts/statusbar/disk /home
-label = /home %output%
+label = %output% [home]
 interval = 60
 
 [module/disk-temp]
@@ -107,6 +107,5 @@ type = custom/script
 exec = $HOME/dev/scripts/statusbar/nvme /dev/nvme0n1
 label =  %output%
 interval = 10
-
 
 ; vim:ft=dosini
