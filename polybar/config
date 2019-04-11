@@ -25,6 +25,7 @@ fixed-center = true
 padding-left = 2 
 padding-right = 2
 module-margin = 1.75
+dpi = ${xrdb:Xft.dpi:-1}
 
 modules-left = disk-temp disk-root disk-home mem cpu
 modules-center = i3
@@ -93,13 +94,13 @@ label =  %output%
 [module/disk-root]
 type = custom/script
 exec = $HOME/dev/scripts/statusbar/disk /root
-label = %output% [root]
+label = [ / %output%
 interval = 60
 
 [module/disk-home]
 type = custom/script
 exec = $HOME/dev/scripts/statusbar/disk /home
-label = %output% [home]
+label = /home %output% ]
 interval = 60
 
 [module/disk-temp]
