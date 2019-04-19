@@ -1,5 +1,7 @@
 set $mod Mod4
 
+set $dpi $(displayctl dpi)
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -15,7 +17,7 @@ bindsym $mod+Return exec uxterm
 bindsym $mod+Shift+q kill
 
 # dmenu
-bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+d exec --no-startup-id rofi -show drun -dpi $dpi
 
 # change focus
 bindsym $mod+Left focus left
@@ -129,6 +131,6 @@ gaps outer 0
 for_window [class=".*"] border pixel 0
 
 exec_always --no-startup-id xsetroot -solid "#94716B"
-exec_always --no-startup-id xrdb -DXDPI=$(displayctl dpi) -merge $HOME/.Xresources
+exec_always --no-startup-id xrdb -DXDPI=$dpi -merge $HOME/.Xresources
 exec_always --no-startup-id start-pulseaudio-x11
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
