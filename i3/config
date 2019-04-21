@@ -103,7 +103,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # lock i3
-bindsym $mod+Shift+l exec --no-startup-id i3lock -e -c 94716B -i /home/dan/Pictures/lock.png
+bindsym $mod+Shift+l exec --no-startup-id i3lock -e -c C79081 -i /home/dan/Pictures/lock.png
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exit i3
 
@@ -130,7 +130,7 @@ gaps outer 0
 # Remove all application borders
 for_window [class=".*"] border pixel 0
 
-exec_always --no-startup-id xsetroot -solid "#94716B"
+exec_always --no-startup-id xsetroot -solid "#C79081"
 exec_always --no-startup-id xrdb -DXDPI=$dpi -merge $HOME/.Xresources
 exec_always --no-startup-id start-pulseaudio-x11
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
