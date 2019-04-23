@@ -2,10 +2,10 @@
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fatih/vim-hclfmt'
 Plug 'Shougo/deoplete.nvim'
-Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'zchee/deoplete-go', { 'do': 'make' }
 Plug 'scrooloose/nerdtree'
 Plug 'davidhalter/jedi-vim'
 Plug 'zchee/deoplete-jedi'
