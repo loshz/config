@@ -7,6 +7,6 @@ rofi.padding: 10
 rofi.line-padding: 2
 rofi.borderwidth: 1
 rofi.hide-scrollbar: true
-rofi.terminal: uxterm
+rofi.terminal: alacritty
 rofi.color-window: #121212, #9F9FA1, #121212
 rofi.color-normal: #121212, #9F9FA1, #121212, #00FF00, #121212
