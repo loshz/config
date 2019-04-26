@@ -69,7 +69,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id sudo backlightctl inc
 bindsym XF86MonBrightnessDown exec --no-startup-id sudo backlightctl dec
 
 # Print Screen
-bindcode 107 exec --no-startup-id scrot $HOME/Pictures/Screenshots/%Y-%m-%d_%H:%M:%S.png
+bindcode 107 exec --no-startup-id scrot $HOME/Pictures/Screenshots/screenshot-%Y%m%d-%H%M%S.png
 
 # Toogle primary display
 bindsym $mod+Shift+p exec --no-startup-id displayctl primary
