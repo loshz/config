@@ -27,3 +27,11 @@ Xft.dpi: XDPI
 ! White
 *color7:     #FFFFFF
 *color15:    #FFFFFF
+
+! URxvt
+URxvt.saveLines:   4096
+URxvt.scrollBar:   false
+URxvt.letterSpace: -1
+URxvt.font:        xft:Hack-Regular:pixelsize=12
+URxvt.boldFont:    xft:Hack-Bold:pixelsize=12:weight=bold
+URxvt.italicFont:  xft:Hack-RegularOblique:pixelsize=12:slant=italic
