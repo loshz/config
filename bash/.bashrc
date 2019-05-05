@@ -54,7 +54,6 @@ alias i3conf="$EDITOR $HOME/.config/i3/config"
 alias rm=rm2
 alias src="source $HOME/.bashrc"
 alias vim=$EDITOR
-alias op=1p
 alias ls="ls --color=auto"
 alias grep="grep --color=always --exclude-dir=.git"
 alias diff='diff --color=always'
