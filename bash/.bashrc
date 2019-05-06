@@ -48,8 +48,8 @@ if [ -f $HOME/.bashrc.local ]; then
 	source $HOME/.bashrc.local
 fi
 
-if [ -d /etc/.bash_completion.d ]; then
-	for f in /etc/.bash_completion.d/* ; do
+if [ -d /etc/bash_completion.d ]; then
+	for f in /etc/bash_completion.d/* ; do
 		. $f
 	done
 fi
