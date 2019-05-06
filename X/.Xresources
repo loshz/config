@@ -38,6 +38,7 @@ URxvt.letterSpace:       -1
 URxvt.font:              xft:Hack-Regular:size=9
 URxvt.boldFont:          xft:Hack-Bold:size=9:weight=bold
 URxvt.italicFont:        xft:Hack-RegularOblique:size=9:slant=italic
+URxvt.internalBorder:    6
 URxvt.perl-ext:
 URxvt.perl-ext-common:
 
