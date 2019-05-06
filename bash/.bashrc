@@ -1,4 +1,4 @@
-function prompt {
+function __prompt {
 	local EXIT="$?"
 	local RESET="\[\e[0m\]"
 	local RED="\[\e[1;31m\]"
@@ -10,7 +10,7 @@ function prompt {
 	fi
 }
 
-PROMPT_COMMAND=prompt
+PROMPT_COMMAND=__prompt
 
 shopt -s direxpand
 shopt -s checkwinsize
@@ -46,4 +46,10 @@ alias netctl="sudo netctl"
 
 if [ -f $HOME/.bashrc.local ]; then
 	source $HOME/.bashrc.local
+fi
+
+if [ -d /etc/.bash_completion.d ]; then
+	for f in /etc/.bash_completion.d/* ; do
+		. $f
+	done
 fi
