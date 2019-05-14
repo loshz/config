@@ -44,6 +44,9 @@ augroup go
   autocmd FileType go nmap <silent> <leader>r <Plug>(go-run)
   autocmd FileType go nmap <silent> <leader>i <Plug>(go-install)
   autocmd FileType go nmap <leader>d <Plug>(go-def)
+
+  "autocmd BufWritePost *.go :GoVet
+  "autocmd BufWritePost *.go :GoLint!
 augroup END
 
 augroup rust
@@ -67,7 +70,6 @@ let g:go_highlight_extra_types=1
 let g:go_highlight_build_constraints=1
 let g:go_highlight_generate_tags=1
 let g:go_metalinter_autosave=1
-let g:go_metalinter_autosave_enabled=['vet', 'golint']
 
 " ============= deoplete =============
 let g:deoplete#enable_at_startup=1

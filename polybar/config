@@ -94,13 +94,13 @@ label =  %output%
 [module/disk-root]
 type = custom/script
 exec = $HOME/dev/scripts/statusbar/disk /root
-label = [ / %output%
+label = / %output%
 interval = 60
 
 [module/disk-home]
 type = custom/script
 exec = $HOME/dev/scripts/statusbar/disk /home
-label = /home %output% ]
+label = /home %output%
 interval = 60
 
 [module/disk-temp]
