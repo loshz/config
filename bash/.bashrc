@@ -49,7 +49,7 @@ if [ -f $HOME/.bashrc.local ]; then
 fi
 
 if [ -d /etc/bash_completion.d ]; then
-	for f in /etc/bash_completion.d/* ; do
-		. $f
+	for completion in /etc/bash_completion.d/* ; do
+		source $completion
 	done
 fi
