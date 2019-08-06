@@ -48,7 +48,7 @@ label-mode-background = #6479FF
 
 [module/datetime]
 type = internal/date
-date = %a %d %b %H:%M:%S
+date = %a %b %d - %H:%M:%S
 interval = 1
 
 [module/battery]
