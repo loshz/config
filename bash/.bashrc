@@ -24,6 +24,7 @@ export TERM="xterm-256color"
 export EDITOR="nvim"
 export DEVPATH="$HOME/dev"
 export GOPATH="$DEVPATH/go"
+export GO111MODULE=on
 export PATH="$HOME/.cargo/bin:$GOPATH/bin:$HOME/bin:/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin"
 export HISTSIZE=10000
 export HISTFILESIZE=10000
