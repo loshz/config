@@ -34,6 +34,7 @@ export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 alias bashconf="$EDITOR $HOME/.bashrc"
 alias nvimconf="$EDITOR $HOME/.config/nvim/init.vim"
 alias i3conf="$EDITOR $HOME/.config/i3/config"
+alias tmuxconf="$EDITOR $HOME/.tmux.conf"
 alias rm="rm -i"
 alias src="source $HOME/.bashrc"
 alias vim=$EDITOR
