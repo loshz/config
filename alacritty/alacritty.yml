@@ -4,7 +4,7 @@ window:
     y: 3
 
   # Neither borders nor title bar
-  decorations: none
+  decorations: full
 
 scrolling:
   history: 10000
@@ -38,7 +38,7 @@ colors:
 
   normal:
     black:      "0x24292E"
-    red:        "0xF02233"
+    red:        "0xD70000"
     green:      "0x00FF00"
     yellow:     "0xFFD75F"
     blue:       "0x6479FF"
@@ -48,7 +48,7 @@ colors:
 
   bright:
     black:      "0x24292E"
-    red:        "0xF02233"
+    red:        "0xDF0000"
     green:      "0x00FF00"
     yellow:     "0xFFD75F"
     blue:       "0x6479FF"

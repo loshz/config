@@ -15,7 +15,7 @@ hi Boolean         ctermfg=135
 hi Character       ctermfg=221
 hi Number          ctermfg=135
 hi String          ctermfg=221
-hi Conditional     ctermfg=197                cterm=bold
+hi Conditional     ctermfg=160                cterm=bold
 hi Constant        ctermfg=135                cterm=bold
 hi Cursor          ctermfg=16   ctermbg=253
 hi Debug           ctermfg=225                cterm=bold
@@ -23,7 +23,7 @@ hi Define          ctermfg=81
 hi Delimiter       ctermfg=246
 hi DiffAdd         ctermfg=46   ctermbg=235   cterm=bold
 hi DiffChange      ctermfg=221  ctermbg=235   cterm=bold
-hi DiffDelete      ctermfg=197  ctermbg=235   cterm=bold
+hi DiffDelete      ctermfg=160  ctermbg=235   cterm=bold
 hi DiffText                     ctermbg=102   cterm=bold
 hi Directory       ctermfg=46                 cterm=bold
 hi Error           ctermfg=221  ctermbg=233
@@ -36,11 +36,11 @@ hi FoldColumn      ctermfg=67   ctermbg=16
 hi Folded          ctermfg=67   ctermbg=16
 hi Ignore          ctermfg=244  ctermbg=232
 hi IncSearch       ctermfg=193  ctermbg=16
-hi Keyword         ctermfg=197                cterm=bold
-hi Operator        ctermfg=197
+hi Keyword         ctermfg=160                cterm=bold
+hi Operator        ctermfg=160
 hi PreCondit       ctermfg=46                 cterm=bold
 hi PreProc         ctermfg=46
-hi Repeat          ctermfg=197                cterm=bold
+hi Repeat          ctermfg=160                cterm=bold
 hi Label           ctermfg=221                cterm=none
 hi Macro           ctermfg=193
 hi SpecialKey      ctermfg=81
@@ -61,8 +61,8 @@ hi SpellBad                     ctermbg=52
 hi SpellCap                     ctermbg=17
 hi SpellLocal                   ctermbg=17
 hi SpellRare       ctermfg=none ctermbg=none  cterm=reverse
-hi Statement       ctermfg=197                cterm=bold
-hi Tag             ctermfg=197
+hi Statement       ctermfg=160                cterm=bold
+hi Tag             ctermfg=160
 hi Title           ctermfg=203
 hi Visual                       ctermbg=238
 hi StatusLine      ctermfg=238  ctermbg=253
