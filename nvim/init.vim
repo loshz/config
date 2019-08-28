@@ -1,6 +1,6 @@
 " ============= vim-plug =============
 call plug#begin('~/.vim/plugged')
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fatih/vim-hclfmt'
 Plug 'Shougo/deoplete.nvim'
@@ -77,3 +77,7 @@ let g:jedi#force_py_version=3
 let g:rustfmt_autosave=1
 let g:rust_clip_command='xclip -selection clipboard'
 let g:racer_experimental_completer=1
+
+" ============= signify =============
+let g:signify_vcs_list = [ 'git' ]
+let g:signify_sign_change = '~'

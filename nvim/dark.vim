@@ -21,9 +21,9 @@ hi Cursor          ctermfg=16   ctermbg=253
 hi Debug           ctermfg=225                cterm=bold
 hi Define          ctermfg=81
 hi Delimiter       ctermfg=246
-hi DiffAdd                      ctermbg=24
-hi DiffChange      ctermfg=181  ctermbg=239
-hi DiffDelete      ctermfg=125  ctermbg=233
+hi DiffAdd         ctermfg=46   ctermbg=235   cterm=bold
+hi DiffChange      ctermfg=221  ctermbg=235   cterm=bold
+hi DiffDelete      ctermfg=197  ctermbg=235   cterm=bold
 hi DiffText                     ctermbg=102   cterm=bold
 hi Directory       ctermfg=46                 cterm=bold
 hi Error           ctermfg=221  ctermbg=233
