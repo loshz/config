@@ -1,6 +1,5 @@
 " ============= vim-plug =============
 call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fatih/vim-hclfmt'
@@ -44,9 +43,6 @@ augroup go
   autocmd FileType go nmap <silent> <leader>r <Plug>(go-run)
   autocmd FileType go nmap <silent> <leader>i <Plug>(go-install)
   autocmd FileType go nmap <leader>d <Plug>(go-def)
-
-  "autocmd BufWritePost *.go :GoVet
-  "autocmd BufWritePost *.go :GoLint!
 augroup END
 
 augroup rust
