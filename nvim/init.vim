@@ -80,5 +80,5 @@ let g:rust_clip_command='xclip -selection clipboard'
 let g:racer_experimental_completer=1
 
 " ============= signify =============
-let g:signify_vcs_list = [ 'git' ]
+let g:signify_vcs_list = ['git']
 let g:signify_sign_change = '~'
