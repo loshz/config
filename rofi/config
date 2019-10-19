@@ -1,7 +1,7 @@
 ! Rofi
 rofi.modi: drun
-rofi.width: 20
-rofi.lines: 8
+rofi.width: 25
+rofi.lines: 6
 rofi.font: Hack 11
 rofi.padding: 10
 rofi.line-padding: 2
