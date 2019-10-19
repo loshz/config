@@ -1,15 +1,15 @@
 " ============= vim-plug =============
 call plug#begin('~/.vim/plugged')
-Plug 'mhinz/vim-signify'
+Plug 'davidhalter/jedi-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fatih/vim-hclfmt'
+Plug 'mhinz/vim-signify'
+Plug 'racer-rust/vim-racer'
+Plug 'rust-lang/rust.vim'
+Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim'
 Plug 'zchee/deoplete-go', { 'do': 'make' }
-Plug 'scrooloose/nerdtree'
-Plug 'davidhalter/jedi-vim'
 Plug 'zchee/deoplete-jedi'
-Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
 call plug#end()
 
 " ============= clipboard =============
