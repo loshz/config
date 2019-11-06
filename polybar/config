@@ -22,7 +22,7 @@ foreground = #00FF00
 # ========= MISCELLANEOUS =========
 
 fixed-center = true
-padding-left = 2 
+padding-left = 2
 padding-right = 2
 module-margin = 1.75
 dpi = ${xrdb:Xft.dpi:-1}
