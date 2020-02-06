@@ -74,6 +74,10 @@ bindcode 107 exec --no-startup-id scrot $HOME/Pictures/Screenshots/screenshot-%Y
 # Toogle primary display
 bindsym $mod+Shift+p exec --no-startup-id displayctl primary
 
+# Redshift
+bindsym $mod+Shift+bracketleft exec --no-startup-id redshift -O 3500
+bindsym $mod+Shift+bracketright exec --no-startup-id redshift -x
+
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
