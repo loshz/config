@@ -35,6 +35,7 @@ alias bashconf="$EDITOR $HOME/.bashrc"
 alias nvimconf="$EDITOR $HOME/.config/nvim/init.vim"
 alias i3conf="$EDITOR $HOME/.config/i3/config"
 alias tmuxconf="$EDITOR $HOME/.tmux.conf"
+alias dotfiles="cd $HOME/.dotfiles"
 alias rm="rm -i"
 alias src="source $HOME/.bashrc"
 alias vim=$EDITOR
