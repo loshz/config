@@ -2,7 +2,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'davidhalter/jedi-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'fatih/vim-hclfmt'
+Plug 'hashivim/vim-terraform'
 Plug 'mhinz/vim-signify'
 Plug 'racer-rust/vim-racer'
 Plug 'rust-lang/rust.vim'
@@ -82,3 +82,7 @@ let g:racer_experimental_completer=1
 " ============= signify =============
 let g:signify_vcs_list = ['git']
 let g:signify_sign_change = '~'
+
+" ============= vim-terraform =============
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
