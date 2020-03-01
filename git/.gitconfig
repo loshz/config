@@ -1,5 +1,5 @@
 [user]
-	email = pm@danbond.io
+	email = danbond@protonmail.com
 	name = Dan Bond
 [filter "lfs"]
 	clean = git-lfs clean %f
