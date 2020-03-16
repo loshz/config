@@ -45,6 +45,7 @@ alias copy="xclip -sel clipboard"
 alias shutdown="shutdown now"
 alias pacman="sudo pacman"
 alias netctl="sudo netctl"
+alias genpass="cat /dev/urandom | tr -dc 'A-Za-z0-9!@#$%^&*()-_=+[]{};:,.<>/?' | head -c 50"
 
 if [ -f $HOME/.bashrc.local ]; then
 	source $HOME/.bashrc.local
