@@ -48,7 +48,7 @@ colors:
     cyan:       "0x53D3FB"
     white:      "0xFFFFFF"
 
-visual_bell:
+bell:
   duration: 0
 
 background_opacity: 1.0
