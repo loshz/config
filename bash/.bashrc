@@ -25,8 +25,8 @@ export EDITOR="nvim"
 export DEVPATH="$HOME/dev"
 export GOPATH="$DEVPATH/go"
 export PATH="$HOME/.local/share/tresorit:$HOME/.cargo/bin:$GOPATH/bin:$HOME/bin:/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin"
-export HISTSIZE=10000
-export HISTFILESIZE=10000
+export HISTSIZE=1000
+export HISTFILESIZE=1000
 export HISTTIMEFORMAT="%d/%m/%y %T  "
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
