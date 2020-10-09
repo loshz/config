@@ -52,7 +52,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # toogle headphones
-bindsym $mod+Shift+h exec --no-startup-id headphonectl toggle
+bindsym $mod+Shift+h exec --no-startup-id headphonectl toggle DB_QC35
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id volumectl inc

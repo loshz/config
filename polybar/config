@@ -76,7 +76,7 @@ label =  %output%
 
 [module/bluetooth]
 type = custom/script
-exec = $HOME/dev/scripts/statusbar/bluetooth
+exec = $HOME/dev/scripts/statusbar/bluetooth DB_QC35
 interval = 3
 label =  %output%
 
