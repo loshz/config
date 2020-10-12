@@ -16,6 +16,7 @@ FILES["polybar/launch.sh"]="$HOME/.config/polybar"
 FILES["rofi/config"]="$HOME/.config/rofi"
 FILES["alacritty/alacritty.yml"]="$HOME/.config/alacritty"
 FILES["redshift/redshift.conf"]="$HOME/.config/redshift"
+FILES["conky/conky.conf"]="$HOME/.config/conky"
 
 COUNT=0
 TOTAL=${#FILES[@]}
