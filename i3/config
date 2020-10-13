@@ -83,7 +83,7 @@ client.focused          #9F9FA1 #9F9FA1 #FFFFFF #00FF00 #9F9FA1
 client.focused_inactive #121212 #121212 #9F9FA1 #00FF00 #121212
 client.unfocused        #121212 #121212 #9F9FA1 #00FF00 #121212
 client.urgent           #D70000 #D70000 #FFFFFF #FFFFFF #D70000
-client.placeholder        #121212 #121212 #9F9FA1 #00FF00 #121212
+client.placeholder      #121212 #121212 #9F9FA1 #00FF00 #121212
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -113,8 +113,12 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
+set $lock i3lock -e -c 9F9FA1 -i $HOME/Pictures/lock.png
+# sleep
+bindsym $mod+Shift+s exec --no-startup-id $lock && systemctl suspend
 # lock i3
-bindsym $mod+Shift+l exec --no-startup-id i3lock -e -c 9F9FA1 -i $HOME/Pictures/lock.png
+bindsym $mod+Shift+l exec --no-startup-id $lock
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exit i3
 
