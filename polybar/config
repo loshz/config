@@ -29,7 +29,7 @@ dpi = ${xrdb:Xft.dpi:-1}
 
 modules-left = disk-temp disk-root disk-home mem cpu
 modules-center = i3
-modules-right = openvpn bluetooth volume wlan battery datetime
+modules-right = openvpn bluetooth volume wlan battery datetime power
 
 # ============ MODULES ============
 
@@ -46,9 +46,25 @@ label-urgent-background = #FF0000
 label-mode-foreground = #FFFFFF
 label-mode-background = #6479FF
 
+[module/power]
+type = custom/menu
+label-open = 
+label-close = Cancel]
+label-separator = /
+expand-right = false
+
+menu-0-0 = [Reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = Shutdown
+menu-0-1-exec = menu-open-2
+menu-1-0 = [Reboot
+menu-1-0-exec = reboot
+menu-2-0 = [Shutdown
+menu-2-0-exec = shutdown now
+
 [module/datetime]
 type = internal/date
-date = %a %b %d - %H:%M:%S
+date = %a, %b %d / %H:%M:%S
 interval = 1
 
 [module/battery]
