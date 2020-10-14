@@ -81,7 +81,7 @@ label =  %output%
 [module/cpu]
 type = custom/script
 exec = $HOME/dev/scripts/statusbar/cpu
-interval = 1
+interval = 3
 label =  %output%
 
 [module/mem]
