@@ -114,7 +114,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-set $lock i3lock -e -c 9F9FA1 -i $HOME/Pictures/lock.png
+set $lock i3lock -e -c 8EB0CC -i $HOME/Pictures/lock.png
 # sleep
 bindsym $mod+Shift+s exec --no-startup-id $lock && systemctl suspend
 # lock i3
@@ -146,7 +146,7 @@ gaps outer 0
 for_window [class=".*"] border pixel 0
 
 #exec_always --no-startup-id feh --bg-scale $HOME/Pictures/background.png
-exec_always --no-startup-id xsetroot -solid "#9F9FA1"
+exec_always --no-startup-id xsetroot -solid "#8EB0CC"
 exec_always --no-startup-id xrdb -DXDPI=$dpi -merge $HOME/.Xresources
 exec_always --no-startup-id start-pulseaudio-x11
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh

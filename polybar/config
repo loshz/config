@@ -27,9 +27,9 @@ padding-right = 2
 module-margin = 1.75
 dpi = ${xrdb:Xft.dpi:-1}
 
-modules-left = disk-temp disk-root disk-home mem cpu
-modules-center = i3
-modules-right = openvpn bluetooth volume wlan battery datetime power
+modules-left = i3
+modules-center = datetime
+modules-right = openvpn bluetooth volume wlan battery power
 
 # ============ MODULES ============
 
@@ -64,7 +64,7 @@ menu-2-0-exec = shutdown now
 
 [module/datetime]
 type = internal/date
-date = %a, %b %d / %H:%M:%S
+date = %a, %b %d - %H:%M:%S
 interval = 1
 
 [module/battery]
