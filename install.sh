@@ -8,7 +8,6 @@ FILES["git/.gitconfig"]="$HOME"
 FILES["X/.Xresources"]="$HOME"
 FILES["X/.xinitrc"]="$HOME"
 FILES["i3/config"]="$HOME/.config/i3"
-FILES["i3/i3blocks.conf"]="$HOME/.config/i3"
 FILES["bash/.bashrc"]="$HOME"
 FILES["bash/.bash_profile"]="$HOME"
 FILES["polybar/config"]="$HOME/.config/polybar"
@@ -17,6 +16,7 @@ FILES["rofi/config"]="$HOME/.config/rofi"
 FILES["alacritty/alacritty.yml"]="$HOME/.config/alacritty"
 FILES["redshift/redshift.conf"]="$HOME/.config/redshift"
 FILES["conky/conky.conf"]="$HOME/.config/conky"
+FILES["conky/launch.sh"]="$HOME/.config/conky"
 
 COUNT=0
 TOTAL=${#FILES[@]}

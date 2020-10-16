@@ -29,7 +29,7 @@ dpi = ${xrdb:Xft.dpi:-1}
 
 modules-left = i3
 modules-center = datetime
-modules-right = openvpn bluetooth volume wlan battery power
+modules-right = bluetooth volume openvpn wlan battery power
 
 # ============ MODULES ============
 
