@@ -29,7 +29,7 @@ dpi = ${xrdb:Xft.dpi:-1}
 
 modules-left = i3
 modules-center = datetime
-modules-right = bluetooth volume openvpn wlan battery power
+modules-right = bluetooth volume vpn wifi battery power
 
 # ============ MODULES ============
 
@@ -69,60 +69,30 @@ interval = 1
 
 [module/battery]
 type = custom/script
-exec = $HOME/dev/scripts/statusbar/battery
+exec = $HOME/.dotfiles/polybar/modules/battery
 interval = 3
 
-[module/wlan]
+[module/wifi]
 type = custom/script
-exec = $HOME/dev/scripts/statusbar/wifi
+exec = $HOME/.dotfiles/polybar/modules/wifi
 interval = 5
 label =  %output%
 
-[module/cpu]
-type = custom/script
-exec = $HOME/dev/scripts/statusbar/cpu
-interval = 3
-label =  %output%
-
-[module/mem]
-type = custom/script
-exec = $HOME/dev/scripts/statusbar/memory
-interval = 10
-label =  %output%
-
 [module/bluetooth]
 type = custom/script
-exec = $HOME/dev/scripts/statusbar/bluetooth DB_QC35
+exec = $HOME/.dotfiles/polybar/modules/bluetooth DB_QC35
 interval = 3
 label =  %output%
 
 [module/volume]
 type = custom/script
-exec = $HOME/dev/scripts/statusbar/volume
+exec = $HOME/.dotfiles/polybar/modules/volume
 interval = 3
 
-[module/openvpn]
+[module/vpn]
 type = custom/script
-exec = $HOME/dev/scripts/statusbar/openvpn
+exec = $HOME/.dotfiles/polybar/modules/vpn
 interval = 5
 label =  %output%
-
-[module/disk-root]
-type = custom/script
-exec = $HOME/dev/scripts/statusbar/disk /root
-label = / %output%
-interval = 60
-
-[module/disk-home]
-type = custom/script
-exec = $HOME/dev/scripts/statusbar/disk /home
-label = /home %output%
-interval = 60
-
-[module/disk-temp]
-type = custom/script
-exec = $HOME/dev/scripts/statusbar/nvme /dev/nvme0n1
-label =  %output%
-interval = 10
 
 ; vim:ft=dosini

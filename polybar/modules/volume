@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -eu
+
+VOLUME=$(volumectl get)
+if [ "${VOLUME}" == "mute" ]; then
+	echo " ${VOLUME}"
+	exit 0
+fi
+
+if [ "${VOLUME::-1}" -gt 41 ]; then
+	echo " ${VOLUME}"
+elif [ "${VOLUME::-1}" -gt 0 ]; then
+	echo " ${VOLUME}"
+fi

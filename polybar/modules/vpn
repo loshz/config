@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -o pipefail
+
+TUNNELS=$(ip link | grep -E "tun|proton")
+if [ $? -ne 0 ]; then
+	echo "down"
+	exit 0
+fi
+
+echo $(echo "${TUNNELS}" | awk '{print $2 "up"}')

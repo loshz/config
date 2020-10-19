@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+BATTERY=$(acpi | head -n 1)
+CHARGE=$(echo $BATTERY| awk '{print $4}' | sed 's/[^0-9]//g')
+STATUS=$(echo $BATTERY| awk '{print $3}' | sed 's/[^A-Za-z]//g')
+
+function getCharge {
+	local charge=$1
+	if [ "${charge}" == 100 ]; then
+		echo " ${charge}%"
+		return
+	elif [ "${charge}" -lt 100 ] && [ "${charge}" -gt 50 ]; then
+		echo " ${charge}%"
+		return
+	elif [ "${charge}" == 50 ]; then
+		echo " ${charge}%"
+		return
+	elif [ "${charge}" -lt 50 ] && [ "${charge}" -gt 14 ]; then
+		echo " ${charge}%"
+		return
+	else
+		echo " ${charge}%"
+		return
+	fi
+}
+
+if [ ${STATUS} == "Discharging" ]; then
+	if [ "${CHARGE}" -lt 15 ]; then
+		echo " $(getCharge ${CHARGE})"
+		exit 0
+	fi
+	echo "$(getCharge ${CHARGE})"
+else
+	echo " $(getCharge ${CHARGE})"
+fi
+
