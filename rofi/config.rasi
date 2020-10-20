@@ -1,0 +1,12 @@
+configuration {
+	modi: "drun,window";
+	width: 25;
+	lines: 6;
+	font: "Hack 11";
+	padding: 10;
+	terminal: "alacritty";
+	line-padding: 2;
+	hide-scrollbar: true;
+	color-normal: "#121212, #9F9FA1, #121212, #00FF00, #121212";
+	color-window: "#121212, #9F9FA1, #121212";
+}

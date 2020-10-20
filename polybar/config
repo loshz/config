@@ -75,7 +75,7 @@ interval = 3
 [module/wifi]
 type = custom/script
 exec = $HOME/.dotfiles/polybar/modules/wifi
-interval = 5
+interval = 3
 label =  %output%
 
 [module/bluetooth]
@@ -92,7 +92,7 @@ interval = 3
 [module/vpn]
 type = custom/script
 exec = $HOME/.dotfiles/polybar/modules/vpn
-interval = 5
+interval = 3
 label =  %output%
 
 ; vim:ft=dosini
