@@ -1,0 +1,317 @@
+[1mdiff --git a/bash/.bashrc b/bash/.bashrc[m
+[1mindex b5cfef8..dcb8d1f 100644[m
+[1m--- a/bash/.bashrc[m
+[1m+++ b/bash/.bashrc[m
+[36m@@ -28,6 +28,7 @@[m [mexport GOPATH="$DEVPATH/go"[m
+ export PATH="$HOME/.local/share/tresorit:$HOME/.cargo/bin:$GOPATH/bin:$HOME/bin:/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin"[m
+ export HISTSIZE=2500[m
+ export HISTFILESIZE=2500[m
+[32m+[m[32mexport HISTCONTROL=ignoreboth:erasedups[m
+ export HISTTIMEFORMAT="%d/%m/%y %T  "[m
+ export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"[m
+ [m
+[36m@@ -38,7 +39,7 @@[m [malias tmuxconf="$EDITOR $HOME/.tmux.conf"[m
+ alias rm="rm -i"[m
+ alias src="source $HOME/.bashrc"[m
+ alias vim=$EDITOR[m
+[31m-alias ls="ls --color=auto"[m
+[32m+[m[32malias ls="ls -al --color=auto"[m
+ alias grep="grep --color=always --exclude-dir=.git"[m
+ alias diff='diff --color=always'[m
+ alias copy="xclip -sel clipboard"[m
+[1mdiff --git a/conky/conky.conf b/conky/conky.conf[m
+[1mindex 1790007..d5e8e33 100644[m
+[1m--- a/conky/conky.conf[m
+[1m+++ b/conky/conky.conf[m
+[36m@@ -56,8 +56,8 @@[m [mUptime: ${uptime}[m
+ Updates: ${execi 3600 checkupdates | wc -l}[m
+ [m
+ ${font Hack:size=11:style=bold}CPU${font} ${hr 3}[m
+[31m-${execi 86400 cat /proc/cpuinfo | grep 'model name' | head -n 1 | awk '{print $4,$5,$6}' | sed -e 's/([^()]*)//g'} @ ${freq_g}GHz (${execi 3 sensors | grep "Package id 0" | awk '{print $4}' | sed 's/[^0-9.]//g'}°C)[m
+[31m-Active Governor: ${exec cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor}[m
+[32m+[m[32m${alignc}${execi 86400 cat /proc/cpuinfo | grep 'model name' | head -n 1 | awk '{print $4,$5,$6}' | sed -e 's/([^()]*)//g'} @ ${freq_g}GHz (${execi 3 sensors | grep "Package id 0" | awk '{print $4}' | sed 's/[^0-9.]//g'}°C)[m
+[32m+[m[32m${alignc}Active Governor: ${exec cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor}[m
+ ${cpugraph -l}[m
+ Cores:[m
+ 1: ${cpubar cpu1 9,120 } ${cpu cpu1}%${alignr}5: ${cpubar cpu5 9,120 } ${cpu cpu5}%[m
+[36m@@ -86,9 +86,15 @@[m [m${top name 3} ${top cpu 3}   ${top_mem mem_res 3}   ${top pid 3}${alignr}${top u[m
+ ${top name 4} ${top cpu 4}   ${top_mem mem_res 4}   ${top pid 4}${alignr}${top user 4}[m
+ Running: ${running_processes}${alignr}Total: ${processes}[m
+ [m
+[31m-${font Hack:size=11:style=bold}NET${font} ${hr 3}${if_gw}[m
+[31m-Interface: ${gw_iface}${alignr}IP: ${addr ${gw_iface}}[m
+[31m-Up speed: ${upspeed ${gw_iface}}${alignr}Total Up: ${totalup ${gw_iface}}[m
+[31m-Down speed: ${downspeed ${gw_iface}}${alignr}Total Down: ${totaldown ${gw_iface}}${else}[m
+[32m+[m[32m${font Hack:size=11:style=bold}NET${font} ${hr 3}${if_up wlp61s0}[m
+[32m+[m[32mWLAN:[m
+[32m+[m[32mIP: ${addr wlp61s0}${alignr}Strength: ${exec iw dev wlp61s0 link | grep signal | awk '{print substr($2,2)}'}%[m
+[32m+[m[32mUp speed: ${upspeed wlp61s0}${alignr}Total Up: ${totalup wlp61s0}[m
+[32m+[m[32mDown speed: ${downspeed wlp61s0}${alignr}Total Down: ${totaldown wlp61s0}${else}[m
+ Offline${endif}[m
+[32m+[m[32m${if_up tun0}[m
+[32m+[m[32mTUN0:[m
+[32m+[m[32mIP: ${addr tun0}[m
+[32m+[m[32mUp speed: ${upspeed tun0}${alignr}Total Up: ${totalup tun0}[m
+[32m+[m[32mDown speed: ${downspeed tun0}${alignr}Total Down: ${totaldown tun0}${endif}[m
+ ]][m
+[1mdiff --git a/i3/config b/i3/config[m
+[1mindex 8d4b461..d91c791 100644[m
+[1m--- a/i3/config[m
+[1m+++ b/i3/config[m
+[36m@@ -2,10 +2,8 @@[m [mset $mod Mod4[m
+ [m
+ set $dpi $(displayctl dpi)[m
+ [m
+[31m-# This font is widely installed, provides lots of unicode glyphs, right-to-left[m
+[31m-# text rendering and scalability on retina/hidpi displays (thanks to pango).[m
+[31m-#font pango:DejaVu Sans Mono 8[m
+[31m-font pango:Hack, FontAwesome 9[m
+[32m+[m[32m# fonts[m
+[32m+[m[32mfont pango:Hack, MaterialDesignIconsDesktop 9[m
+ [m
+ # Use Mouse+$mod to drag floating windows to their wanted position[m
+ floating_modifier $mod[m
+[36m@@ -70,7 +68,7 @@[m [mbindcode 107 exec --no-startup-id scrot $HOME/Pictures/Screenshots/screenshot-%Y[m
+ bindsym $mod+Shift+p exec --no-startup-id displayctl primary[m
+ [m
+ # Redshift[m
+[31m-bindsym $mod+Shift+bracketleft exec --no-startup-id redshift -O 2700[m
+[32m+[m[32mbindsym $mod+Shift+bracketleft exec --no-startup-id redshift -P -O 2700[m
+ bindsym $mod+Shift+bracketright exec --no-startup-id redshift -x[m
+ [m
+ # Styles[m
+[36m@@ -109,7 +107,7 @@[m [mbindsym $mod+Shift+c reload[m
+ # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)[m
+ bindsym $mod+Shift+r restart[m
+ [m
+[31m-set $lock i3lock -e -c 8EB0CC -i $HOME/Pictures/lock.png[m
+[32m+[m[32mset $lock i3lock -e -c FAB1A0 -i $HOME/Pictures/lock.png[m
+ # sleep[m
+ bindsym $mod+Shift+s exec --no-startup-id $lock && systemctl suspend[m
+ # lock i3[m
+[36m@@ -141,7 +139,7 @@[m [mgaps outer 0[m
+ for_window [class=".*"] border pixel 0[m
+ [m
+ #exec_always --no-startup-id feh --bg-scale $HOME/Pictures/background.png[m
+[31m-exec_always --no-startup-id xsetroot -solid "#8EB0CC"[m
+[32m+[m[32mexec_always --no-startup-id xsetroot -solid "#FAB1A0"[m
+ exec_always --no-startup-id xrdb -DXDPI=$dpi -merge $HOME/.Xresources[m
+ exec_always --no-startup-id start-pulseaudio-x11[m
+ exec_always --no-startup-id $HOME/.config/polybar/launch.sh[m
+[1mdiff --git a/polybar/config b/polybar/config[m
+[1mindex f05a017..5f6ccee 100644[m
+[1m--- a/polybar/config[m
+[1m+++ b/polybar/config[m
+[36m@@ -9,10 +9,9 @@[m [moffset-x = 0[m
+ [m
+ # ============ FONTS ============[m
+ [m
+[31m-font-0 = Hack:size=9:style=Bold;3[m
+[32m+[m[32mfont-0 = "Hack:size=9:style=Bold;3"[m
+ font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=9;3"[m
+[31m-font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=9;3"[m
+[31m-font-3 = "Font Awesome 5 Brands:pixelsize=9;3"[m
+[32m+[m[32mfont-2 = "Material Design Icons:style=Solid:pixelsize=12;3"[m
+ [m
+ # ============ COLORS ============[m
+ [m
+[36m@@ -29,7 +28,7 @@[m [mdpi = ${xrdb:Xft.dpi:-1}[m
+ [m
+ modules-left = i3[m
+ modules-center = datetime[m
+[31m-modules-right = bluetooth volume vpn wifi battery power[m
+[32m+[m[32mmodules-right = bluetooth volume wlan battery power[m
+ [m
+ # ============ MODULES ============[m
+ [m
+[36m@@ -72,27 +71,19 @@[m [mtype = custom/script[m
+ exec = $HOME/.dotfiles/polybar/modules/battery[m
+ interval = 3[m
+ [m
+[31m-[module/wifi][m
+[32m+[m[32m[module/wlan][m
+ type = custom/script[m
+[31m-exec = $HOME/.dotfiles/polybar/modules/wifi[m
+[32m+[m[32mexec = $HOME/.dotfiles/polybar/modules/wlan[m
+ interval = 3[m
+[31m-label =  %output%[m
+ [m
+ [module/bluetooth][m
+ type = custom/script[m
+ exec = $HOME/.dotfiles/polybar/modules/bluetooth DB_QC35[m
+ interval = 3[m
+[31m-label =  %output%[m
+ [m
+ [module/volume][m
+ type = custom/script[m
+ exec = $HOME/.dotfiles/polybar/modules/volume[m
+ interval = 3[m
+ [m
+[31m-[module/vpn][m
+[31m-type = custom/script[m
+[31m-exec = $HOME/.dotfiles/polybar/modules/vpn[m
+[31m-interval = 3[m
+[31m-label =  %output%[m
+[31m-[m
+ ; vim:ft=dosini[m
+[1mdiff --git a/polybar/modules/battery b/polybar/modules/battery[m
+[1mindex 66f10d6..0760be5 100755[m
+[1m--- a/polybar/modules/battery[m
+[1m+++ b/polybar/modules/battery[m
+[36m@@ -1,38 +1,43 @@[m
+ #!/usr/bin/env bash[m
+ [m
+[31m-set -euo pipefail[m
+[32m+[m[32mset -eo pipefail[m
+ [m
+ BATTERY=$(acpi | head -n 1)[m
+[31m-CHARGE=$(echo $BATTERY| awk '{print $4}' | sed 's/[^0-9]//g')[m
+[31m-STATUS=$(echo $BATTERY| awk '{print $3}' | sed 's/[^A-Za-z]//g')[m
+[31m-[m
+[31m-function getCharge {[m
+[31m-	local charge=$1[m
+[31m-	if [ "${charge}" == 100 ]; then[m
+[31m-		echo " ${charge}%"[m
+[31m-		return[m
+[31m-	elif [ "${charge}" -lt 100 ] && [ "${charge}" -gt 50 ]; then[m
+[31m-		echo " ${charge}%"[m
+[31m-		return[m
+[31m-	elif [ "${charge}" == 50 ]; then[m
+[31m-		echo " ${charge}%"[m
+[31m-		return[m
+[31m-	elif [ "${charge}" -lt 50 ] && [ "${charge}" -gt 14 ]; then[m
+[31m-		echo " ${charge}%"[m
+[31m-		return[m
+[31m-	else[m
+[31m-		echo " ${charge}%"[m
+[31m-		return[m
+[31m-	fi[m
+[31m-}[m
+[32m+[m[32mCHARGE=$(echo ${BATTERY} | awk '{print $4}' | sed 's/[^0-9]//g')[m
+[32m+[m[32mSTATUS=$(echo ${BATTERY} | awk '{print $3}' | sed 's/[^A-Za-z]//g')[m
+ [m
+ if [ ${STATUS} == "Discharging" ]; then[m
+[31m-	if [ "${CHARGE}" -lt 15 ]; then[m
+[31m-		echo " $(getCharge ${CHARGE})"[m
+[32m+[m	[32mif [ "${CHARGE}" == 100 ]; then[m
+[32m+[m		[32mecho "󰁹 ${CHARGE}%"[m
+[32m+[m		[32mexit 0[m
+[32m+[m	[32melif [ "${CHARGE}" -lt 100 ] && [ "${CHARGE}" -gt 50 ]; then[m
+[32m+[m		[32mecho "󰂁 ${CHARGE}%"[m
+[32m+[m		[32mexit 0[m
+[32m+[m	[32melif [ "${CHARGE}" == 50 ]; then[m
+[32m+[m		[32mecho "󰁾 ${CHARGE}%"[m
+[32m+[m		[32mexit 0[m
+[32m+[m	[32melif [ "${CHARGE}" -lt 50 ] && [ "${CHARGE}" -gt 14 ]; then[m
+[32m+[m		[32mecho "󰁼 ${CHARGE}%"[m
+[32m+[m		[32mexit 0[m
+[32m+[m	[32melse[m
+[32m+[m		[32mecho "󱃍 ${CHARGE}%"[m
+ 		exit 0[m
+ 	fi[m
+[31m-	echo "$(getCharge ${CHARGE})"[m
+ else[m
+[31m-	echo " $(getCharge ${CHARGE})"[m
+[32m+[m	[32mif [ "${CHARGE}" == 100 ]; then[m
+[32m+[m		[32mecho "󰂅 ${CHARGE}%"[m
+[32m+[m		[32mexit 0[m
+[32m+[m	[32melif [ "${CHARGE}" -lt 100 ] && [ "${CHARGE}" -gt 50 ]; then[m
+[32m+[m		[32mecho "󰂊 ${CHARGE}%"[m
+[32m+[m		[32mexit 0[m
+[32m+[m	[32melif [ "${CHARGE}" == 50 ]; then[m
+[32m+[m		[32mecho "󰢝 ${CHARGE}%"[m
+[32m+[m		[32mexit 0[m
+[32m+[m	[32melif [ "${CHARGE}" -lt 50 ] && [ "${CHARGE}" -gt 14 ]; then[m
+[32m+[m		[32mecho "󰂇 ${CHARGE}%"[m
+[32m+[m		[32mexit 0[m
+[32m+[m	[32melse[m
+[32m+[m		[32mecho "󰢜 ${CHARGE}%"[m
+[32m+[m		[32mexit 0[m
+[32m+[m	[32mfi[m
+ fi[m
+[31m-[m
+[1mdiff --git a/polybar/modules/bluetooth b/polybar/modules/bluetooth[m
+[1mindex 6245887..7dbfef2 100755[m
+[1m--- a/polybar/modules/bluetooth[m
+[1m+++ b/polybar/modules/bluetooth[m
+[36m@@ -4,13 +4,13 @@[m [mset -uo pipefail[m
+ [m
+ BLUETOOTH=$(systemctl is-active bluetooth)[m
+ if [ $? -ne 0 ]; then[m
+[31m-	echo "down"[m
+[32m+[m	[32mecho "󰂲 down"[m
+ else[m
+ 	DEVICE=$(bluetoothctl paired-devices | head -n 1 | grep $1 | awk '{print $2}')[m
+ 	CONNECTED=$(bluetoothctl info ${DEVICE} | grep "Connected: yes")[m
+ 	if [[ -z "${DEVICE}" ]] || [[ -z ${CONNECTED} ]]; then[m
+[31m-		echo "up"[m
+[32m+[m		[32mecho "󰂯 up"[m
+ 	else[m
+[31m-		echo "$1"[m
+[32m+[m		[32mecho "󰂱 $1"[m
+ 	fi[m
+ fi[m
+[1mdiff --git a/polybar/modules/volume b/polybar/modules/volume[m
+[1mindex dfba730..9a18abc 100755[m
+[1m--- a/polybar/modules/volume[m
+[1m+++ b/polybar/modules/volume[m
+[36m@@ -1,14 +1,14 @@[m
+ #!/usr/bin/env bash[m
+ [m
+[31m-set -eu[m
+[32m+[m[32mset -e[m
+ [m
+ VOLUME=$(volumectl get)[m
+ if [ "${VOLUME}" == "mute" ]; then[m
+[31m-	echo " ${VOLUME}"[m
+[32m+[m	[32mecho " mute"[m
+ 	exit 0[m
+ fi[m
+ [m
+[31m-if [ "${VOLUME::-1}" -gt 41 ]; then[m
+[32m+[m[32mif [ "${VOLUME::-1}" -gt 49 ]; then[m
+ 	echo " ${VOLUME}"[m
+ elif [ "${VOLUME::-1}" -gt 0 ]; then[m
+ 	echo " ${VOLUME}"[m
+[1mdiff --git a/polybar/modules/vpn b/polybar/modules/vpn[m
+[1mdeleted file mode 100755[m
+[1mindex 2ef802f..0000000[m
+[1m--- a/polybar/modules/vpn[m
+[1m+++ /dev/null[m
+[36m@@ -1,11 +0,0 @@[m
+[31m-#!/usr/bin/env bash[m
+[31m-[m
+[31m-set -o pipefail[m
+[31m-[m
+[31m-TUNNELS=$(ip link | grep -E "tun|proton")[m
+[31m-if [ $? -ne 0 ]; then[m
+[31m-	echo "down"[m
+[31m-	exit 0[m
+[31m-fi[m
+[31m-[m
+[31m-echo $(echo "${TUNNELS}" | awk '{print $2 "up"}')[m
+[1mdiff --git a/polybar/modules/wifi b/polybar/modules/wifi[m
+[1mdeleted file mode 100755[m
+[1mindex 72f1455..0000000[m
+[1m--- a/polybar/modules/wifi[m
+[1m+++ /dev/null[m
+[36m@@ -1,19 +0,0 @@[m
+[31m-#!/usr/bin/env bash[m
+[31m-[m
+[31m-set -o pipefail[m
+[31m-[m
+[31m-WIFI_INTERFACE=$(ip link | grep "wl" | awk '{print $2}' | sed 's/[^a-zA-Z0-9]//g')[m
+[31m-[m
+[31m-OPERSTATE=$(cat /sys/class/net/${WIFI_INTERFACE}/operstate)[m
+[31m-if [ "${OPERSTATE}" == "down" ]; then[m
+[31m-	echo "down"[m
+[31m-	exit 0[m
+[31m-fi[m
+[31m-[m
+[31m-WIFI=$(netctl list | grep "*" | awk '{print $2}')[m
+[31m-if [[ -z ${WIFI} ]]; then[m
+[31m-	echo "up"[m
+[31m-	exit 0[m
+[31m-fi[m
+[31m-[m
+[31m-echo "${WIFI}"[m

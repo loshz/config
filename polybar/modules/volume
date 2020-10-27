@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-set -eu
+set -e
 
 VOLUME=$(volumectl get)
 if [ "${VOLUME}" == "mute" ]; then
-	echo " ${VOLUME}"
+	echo " mute"
 	exit 0
 fi
 
-if [ "${VOLUME::-1}" -gt 41 ]; then
+if [ "${VOLUME::-1}" -gt 49 ]; then
 	echo " ${VOLUME}"
 elif [ "${VOLUME::-1}" -gt 0 ]; then
 	echo " ${VOLUME}"

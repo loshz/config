@@ -9,10 +9,9 @@ offset-x = 0
 
 # ============ FONTS ============
 
-font-0 = Hack:size=9:style=Bold;3
+font-0 = "Hack:size=9:style=Bold;3"
 font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=9;3"
-font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=9;3"
-font-3 = "Font Awesome 5 Brands:pixelsize=9;3"
+font-2 = "Material Design Icons:style=Solid:pixelsize=12;3"
 
 # ============ COLORS ============
 
@@ -29,7 +28,7 @@ dpi = ${xrdb:Xft.dpi:-1}
 
 modules-left = i3
 modules-center = datetime
-modules-right = bluetooth volume vpn wifi battery power
+modules-right = bluetooth volume wlan battery power
 
 # ============ MODULES ============
 
@@ -72,27 +71,19 @@ type = custom/script
 exec = $HOME/.dotfiles/polybar/modules/battery
 interval = 3
 
-[module/wifi]
+[module/wlan]
 type = custom/script
-exec = $HOME/.dotfiles/polybar/modules/wifi
+exec = $HOME/.dotfiles/polybar/modules/wlan
 interval = 3
-label =  %output%
 
 [module/bluetooth]
 type = custom/script
 exec = $HOME/.dotfiles/polybar/modules/bluetooth DB_QC35
 interval = 3
-label =  %output%
 
 [module/volume]
 type = custom/script
 exec = $HOME/.dotfiles/polybar/modules/volume
 interval = 3
-
-[module/vpn]
-type = custom/script
-exec = $HOME/.dotfiles/polybar/modules/vpn
-interval = 3
-label =  %output%
 
 ; vim:ft=dosini

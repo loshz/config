@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+set -o pipefail
+
+WLAN_INTERFACE=$(ip link | grep "wl" | awk '{print $2}' | sed 's/[^a-zA-Z0-9]//g')
+
+OPERSTATE=$(cat /sys/class/net/${WLAN_INTERFACE}/operstate)
+if [ "${OPERSTATE}" == "down" ]; then
+	echo "󰤭"
+	exit 0
+fi
+
+WLAN=$(netctl list | grep "*" | awk '{print $2}')
+if [[ -z ${WLAN} ]]; then
+	echo "󰤯"
+	exit 0
+fi
+
+WLAN_STRENGTH=$(iw dev ${WLAN_INTERFACE} link | grep signal | awk '{print substr($2,2)}')
+TUNNELS=$(ip link | grep -E "tun|proton")
+if [ $? -ne 0 ]; then
+	if [ "${WLAN_STRENGTH}" == 100 ]; then
+		echo "󰤨 ${WLAN}"
+		exit 0
+	elif [ "${WLAN_STRENGTH}" -lt 100 ] && [ "${WLAN_STRENGTH}" -gt 50 ]; then
+		echo "󰤥 ${WLAN}"
+		exit 0
+	elif [ "${WLAN_STRENGTH}" == 50 ]; then
+		echo "󰤢 ${WLAN}"
+		exit 0
+	elif [ "${WLAN_STRENGTH}" -lt 50 ] && [ "${WLAN_STRENGTH}" -gt 14 ]; then
+		echo "󰤟 ${WLAN}"
+		exit 0
+	else
+		echo "󰤯 ${WLAN}"
+		exit 0
+	fi
+else
+	if [ "${WLAN_STRENGTH}" == 100 ]; then
+		echo "󰤪 ${WLAN}"
+		exit 0
+	elif [ "${WLAN_STRENGTH}" -lt 100 ] && [ "${WLAN_STRENGTH}" -gt 50 ]; then
+		echo "󰤧 ${WLAN}"
+		exit 0
+	elif [ "${WLAN_STRENGTH}" == 50 ]; then
+		echo "󰤤 ${WLAN}"
+		exit 0
+	elif [ "${WLAN_STRENGTH}" -lt 50 ] && [ "${WLAN_STRENGTH}" -gt 14 ]; then
+		echo "󰤡 ${WLAN}"
+		exit 0
+	else
+		echo "󰤬 ${WLAN}"
+		exit 0
+	fi
+fi

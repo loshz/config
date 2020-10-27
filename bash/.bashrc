@@ -28,6 +28,7 @@ export GOPATH="$DEVPATH/go"
 export PATH="$HOME/.local/share/tresorit:$HOME/.cargo/bin:$GOPATH/bin:$HOME/bin:/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin"
 export HISTSIZE=2500
 export HISTFILESIZE=2500
+export HISTCONTROL=ignoreboth:erasedups
 export HISTTIMEFORMAT="%d/%m/%y %T  "
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
@@ -38,7 +39,7 @@ alias tmuxconf="$EDITOR $HOME/.tmux.conf"
 alias rm="rm -i"
 alias src="source $HOME/.bashrc"
 alias vim=$EDITOR
-alias ls="ls --color=auto"
+alias ls="ls -al --color=auto"
 alias grep="grep --color=always --exclude-dir=.git"
 alias diff='diff --color=always'
 alias copy="xclip -sel clipboard"

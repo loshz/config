@@ -4,13 +4,13 @@ set -uo pipefail
 
 BLUETOOTH=$(systemctl is-active bluetooth)
 if [ $? -ne 0 ]; then
-	echo "down"
+	echo "󰂲 down"
 else
 	DEVICE=$(bluetoothctl paired-devices | head -n 1 | grep $1 | awk '{print $2}')
 	CONNECTED=$(bluetoothctl info ${DEVICE} | grep "Connected: yes")
 	if [[ -z "${DEVICE}" ]] || [[ -z ${CONNECTED} ]]; then
-		echo "up"
+		echo "󰂯 up"
 	else
-		echo "$1"
+		echo "󰂱 $1"
 	fi
 fi

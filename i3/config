@@ -2,10 +2,8 @@ set $mod Mod4
 
 set $dpi $(displayctl dpi)
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-font pango:Hack, FontAwesome 9
+# fonts
+font pango:Hack, MaterialDesignIconsDesktop 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -70,7 +68,7 @@ bindcode 107 exec --no-startup-id scrot $HOME/Pictures/Screenshots/screenshot-%Y
 bindsym $mod+Shift+p exec --no-startup-id displayctl primary
 
 # Redshift
-bindsym $mod+Shift+bracketleft exec --no-startup-id redshift -O 2700
+bindsym $mod+Shift+bracketleft exec --no-startup-id redshift -P -O 2700
 bindsym $mod+Shift+bracketright exec --no-startup-id redshift -x
 
 # Styles
@@ -109,7 +107,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-set $lock i3lock -e -c 8EB0CC -i $HOME/Pictures/lock.png
+set $lock i3lock -e -c FAB1A0 -i $HOME/Pictures/lock.png
 # sleep
 bindsym $mod+Shift+s exec --no-startup-id $lock && systemctl suspend
 # lock i3
@@ -141,7 +139,7 @@ gaps outer 0
 for_window [class=".*"] border pixel 0
 
 #exec_always --no-startup-id feh --bg-scale $HOME/Pictures/background.png
-exec_always --no-startup-id xsetroot -solid "#8EB0CC"
+exec_always --no-startup-id xsetroot -solid "#FAB1A0"
 exec_always --no-startup-id xrdb -DXDPI=$dpi -merge $HOME/.Xresources
 exec_always --no-startup-id start-pulseaudio-x11
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
