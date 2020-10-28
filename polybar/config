@@ -68,22 +68,22 @@ interval = 1
 
 [module/battery]
 type = custom/script
-exec = $HOME/.dotfiles/polybar/modules/battery
+exec = $HOME/dev/config/polybar/modules/battery
 interval = 3
 
 [module/wlan]
 type = custom/script
-exec = $HOME/.dotfiles/polybar/modules/wlan
+exec = $HOME/dev/config/polybar/modules/wlan
 interval = 3
 
 [module/bluetooth]
 type = custom/script
-exec = $HOME/.dotfiles/polybar/modules/bluetooth DB_QC35
+exec = $HOME/dev/config/polybar/modules/bluetooth DB_QC35
 interval = 3
 
 [module/volume]
 type = custom/script
-exec = $HOME/.dotfiles/polybar/modules/volume
+exec = $HOME/dev/config/polybar/modules/volume
 interval = 3
 
 ; vim:ft=dosini
