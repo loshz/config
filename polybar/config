@@ -63,7 +63,10 @@ menu-2-0-exec = shutdown now
 
 [module/datetime]
 type = internal/date
-date = %a, %b %d - %H:%M:%S
+date = %a, %b %d
+time = %H:%M:%S
+label = %date% - %time%
+#format =%{A1:alacritty:} <label> %{A}
 interval = 1
 
 [module/battery]

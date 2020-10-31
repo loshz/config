@@ -4,12 +4,12 @@ set -e
 
 VOLUME=$(volumectl get)
 if [ "${VOLUME}" == "mute" ]; then
-	echo " mute"
+	echo "󰝟 mute"
 	exit 0
 fi
 
 if [ "${VOLUME::-1}" -gt 49 ]; then
-	echo " ${VOLUME}"
+	echo "󰕾 ${VOLUME}"
 elif [ "${VOLUME::-1}" -gt 0 ]; then
-	echo " ${VOLUME}"
+	echo "󰖀 ${VOLUME}"
 fi
