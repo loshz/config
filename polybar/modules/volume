@@ -4,7 +4,7 @@ set -e
 
 VOLUME=$(volumectl get)
 if [ "${VOLUME}" == "mute" ]; then
-	echo "󰝟 mute"
+	echo "󰖁"
 	exit 0
 fi
 

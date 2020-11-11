@@ -8,6 +8,7 @@ Plug 'racer-rust/vim-racer'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim'
+Plug 'vim-airline/vim-airline'
 Plug 'zchee/deoplete-go', { 'do': 'make' }
 Plug 'zchee/deoplete-jedi'
 call plug#end()
@@ -86,3 +87,6 @@ let g:signify_sign_change = '~'
 " ============= vim-terraform =============
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
+
+" ============= vim-airline =============
+let g:airline_extensions = []
