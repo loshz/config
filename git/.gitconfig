@@ -1,6 +1,7 @@
 [user]
 	email = danbond@protonmail.com
 	name = Dan Bond
+	signingkey = 82E7BCF2EAB74CF0
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
@@ -15,3 +16,13 @@
 	prune = true
 [pull]
 	rebase = false
+[commit]
+	gpgSign = true
+[color]
+    ui = auto
+[color "status"]
+    branch = white
+    added = green
+    changed = yellow
+    untracked = yellow
+    deleted = red
