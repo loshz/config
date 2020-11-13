@@ -7,7 +7,7 @@ Plug 'mhinz/vim-signify'
 Plug 'racer-rust/vim-racer'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-airline/vim-airline'
 Plug 'zchee/deoplete-go', { 'do': 'make' }
 Plug 'zchee/deoplete-jedi'

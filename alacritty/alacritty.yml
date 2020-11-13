@@ -1,7 +1,10 @@
+env:
+  WINIT_X11_SCALE_FACTOR: "1"
+
 window:
   padding:
-    x: 5
-    y: 5
+    x: 3
+    y: 3
 
   # Neither borders nor title bar
   decorations: full

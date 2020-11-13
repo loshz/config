@@ -10,8 +10,8 @@ offset-x = 0
 # ============ FONTS ============
 
 font-0 = "Hack:size=9:style=Bold;3"
-font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=9;3"
-font-2 = "Material Design Icons:style=Solid:pixelsize=12;3"
+font-1 = "Material Design Icons Desktop:style=Solid:pixelsize=12;3"
+font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=9;3"
 
 # ============ COLORS ============
 

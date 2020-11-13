@@ -1,4 +1,4 @@
 eval $(ssh-agent)
-#eval $(dbus-launch --sh-syntax)
-xrandr --dpi $(displayctl dpi)
+xrandr --dpi 96
+xrdb $HOME/.Xresources
 exec i3
