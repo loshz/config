@@ -22,7 +22,3 @@
     ui = auto
 [color "status"]
     branch = white
-    added = green
-    changed = yellow
-    untracked = yellow
-    deleted = red

@@ -105,7 +105,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-set $lock i3lock -e -c ABB7B7 -i $HOME/Pictures/lock.png
+set $lock i3lock -e -c 8A8181 -i $HOME/Pictures/lock.png
 # sleep
 bindsym $mod+Shift+s exec --no-startup-id $lock && systemctl suspend
 # lock i3
