@@ -10,7 +10,7 @@ if [ "${OPERSTATE}" == "down" ]; then
 	exit 0
 fi
 
-WLAN=$(netctl list | grep "*" | awk '{print $2}')
+WLAN=$(iwctl station wlan0 show | grep "Connected network" | awk '{print $3}')
 if [[ -z ${WLAN} ]]; then
 	echo "󰤯"
 	exit 0
