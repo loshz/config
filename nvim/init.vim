@@ -1,6 +1,7 @@
 " ============= vim-plug =============
 call plug#begin('~/.vim/plugged')
-Plug 'davidhalter/jedi-vim'
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
+Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'hashivim/vim-terraform'
 Plug 'mhinz/vim-signify'
@@ -9,8 +10,6 @@ Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-airline/vim-airline'
-Plug 'zchee/deoplete-go', { 'do': 'make' }
-Plug 'zchee/deoplete-jedi'
 call plug#end()
 
 " ============= clipboard =============

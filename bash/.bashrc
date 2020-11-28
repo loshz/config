@@ -24,12 +24,12 @@ export TERM="xterm-256color"
 export EDITOR="nvim"
 export DEVPATH="$HOME/dev"
 export GOPATH="$DEVPATH/go"
-export PATH="$HOME/.local/share/tresorit:$GOPATH/bin:$HOME/bin:/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin"
+export PATH="$HOME/.cargo/bin:$GOPATH/bin:$HOME/bin:/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin"
 export HISTSIZE=2500
 export HISTFILESIZE=2500
 export HISTCONTROL=ignoreboth:erasedups
 export HISTTIMEFORMAT="%d/%m/%y %T  "
-export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/library"
 
 alias bashconf="$EDITOR $HOME/.bashrc"
 alias nvimconf="$EDITOR $HOME/.config/nvim/init.vim"
