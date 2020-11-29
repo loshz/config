@@ -62,9 +62,6 @@ bindsym XF86MonBrightnessDown exec --no-startup-id sudo backlightctl dec
 # Print Screen
 bindcode 107 exec --no-startup-id scrot $HOME/Pictures/Screenshots/screenshot-%Y%m%d-%H%M%S.png
 
-# Toogle primary display
-bindsym $mod+Shift+p exec --no-startup-id displayctl primary
-
 # Redshift
 bindsym $mod+Shift+bracketleft exec --no-startup-id redshift -P -O 2700
 bindsym $mod+Shift+bracketright exec --no-startup-id redshift -x
@@ -125,8 +122,21 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
 bindsym $mod+r mode "resize"
+
+# manual management of external displays
+set $display Display: (b) Both ON (p) Primary ONLY (e) External ONLY
+mode "$display" {
+    bindsym b exec --no-startup-id displayctl both, mode "default"
+    bindsym p exec --no-startup-id displayctl primary, mode "default"
+    bindsym e exec --no-startup-id displayctl external, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+# Declare here the shortcut to bring the display selection menu
+bindsym $mod+Shift+d mode "$display"
 
 hide_edge_borders both
 
