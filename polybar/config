@@ -38,12 +38,23 @@ pin-workspaces = true
 strip-wsnumbers = true
 enable-scroll = false
 enable-click = false
+
 label-unfocused-foreground = #9F9FA1
+label-unfocused-padding = 1
+label-unfocused = %index%
+
 label-focused-foreground = #00FF00
+label-focused-padding = 1
+label-focused = %index%
+
 label-urgent-foreground = #FFFFFF
 label-urgent-background = #FF0000
+label-urgent-padding = 1
+label-urgent = %index%
+
 label-mode-foreground = #FFFFFF
 label-mode-background = #6479FF
+label-mode-padding = 1
 
 [module/power]
 type = custom/menu
