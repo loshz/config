@@ -74,7 +74,6 @@ client.urgent           #D70000 #D70000 #FFFFFF #FFFFFF #D70000
 client.placeholder      #121212 #121212 #9F9FA1 #00FF00 #121212
 
 # switch to workspace
-bindsym $mod+0 workspace 0
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
@@ -84,9 +83,9 @@ bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+0 move container to workspace 0
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
 bindsym $mod+Shift+3 move container to workspace 3
@@ -96,6 +95,7 @@ bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -125,9 +125,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # manual management of external displays
-set $displayctl Display: [b]oth ON - [p]rimary ONLY - [e]xternal ONLY
+set $displayctl Display: [D]ual - [P]rimary ONLY - [E]xternal ONLY
 mode "$displayctl" {
-    bindsym b exec --no-startup-id displayctl both, mode "default"
+    bindsym b exec --no-startup-id displayctl dual, mode "default"
     bindsym p exec --no-startup-id displayctl primary, mode "default"
     bindsym e exec --no-startup-id displayctl external, mode "default"
 

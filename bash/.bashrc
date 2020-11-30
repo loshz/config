@@ -36,7 +36,6 @@ alias nvimconf="$EDITOR $HOME/.config/nvim/init.vim"
 alias i3conf="$EDITOR $HOME/.config/i3/config"
 alias rm="rm -i"
 alias vim=$EDITOR
-alias find="fd"
 alias ls="ls -al --color=auto"
 alias grep="grep --color=always --exclude-dir=.git"
 alias diff='diff --color=always'
