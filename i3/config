@@ -1,7 +1,11 @@
 set $mod Mod4
 
+# set global vars
+set $displayctl Display: [D]ual - [P]rimary ONLY - [E]xternal ONLY
+set $lock i3lock -e -c 8A8181 -i $HOME/Pictures/lock.png
+
 # fonts
-font pango:Hack, MaterialDesignIconsDesktop 9
+font pango:Hack 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -101,8 +105,6 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-
-set $lock i3lock -e -c 8A8181 -i $HOME/Pictures/lock.png
 # sleep
 bindsym $mod+Shift+s exec --no-startup-id $lock && systemctl suspend
 # lock i3
@@ -125,17 +127,14 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # manual management of external displays
-set $displayctl Display: [D]ual - [P]rimary ONLY - [E]xternal ONLY
 mode "$displayctl" {
     bindsym b exec --no-startup-id displayctl dual, mode "default"
     bindsym p exec --no-startup-id displayctl primary, mode "default"
     bindsym e exec --no-startup-id displayctl external, mode "default"
 
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
+    # back to normal: Escape
     bindsym Escape mode "default"
 }
-# Declare here the shortcut to bring the display selection menu
 bindsym $mod+Shift+d mode "$displayctl"
 
 hide_edge_borders both
@@ -147,6 +146,5 @@ gaps outer 0
 for_window [class=".*"] border pixel 0
 
 exec_always --no-startup-id feh --no-fehbg --bg-scale $HOME/Pictures/background.png
-#exec_always --no-startup-id xsetroot -solid "#ABB7B7"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/.config/conky/launch.sh
