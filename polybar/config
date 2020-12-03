@@ -77,13 +77,12 @@ type = internal/date
 date = %a, %b %d
 time = %H:%M:%S
 label = %date% - %time%
-#format =%{A1:alacritty:} <label> %{A}
 interval = 1
 
 [module/battery]
 type = custom/script
 exec = $HOME/dev/config/polybar/modules/battery
-interval = 3
+interval = 10
 
 [module/wlan]
 type = custom/script
