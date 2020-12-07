@@ -60,8 +60,8 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec --no-startup-id sudo backlightctl inc
-bindsym XF86MonBrightnessDown exec --no-startup-id sudo backlightctl dec
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +20%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 20%-
 
 # Print Screen
 bindcode 107 exec --no-startup-id scrot $HOME/Pictures/Screenshots/screenshot-%Y%m%d-%H%M%S.png
@@ -128,7 +128,7 @@ bindsym $mod+r mode "resize"
 
 # manual management of external displays
 mode "$displayctl" {
-    bindsym b exec --no-startup-id displayctl dual, mode "default"
+    bindsym d exec --no-startup-id displayctl dual, mode "default"
     bindsym p exec --no-startup-id displayctl primary, mode "default"
     bindsym e exec --no-startup-id displayctl external, mode "default"
 
