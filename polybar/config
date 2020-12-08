@@ -11,7 +11,6 @@ offset-x = 0
 
 font-0 = "Hack:size=9:style=Bold;3"
 font-1 = "Material Design Icons Desktop:style=Solid:pixelsize=12;3"
-font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=9;3"
 
 # ============ COLORS ============
 
@@ -28,7 +27,7 @@ dpi = ${xrdb:Xft.dpi:-1}
 
 modules-left = i3
 modules-center = datetime
-modules-right = bluetooth volume wlan battery power
+modules-right = bluetooth volume wlan battery
 
 # ============ MODULES ============
 
@@ -55,22 +54,6 @@ label-urgent = %index%
 label-mode-foreground = #FFFFFF
 label-mode-background = #6479FF
 label-mode-padding = 1
-
-[module/power]
-type = custom/menu
-label-open = 
-label-close = Cancel]
-label-separator = /
-expand-right = false
-
-menu-0-0 = [Reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = Shutdown
-menu-0-1-exec = menu-open-2
-menu-1-0 = [Reboot
-menu-1-0-exec = reboot
-menu-2-0 = [Shutdown
-menu-2-0-exec = shutdown now
 
 [module/datetime]
 type = internal/date

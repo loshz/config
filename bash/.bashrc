@@ -40,7 +40,6 @@ alias ls="ls -al --color=auto"
 alias grep="grep --color=always --exclude-dir=.git"
 alias diff='diff --color=always'
 alias copy="xclip -sel clipboard"
-alias shutdown="shutdown now"
 alias pacman="sudo pacman"
 alias genpass="cat /dev/urandom | tr -dc 'A-Za-z0-9!@#$%^&*()-_=+[]{};:,.<>/?' | head -c 50"
 
