@@ -65,7 +65,7 @@ interval = 1
 [module/battery]
 type = custom/script
 exec = $HOME/dev/config/polybar/modules/battery
-interval = 10
+interval = 3
 
 [module/wlan]
 type = custom/script
