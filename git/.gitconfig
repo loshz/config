@@ -22,3 +22,5 @@
     ui = auto
 [color "status"]
     branch = white
+[init]
+	defaultBranch = main
