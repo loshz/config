@@ -159,3 +159,4 @@ for_window [class=".*"] border pixel 0
 exec_always --no-startup-id feh --no-fehbg --bg-scale $HOME/Pictures/background.png
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/.config/conky/launch.sh
+exec_always --no-startup-id redshift -P -O 2700
