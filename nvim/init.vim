@@ -10,6 +10,7 @@ Plug 'rhysd/vim-go-impl'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'SirVer/ultisnips'
 Plug 'vim-airline/vim-airline'
 call plug#end()
 
