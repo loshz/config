@@ -19,7 +19,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # rofi
-bindsym $mod+d $exec rofi -show drun
+bindsym $mod+d $exec rofi -show drun -display-drun "Search:"
 
 # change focus
 bindsym $mod+Left focus left
