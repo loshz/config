@@ -6,6 +6,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'hashivim/vim-terraform'
 Plug 'mhinz/vim-signify'
 Plug 'racer-rust/vim-racer'
+Plug 'rhysd/vim-clang-format'
 Plug 'rhysd/vim-go-impl'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree'
@@ -55,6 +56,10 @@ augroup END
 " ============= NERDTree =============
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.pyc$', '.DS_STORE']
+
+" ============= c =============
+"let g:clang_format#auto_format=1
+let g:clang_format#code_style="llvm"
 
 " ============= go =============
 let g:go_fmt_command="goimports"
