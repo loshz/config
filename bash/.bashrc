@@ -23,7 +23,7 @@ bind '"\e[B": history-search-forward'
 export TERM="xterm-256color"
 export EDITOR="nvim"
 export DEVPATH="$HOME/dev"
-export PATH="$HOME/.cargo/bin:$HOME/go/bin:$HOME/bin:/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin"
+export PATH="$HOME/.cargo/bin:$HOME/go/bin:/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin"
 export HISTSIZE=2500
 export HISTFILESIZE=2500
 export HISTCONTROL=ignoreboth:erasedups

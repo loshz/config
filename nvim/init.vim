@@ -1,6 +1,5 @@
 " ============= vim-plug =============
 call plug#begin('~/.vim/plugged')
-Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'hashivim/vim-terraform'
