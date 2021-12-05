@@ -4,7 +4,7 @@ Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'hashivim/vim-terraform'
 Plug 'mhinz/vim-signify'
-Plug 'racer-rust/vim-racer'
+Plug 'neovim/nvim-lspconfig'
 Plug 'rhysd/vim-clang-format'
 Plug 'rhysd/vim-go-impl'
 Plug 'rust-lang/rust.vim'
@@ -14,8 +14,9 @@ Plug 'SirVer/ultisnips'
 Plug 'vim-airline/vim-airline'
 call plug#end()
 
-" ============= clipboard =============
+" ============= General =============
 set clipboard^=unnamed,unnamedplus
+set completeopt=menuone,noinsert,noselect
 
 " ============= UI =============
 colorscheme dark
