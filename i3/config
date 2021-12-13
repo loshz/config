@@ -2,7 +2,7 @@ set $mod Mod4
 
 # set global vars
 set $exec exec --no-startup-id
-set $displayctl Display: [D]ual - [P]rimary - [E]xternal
+set $displayctl Display: [D]ual - [E]xternal - [P]rimary
 set $lock i3lock -e -c 8A8181 -i $HOME/Pictures/lock.png
 set $power Power: [P]oweroff - [R]eboot - [S]uspend
 
@@ -129,8 +129,8 @@ bindsym $mod+r mode "resize"
 # manual management of external displays
 mode "$displayctl" {
     bindsym d $exec displayctl dual, mode "default"
-    bindsym p $exec displayctl primary, mode "default"
     bindsym e $exec displayctl external, mode "default"
+    bindsym p $exec displayctl primary, mode "default"
 
     # back to normal: Escape
     bindsym Escape mode "default"
