@@ -107,8 +107,13 @@ augroup go
 augroup END
 
 augroup rust
-  autocmd FileType rust nmap <silent> <Leader>d <Plug>(rust-def)
-  autocmd FileType rust nmap <silent> <Leader>x <Plug>(rust-doc)
+  autocmd FileType rust nmap <silent> <leader>t :belowright 16RustTest<CR>
+  autocmd FileType rust nmap <silent> <leader>tt :belowright 16RustTest!<CR>
+augroup END
+
+augroup comment
+  autocmd FileType go,rust nmap <silent> <leader>cc I//<esc>
+  autocmd FileType python  nmap <silent> <leader>cc I#<esc>
 augroup END
 
 " ============= NERDTree =============
