@@ -6,6 +6,11 @@ BATTERY=$(acpi | head -n 1)
 CHARGE=$(echo ${BATTERY} | awk '{print $4}' | sed 's/[^0-9]//g')
 STATUS=$(echo ${BATTERY} | awk '{print $3}' | sed 's/[^A-Za-z]//g')
 
+if [ -z ${CHARGE} ] || [ -z ${STATUS} ]; then
+	echo "󱃍 Unknown"
+	exit 0
+fi
+
 if [ ${STATUS} == "Discharging" ]; then
 	if [ "${CHARGE}" == 100 ]; then
 		echo "󰁹 ${CHARGE}%"
