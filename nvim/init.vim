@@ -112,7 +112,7 @@ augroup rust
 augroup END
 
 augroup comment
-  autocmd FileType go,rust nmap <silent> <leader>cc I//<esc>
+  autocmd FileType c,cpp,go,rust nmap <silent> <leader>cc I//<esc>
   autocmd FileType python  nmap <silent> <leader>cc I#<esc>
 augroup END
 
