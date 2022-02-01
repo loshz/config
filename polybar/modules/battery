@@ -2,8 +2,8 @@
 
 set -eo pipefail
 
-BATTERY=$(acpi | head -n 1)
-CHARGE=$(echo ${BATTERY} | awk '{print $4}' | sed 's/[^0-9]//g')
+BATTERY=$(acpi -b)
+CHARGE=$(echo ${BATTERY} | awk '{print $(NF)}' | sed 's/[^0-9]//g')
 STATUS=$(echo ${BATTERY} | awk '{print $3}' | sed 's/[^A-Za-z]//g')
 
 if [ -z ${CHARGE} ] || [ -z ${STATUS} ]; then
