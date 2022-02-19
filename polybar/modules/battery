@@ -3,14 +3,15 @@
 set -eo pipefail
 
 BATTERY=$(acpi -b)
-CHARGE=$(echo ${BATTERY} | awk '{print $(NF)}' | sed 's/[^0-9]//g')
+CHARGE=$(echo ${BATTERY} | awk '{print $4}' | sed 's/[^0-9]//g')
 STATUS=$(echo ${BATTERY} | awk '{print $3}' | sed 's/[^A-Za-z]//g')
 
-if [ -z ${CHARGE} ] || [ -z ${STATUS} ]; then
+if [ -z ${STATUS} ]; then
 	echo "󱃍 Unknown"
 	exit 0
 fi
 
+# AC adapter not connected.
 if [ ${STATUS} == "Discharging" ]; then
 	if [ "${CHARGE}" == 100 ]; then
 		echo "󰁹 ${CHARGE}%"
@@ -28,21 +29,25 @@ if [ ${STATUS} == "Discharging" ]; then
 		echo "󱃍 ${CHARGE}%"
 		exit 0
 	fi
+elif [ ${STATUS} == "Not" ]; then
+	# Not Charging, e.g. AC adapter connected, but charge threshold reached.
+	CHARGE=$(echo ${BATTERY} | awk '{print $5}' | sed 's/[^0-9]//g')
+fi
+
+# AC adapter connected.
+if [ "${CHARGE}" == 100 ]; then
+	echo "󰂅 ${CHARGE}%"
+	exit 0
+elif [ "${CHARGE}" -lt 100 ] && [ "${CHARGE}" -gt 50 ]; then
+	echo "󰂊 ${CHARGE}%"
+	exit 0
+elif [ "${CHARGE}" == 50 ]; then
+	echo "󰢝 ${CHARGE}%"
+	exit 0
+elif [ "${CHARGE}" -lt 50 ] && [ "${CHARGE}" -gt 14 ]; then
+	echo "󰂇 ${CHARGE}%"
+	exit 0
 else
-	if [ "${CHARGE}" == 100 ]; then
-		echo "󰂅 ${CHARGE}%"
-		exit 0
-	elif [ "${CHARGE}" -lt 100 ] && [ "${CHARGE}" -gt 50 ]; then
-		echo "󰂊 ${CHARGE}%"
-		exit 0
-	elif [ "${CHARGE}" == 50 ]; then
-		echo "󰢝 ${CHARGE}%"
-		exit 0
-	elif [ "${CHARGE}" -lt 50 ] && [ "${CHARGE}" -gt 14 ]; then
-		echo "󰂇 ${CHARGE}%"
-		exit 0
-	else
-		echo "󰢜 ${CHARGE}%"
-		exit 0
-	fi
+	echo "󰢜 ${CHARGE}%"
+	exit 0
 fi
