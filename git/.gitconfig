@@ -25,6 +25,4 @@
 [init]
 	defaultBranch = main
 [alias]
-	co = checkout
-	br = branch
 	cm = commit -asm
