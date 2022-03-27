@@ -120,9 +120,14 @@ augroup END
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.pyc$', '.DS_STORE']
 
-" ============= c =============
-"let g:clang_format#auto_format=1
+" ============= clang =============
+let g:clang_format#auto_filetypes=["c", "cpp", "proto"]
+let g:clang_format#auto_format=1
 let g:clang_format#code_style="llvm"
+let g:clang_format#detect_style_file=1
+let g:clang_format#style_options = {
+            \ "Standard" : "Latest",
+            \ "SortIncludes" : "Never"}
 
 " ============= go =============
 let g:go_fmt_command="goimports"
