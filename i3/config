@@ -147,10 +147,6 @@ mode "$power" {
 }
 bindsym $mod+Shift+p mode "$power"
 
-# i3-gaps
-#gaps inner 0
-#gaps outer 0
-
 # Borders
 for_window [class=".*"] border pixel 2
 
