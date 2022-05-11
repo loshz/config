@@ -3,7 +3,7 @@ set $mod Mod4
 # set global vars
 set $exec exec --no-startup-id
 set $displayctl Display: [D]ual - [E]xternal - [P]rimary
-set $lock i3lock -e -c 8A8181 -i $HOME/Pictures/lock.png
+set $lock i3lock -e -c BFCAD0 -i $HOME/Pictures/lock.png
 set $power Power: [P]oweroff - [R]eboot - [S]uspend
 
 # fonts
@@ -150,7 +150,7 @@ bindsym $mod+Shift+p mode "$power"
 # Borders
 for_window [class=".*"] border pixel 2
 
-exec_always --no-startup-id feh --no-fehbg --bg-scale $HOME/Pictures/background.png
+exec_always --no-startup-id feh --no-fehbg --bg-scale $HOME/Pictures/background.jpg
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/.config/conky/launch.sh
 exec_always --no-startup-id redshift -P -O 2700
