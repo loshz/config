@@ -57,7 +57,7 @@ label-mode-padding = 1
 
 [module/datetime]
 type = internal/date
-date = %a %b %d
+date = %a %d %b
 time = %H:%M:%S
 label = %date% - %time%
 interval = 1
