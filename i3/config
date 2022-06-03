@@ -20,6 +20,7 @@ bindsym $mod+Shift+q kill
 
 # rofi
 bindsym $mod+d $exec rofi -show drun -display-drun "Search:"
+bindsym $mod+Tab $exec rofi -modi combi -combi-modi window -show combi -display-combi "Search:"
 
 # change focus
 bindsym $mod+Left focus left
@@ -146,6 +147,9 @@ mode "$power" {
     bindsym Escape mode "default"
 }
 bindsym $mod+Shift+p mode "$power"
+
+# Automatic back-and-forth when switching to the current workspace
+workspace_auto_back_and_forth yes
 
 # Borders
 for_window [class=".*"] border pixel 2

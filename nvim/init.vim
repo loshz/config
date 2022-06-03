@@ -113,7 +113,7 @@ augroup END
 
 augroup comment
   autocmd FileType c,cpp,go,rust nmap <silent> <leader>cc I//<esc>
-  autocmd FileType python  nmap <silent> <leader>cc I#<esc>
+  autocmd FileType python,yaml  nmap <silent> <leader>cc I#<esc>
 augroup END
 
 " ============= NERDTree =============
