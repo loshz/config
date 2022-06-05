@@ -9,6 +9,9 @@ window:
   # Neither borders nor title bar
   decorations: full
 
+  # Allow terminal applications to change Alacritty's window title.
+  dynamic_title: true
+
 scrolling:
   history: 10000
 
@@ -75,3 +78,7 @@ cursor:
 
 # Live config reload (changes require restart)
 live_config_reload: true
+
+key_bindings:
+  # Spawn a new instance of Alacritty in the current working directory.
+  - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }

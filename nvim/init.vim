@@ -122,10 +122,11 @@ let NERDTreeIgnore=['\.pyc$', '.DS_STORE']
 
 " ============= clang =============
 let g:clang_format#auto_filetypes=["c", "cpp", "proto"]
-let g:clang_format#auto_format=1
+let g:clang_format#auto_format=0
 let g:clang_format#code_style="llvm"
 let g:clang_format#detect_style_file=1
 let g:clang_format#style_options = {
+            \ "IndentWidth": 2,
             \ "Standard" : "Latest",
             \ "SortIncludes" : "Never"}
 
