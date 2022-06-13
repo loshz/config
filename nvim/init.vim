@@ -1,19 +1,19 @@
 " ============= vim-plug =============
 call plug#begin('~/.vim/plugged')
-Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'hashivim/vim-terraform'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-signify'
 Plug 'neovim/nvim-lspconfig'
 Plug 'rhysd/vim-clang-format'
 Plug 'rhysd/vim-go-impl'
 Plug 'rust-lang/rust.vim'
-Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'
 Plug 'vim-airline/vim-airline'
+Plug 'ziglang/zig.vim'
 call plug#end()
 
 " ============= General =============
@@ -39,63 +39,13 @@ set ignorecase
 set smartcase
 
 " ============= LSP =============
-lua << EOF
-local nvim_lsp = require'lspconfig'
-
-nvim_lsp.rust_analyzer.setup({
-    settings = {
-		-- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
-        ["rust-analyzer"] = {
-            assist = {
-                importGranularity = "crate",
-				importGroup = true,
-            },
-		    autoimport = {
-                enable = true
-			},
-            cargo = {
-                loadOutDirsFromCheck = true
-            },
-            checkOnSave = {
-                command = "clippy"
-            },
-        }
-    }
-})
-EOF
-
-lua <<EOF
-local cmp = require'cmp'
-cmp.setup({
-  snippet = {
-    expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body)
-    end,
-  },
-  mapping = {
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<S-Tab>'] = cmp.mapping.select_prev_item(),
-    ['<Tab>'] = cmp.mapping.select_next_item(),
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.close(),
-    ['<CR>'] = cmp.mapping.confirm({
-      behavior = cmp.ConfirmBehavior.Insert,
-      select = true,
-    })
-  },
-  sources = {
-    { name = 'nvim_lsp' },
-  },
-})
-EOF
+lua require ("lsp_config")
 
 " ============= Mappings =============
 let mapleader=","
 
-map <leader>n :NERDTreeToggle<CR>
+map <leader>g :GitFiles<CR>
+map <leader>f :Files<CR>
 
 augroup go
   autocmd FileType go nmap <silent> <Leader>x <Plug>(go-doc-vertical)
@@ -104,6 +54,7 @@ augroup go
   autocmd FileType go nmap <silent> <leader>r <Plug>(go-run)
   autocmd FileType go nmap <silent> <leader>i <Plug>(go-install)
   autocmd FileType go nmap <leader>d <Plug>(go-def)
+  autocmd FileType go imap <buffer> . .<C-x><C-o>
 augroup END
 
 augroup rust
@@ -112,13 +63,10 @@ augroup rust
 augroup END
 
 augroup comment
-  autocmd FileType c,cpp,go,rust nmap <silent> <leader>cc I//<esc>
-  autocmd FileType python,yaml  nmap <silent> <leader>cc I#<esc>
+  autocmd FileType c,cpp,go,rust,terraform,zig nmap <silent> <leader>cc I//<esc>
+  autocmd FileType python,yaml nmap <silent> <leader>cc I#<esc>
+  autocmd FileType lua nmap <silent> <leader>cc I--<esc>
 augroup END
-
-" ============= NERDTree =============
-let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.pyc$', '.DS_STORE']
 
 " ============= clang =============
 let g:clang_format#auto_filetypes=["c", "cpp", "proto"]
@@ -146,9 +94,6 @@ let g:go_jump_to_error=0
 
 " ============= deoplete =============
 let g:deoplete#enable_at_startup=1
-
-" ============= jedi =============
-let g:jedi#force_py_version=3
 
 " ============= rust =============
 let g:rustfmt_autosave=1

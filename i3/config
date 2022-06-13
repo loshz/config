@@ -2,9 +2,9 @@ set $mod Mod4
 
 # set global vars
 set $exec exec --no-startup-id
-set $displayctl Display: [D]ual - [E]xternal - [P]rimary
+set $displayctl Display: [D]ual [E]xternal [P]rimary
 set $lock i3lock -e -c BFCAD0 -i $HOME/Pictures/lock.png
-set $power Power: [P]oweroff - [R]eboot - [S]uspend
+set $power Power: [P]oweroff [R]eboot [S]uspend
 
 # fonts
 font pango:Hack 9
