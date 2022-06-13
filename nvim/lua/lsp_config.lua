@@ -1,15 +1,16 @@
 local nvim_lsp = require('lspconfig')
+
 nvim_lsp.rust_analyzer.setup({
     settings = {
-		-- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
+        -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
         ["rust-analyzer"] = {
             assist = {
                 importGranularity = "crate",
-				importGroup = true,
+                importGroup = true,
             },
-		    autoimport = {
+            autoimport = {
                 enable = true
-			},
+            },
             cargo = {
                 loadOutDirsFromCheck = true
             },
@@ -43,5 +44,6 @@ cmp.setup({
   },
   sources = {
     { name = 'nvim_lsp' },
+    { name = 'vsnip' },
   },
 })

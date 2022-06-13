@@ -2,16 +2,16 @@
 call plug#begin('~/.vim/plugged')
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'hashivim/vim-terraform'
-Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/vim-vsnip'
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-signify'
 Plug 'neovim/nvim-lspconfig'
 Plug 'rhysd/vim-clang-format'
 Plug 'rhysd/vim-go-impl'
 Plug 'rust-lang/rust.vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'SirVer/ultisnips'
 Plug 'vim-airline/vim-airline'
 Plug 'ziglang/zig.vim'
 call plug#end()
@@ -98,7 +98,6 @@ let g:deoplete#enable_at_startup=1
 " ============= rust =============
 let g:rustfmt_autosave=1
 let g:rust_clip_command='xclip -selection clipboard'
-let g:racer_experimental_completer=1
 
 " ============= signify =============
 let g:signify_vcs_list = ['git']
