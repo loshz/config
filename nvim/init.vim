@@ -2,6 +2,8 @@
 call plug#begin('~/.vim/plugged')
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'hashivim/vim-terraform'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/nvim-cmp'
@@ -64,7 +66,7 @@ augroup END
 
 augroup comment
   autocmd FileType c,cpp,go,rust,terraform,zig nmap <silent> <leader>cc I//<esc>
-  autocmd FileType python,yaml nmap <silent> <leader>cc I#<esc>
+  autocmd FileType python,sh,yaml nmap <silent> <leader>cc I#<esc>
   autocmd FileType lua nmap <silent> <leader>cc I--<esc>
 augroup END
 
