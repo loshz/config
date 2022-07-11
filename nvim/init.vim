@@ -48,6 +48,7 @@ let mapleader=","
 
 map <leader>g :GitFiles<CR>
 map <leader>f :Files<CR>
+map <leader>n :Lexplore<CR>
 
 augroup go
   autocmd FileType go nmap <silent> <Leader>x <Plug>(go-doc-vertical)
@@ -69,6 +70,13 @@ augroup comment
   autocmd FileType python,sh,yaml nmap <silent> <leader>cc I#<esc>
   autocmd FileType lua nmap <silent> <leader>cc I--<esc>
 augroup END
+
+" ============= netrw =============
+let g:netrw_altv = 1
+let g:netrw_banner = 0
+let g:netrw_browse_split = 4
+let g:netrw_liststyle = 3
+let g:netrw_winsize = 15
 
 " ============= clang =============
 let g:clang_format#auto_filetypes=["c", "cpp", "proto"]
