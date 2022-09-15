@@ -38,7 +38,7 @@ alias cat='bat --paging=never'
 alias rm="rm -i"
 alias vim=$EDITOR
 alias ls="ls -ahl --color=auto"
-alias grep="grep --color=always --exclude-dir=.git"
+alias grep="rg -g '!.git'"
 alias diff='diff --color=always'
 alias copy="xclip -sel clipboard"
 alias pacman="sudo pacman"
