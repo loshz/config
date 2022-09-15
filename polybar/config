@@ -53,8 +53,11 @@ label-urgent-padding = 1
 label-urgent = %index%
 
 label-mode-foreground = #FFFFFF
-label-mode-background = #6479FF
+label-mode-background = #9F9FA1
 label-mode-padding = 1
+
+label-visible-padding = 1
+label-visible = %index%
 
 [module/datetime]
 type = internal/date
