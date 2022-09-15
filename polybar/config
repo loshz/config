@@ -1,4 +1,5 @@
 [bar/default]
+monitor = ${env:MONITOR:}
 
 # ========== DIMENSIONS ==========
 
