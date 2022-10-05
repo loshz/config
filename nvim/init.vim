@@ -72,18 +72,18 @@ augroup comment
 augroup END
 
 " ============= netrw =============
-let g:netrw_altv = 1
-let g:netrw_banner = 0
-let g:netrw_browse_split = 4
-let g:netrw_liststyle = 3
-let g:netrw_winsize = 15
+let g:netrw_altv=1
+let g:netrw_banner=0
+let g:netrw_browse_split=4
+let g:netrw_liststyle=3
+let g:netrw_winsize=15
 
 " ============= clang =============
 let g:clang_format#auto_filetypes=["c", "cpp", "proto"]
-let g:clang_format#auto_format=0
+let g:clang_format#auto_format=1
 let g:clang_format#code_style="llvm"
 let g:clang_format#detect_style_file=1
-let g:clang_format#style_options = {
+let g:clang_format#style_options={
             \ "IndentWidth": 2,
             \ "Standard" : "Latest",
             \ "SortIncludes" : "Never"}
@@ -101,21 +101,19 @@ let g:go_highlight_build_constraints=1
 let g:go_highlight_generate_tags=1
 let g:go_metalinter_autosave=1
 let g:go_jump_to_error=0
-
-" ============= deoplete =============
-let g:deoplete#enable_at_startup=1
+let g:go_template_autocreate=0
 
 " ============= rust =============
 let g:rustfmt_autosave=1
 let g:rust_clip_command='xclip -selection clipboard'
 
 " ============= signify =============
-let g:signify_vcs_list = ['git']
-let g:signify_sign_change = '~'
+let g:signify_vcs_list=['git']
+let g:signify_sign_change='~'
 
 " ============= vim-terraform =============
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
 
 " ============= vim-airline =============
-let g:airline_extensions = []
+let g:airline_extensions=[]
