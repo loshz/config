@@ -14,6 +14,8 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'rhysd/vim-clang-format'
 Plug 'rhysd/vim-go-impl'
 Plug 'rust-lang/rust.vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'ziglang/zig.vim'
 call plug#end()
@@ -46,6 +48,7 @@ lua require ("lsp_config")
 " ============= Mappings =============
 let mapleader=","
 
+map <leader>c <Plug>CommentaryLine
 map <leader>g :GitFiles<CR>
 map <leader>f :Files<CR>
 map <leader>n :Lexplore<CR>
@@ -63,12 +66,6 @@ augroup END
 augroup rust
   autocmd FileType rust nmap <silent> <leader>t :belowright 16RustTest<CR>
   autocmd FileType rust nmap <silent> <leader>tt :belowright 16RustTest!<CR>
-augroup END
-
-augroup comment
-  autocmd FileType c,cpp,go,rust,terraform,zig nmap <silent> <leader>cc I//<esc>
-  autocmd FileType python,sh,yaml nmap <silent> <leader>cc I#<esc>
-  autocmd FileType lua nmap <silent> <leader>cc I--<esc>
 augroup END
 
 " ============= netrw =============
@@ -116,4 +113,7 @@ let g:terraform_align=1
 let g:terraform_fmt_on_save=1
 
 " ============= vim-airline =============
-let g:airline_extensions=[]
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+let g:airline_symbols.branch=''
