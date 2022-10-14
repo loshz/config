@@ -30,6 +30,7 @@ export HISTCONTROL=ignoreboth:erasedups
 export HISTTIMEFORMAT="%d/%m/%y %T  "
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/library"
 export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 alias ..="cd .."
 alias bashconf="$EDITOR $HOME/.bashrc"

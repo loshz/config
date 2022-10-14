@@ -1,7 +1,7 @@
 [user]
 	email = danbond@protonmail.com
 	name = Dan Bond
-	signingkey = 82E7BCF2EAB74CF0
+	signingkey = FEAC7C1EA83DE88F!
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
