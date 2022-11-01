@@ -10,6 +10,18 @@ function __prompt {
 	fi
 }
 
+function tmpd {
+	local tmp_dir
+
+	if [[ -z $1 ]]; then
+		tmp_dir=$(mktemp -d)
+	else
+		tmp_dir=$(mktemp -d --suffix=_$1)
+	fi
+
+	cd $tmp_dir
+}
+
 PROMPT_COMMAND=__prompt
 
 shopt -s direxpand
