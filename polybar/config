@@ -61,9 +61,9 @@ label-visible = %index%
 
 [module/datetime]
 type = internal/date
-date = %a %d %b
+date = %Y-%m-%d
 time = %H:%M:%S
-label = %date% - %time%
+label = %date% %time%
 interval = 1
 
 [module/battery]
