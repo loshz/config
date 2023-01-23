@@ -1,6 +1,22 @@
 local nvim_lsp = require('lspconfig')
 
+local on_attach = function(client, bufnr)
+  -- Mappings.
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  vim.keymap.set('n', '<Leader>d', vim.lsp.buf.definition, bufopts)
+  vim.keymap.set('n', '<Leader>h', vim.lsp.buf.hover, bufopts)
+  vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, bufopts)
+  vim.keymap.set('n', '<Leader>td', vim.lsp.buf.type_definition, bufopts)
+end
+
+-- Add additional capabilities supported by nvim-cmp
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
 nvim_lsp.rust_analyzer.setup({
+	capabilities = capabilities,
+    on_attach = on_attach,
     settings = {
         -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
         ["rust-analyzer"] = {
@@ -19,6 +35,11 @@ nvim_lsp.rust_analyzer.setup({
             },
         }
     }
+})
+
+nvim_lsp.clangd.setup({
+	capabilities = capabilities,
+    on_attach = on_attach,
 })
 
 local cmp = require('cmp')

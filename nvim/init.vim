@@ -57,8 +57,8 @@ augroup go
   autocmd FileType go nmap <silent> <Leader>x <Plug>(go-doc-vertical)
   autocmd FileType go nmap <silent> <leader>t <Plug>(go-test)
   autocmd FileType go nmap <silent> <Leader>c <Plug>(go-coverage-toggle)
-  autocmd FileType go nmap <silent> <leader>r <Plug>(go-run)
-  autocmd FileType go nmap <silent> <leader>i <Plug>(go-install)
+  autocmd FileType go nmap <silent> <leader>r <Plug>(go-referrers)
+  autocmd FileType go nmap <silent> <leader>cl <Plug>(go-callers)
   autocmd FileType go nmap <leader>d <Plug>(go-def)
   autocmd FileType go imap <buffer> . .<C-x><C-o>
 augroup END
@@ -87,6 +87,7 @@ let g:clang_format#style_options={
 
 " ============= go =============
 let g:go_fmt_command="goimports"
+let g:go_fmt_options = "-local"
 let g:go_highlight_fields=1
 let g:go_highlight_functions=1
 let g:go_highlight_methods=1
