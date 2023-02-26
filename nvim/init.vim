@@ -56,6 +56,7 @@ map <leader>n :Lexplore<CR>
 augroup go
   autocmd FileType go nmap <silent> <Leader>x <Plug>(go-doc-vertical)
   autocmd FileType go nmap <silent> <leader>t <Plug>(go-test)
+  autocmd FileType go nmap <silent> <leader>tf <Plug>(go-test-func)
   autocmd FileType go nmap <silent> <Leader>c <Plug>(go-coverage-toggle)
   autocmd FileType go nmap <silent> <leader>r <Plug>(go-referrers)
   autocmd FileType go nmap <silent> <leader>cl <Plug>(go-callers)
