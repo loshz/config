@@ -70,7 +70,7 @@ bindsym XF86MonBrightnessDown $exec brightnessctl set 20%-
 bindcode 107 $exec scrot $HOME/Pictures/Screenshots/%Y%m%d-%H%M%S.png
 
 # Redshift
-bindsym $mod+Shift+bracketleft $exec redshift -P -O 2700
+bindsym $mod+Shift+bracketleft $exec redshift -P -O 3500
 bindsym $mod+Shift+bracketright $exec redshift -x
 
 # Styles
@@ -158,4 +158,4 @@ for_window [class="Alacritty" title="cal"] floating enable
 exec_always --no-startup-id feh --no-fehbg --bg-scale $HOME/Pictures/background.jpg
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/.config/conky/launch.sh
-exec_always --no-startup-id redshift -P -O 2700
+exec_always --no-startup-id redshift -P -O 3500
