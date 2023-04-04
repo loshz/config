@@ -16,7 +16,6 @@ FILES["conky"]="$HOME/.config/conky"
 FILES["i3"]="$HOME/.config/i3"
 FILES["polybar"]="$HOME/.config/polybar"
 FILES["nvim"]="$HOME/.config/nvim"
-FILES["redshift"]="$HOME/.config/redshift"
 FILES["rofi"]="$HOME/.config/rofi"
 
 COUNT=0
