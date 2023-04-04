@@ -69,9 +69,9 @@ bindsym XF86MonBrightnessDown $exec brightnessctl set 20%-
 # Print Screen
 bindcode 107 $exec scrot $HOME/Pictures/Screenshots/%Y%m%d-%H%M%S.png
 
-# sct
-bindsym $mod+Shift+bracketleft $exec sct 3500
-bindsym $mod+Shift+bracketright $exec sct
+# xsct
+bindsym $mod+Shift+bracketleft $exec xsct 3750
+bindsym $mod+Shift+bracketright $exec xsct 0
 
 # Styles
 # class                 border  background text    indicator child_border
@@ -158,4 +158,4 @@ for_window [class="Alacritty" title="cal"] floating enable
 exec_always --no-startup-id feh --no-fehbg --bg-scale $HOME/Pictures/background.jpg
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/.config/conky/launch.sh
-exec_always --no-startup-id sct 3500
+exec_always --no-startup-id xsct 3750
