@@ -42,10 +42,10 @@ set ignorecase
 set smartcase
 
 " ============= LSP =============
-lua require ("lsp_config")
+lua require ('lsp_config')
 
 " ============= Mappings =============
-let mapleader=","
+let mapleader=','
 
 map <leader>c <Plug>CommentaryLine
 map <leader>g :GitFiles<CR>
@@ -61,11 +61,16 @@ augroup go
   autocmd FileType go nmap <silent> <leader>cl <Plug>(go-callers)
   autocmd FileType go nmap <leader>d <Plug>(go-def)
   autocmd FileType go imap <buffer> . .<C-x><C-o>
+  autocmd FileType go let b:go_fmt_options = {'goimports': '-local ' . trim(system('go list -m'))}
 augroup END
 
 augroup rust
   autocmd FileType rust nmap <silent> <leader>t :belowright 16RustTest<CR>
   autocmd FileType rust nmap <silent> <leader>tt :belowright 16RustTest!<CR>
+augroup END
+
+augroup proto
+  autocmd BufWritePost *.proto silent !buf format -w
 augroup END
 
 " ============= netrw =============
@@ -76,9 +81,9 @@ let g:netrw_liststyle=3
 let g:netrw_winsize=15
 
 " ============= clang =============
-let g:clang_format#auto_filetypes=["c", "cpp", "proto"]
+let g:clang_format#auto_filetypes=['c', 'cpp']
 let g:clang_format#auto_format=1
-let g:clang_format#code_style="llvm"
+let g:clang_format#code_style='llvm'
 let g:clang_format#detect_style_file=1
 let g:clang_format#style_options={
             \ "IndentWidth": 2,
@@ -86,8 +91,7 @@ let g:clang_format#style_options={
             \ "SortIncludes" : "Never"}
 
 " ============= go =============
-let g:go_fmt_command="goimports"
-let g:go_fmt_options = "-local"
+let g:go_fmt_command='goimports'
 let g:go_highlight_fields=1
 let g:go_highlight_functions=1
 let g:go_highlight_methods=1
