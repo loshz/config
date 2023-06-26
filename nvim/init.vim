@@ -56,9 +56,9 @@ augroup go
   autocmd FileType go nmap <silent> <Leader>x <Plug>(go-doc-vertical)
   autocmd FileType go nmap <silent> <leader>t <Plug>(go-test)
   autocmd FileType go nmap <silent> <leader>tf <Plug>(go-test-func)
-  autocmd FileType go nmap <silent> <Leader>c <Plug>(go-coverage-toggle)
+  autocmd FileType go nmap <silent> <Leader>tc <Plug>(go-coverage-toggle)
   autocmd FileType go nmap <silent> <leader>r <Plug>(go-referrers)
-  autocmd FileType go nmap <silent> <leader>cl <Plug>(go-callers)
+  autocmd FileType go nmap <silent> <leader>c <Plug>(go-callers)
   autocmd FileType go nmap <leader>d <Plug>(go-def)
   autocmd FileType go imap <buffer> . .<C-x><C-o>
   autocmd FileType go let b:go_fmt_options = {'goimports': '-local ' . trim(system('go list -m'))}
