@@ -39,18 +39,18 @@ for i in "${!FILES[@]}"; do
 	fi
 
     # Prompt user for confirmation.
-	read -p "Install ${FILE} [y/N]: " answer
+	read -rp "Install ${FILE} [y/N]: " answer
 	if [[ -z "$answer" ]] || [[ "$answer" != "y" ]]; then
 		echo "Skipping..."
 		continue
 	fi
 	
 	# Remove any existing symlinks.
-	rm -rf $FILE
+	rm -rf "${FILE}"
 
 	# Create symlinks.
-	ln -sv $PWD/$i $FILE
-	if [ $? -eq 0 ]; then
+	if ln -sv "${PWD}/${i}" "${FILE}";
+	then
 		((COUNT++))
 	fi
 done

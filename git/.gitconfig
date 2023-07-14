@@ -17,7 +17,7 @@
 [pull]
 	rebase = false
 [commit]
-	gpgSign = true
+	gpgSign = false
 [color]
     ui = auto
 [color "status"]
@@ -25,4 +25,5 @@
 [init]
 	defaultBranch = main
 [alias]
-	cm = commit -asm
+	cm = commit -am
+	csm = commit -asm
