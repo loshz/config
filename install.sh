@@ -2,7 +2,7 @@
 
 declare -A FILES
 
-# file specific symlinks
+# File specific symlinks.
 FILES["tmux/.tmux.conf"]="$HOME"
 FILES["git/.gitconfig"]="$HOME"
 FILES["X/.Xresources"]="$HOME"
@@ -10,7 +10,7 @@ FILES["X/.xinitrc"]="$HOME"
 FILES["bash/.bashrc"]="$HOME"
 FILES["bash/.bash_profile"]="$HOME"
 
-# dir specific symlinks
+# Dir specific symlinks.
 FILES["alacritty"]="$HOME/.config/alacritty"
 FILES["conky"]="$HOME/.config/conky"
 FILES["i3"]="$HOME/.config/i3"
@@ -21,29 +21,38 @@ FILES["rofi"]="$HOME/.config/rofi"
 COUNT=0
 TOTAL=${#FILES[@]}
 
+echo -e "Installing config files..."
+
 for i in "${!FILES[@]}"; do
 	if [[ -d $i ]]; then
-		# if creating symlink for dir, we don't need
-		# the individual file names
+		# If creating symlink for dir, we don't need
+		# the individual file names.
 		FILE="${FILES[$i]}"
 	else
-		# if creating symlink for individual file,
-		# we need to ensure the destination exists
+		# If creating symlink for individual file,
+		# we need to ensure the destination exists.
 		mkdir -p "${FILES[$i]}"
 
-		# if creating symlink for individual file,
-		# we need to get the individual file name
+		# If creating symlink for individual file,
+		# we need to get the individual file name.
 		FILE="${FILES[$i]}/${i##*/}"
 	fi
 
-	# remove any existing symlinks
+    # Prompt user for confirmation.
+	read -p "Install ${FILE} [y/N]: " answer
+	if [[ -z "$answer" ]] || [[ "$answer" != "y" ]]; then
+		echo "Skipping..."
+		continue
+	fi
+	
+	# Remove any existing symlinks.
 	rm -rf $FILE
 
-	# create symlink
+	# Create symlinks.
 	ln -sv $PWD/$i $FILE
 	if [ $? -eq 0 ]; then
 		((COUNT++))
 	fi
 done
 
-echo -e "\nsuccessfully linked ${COUNT} out of ${TOTAL} files"
+echo -e "\nSuccessfully linked ${COUNT} out of ${TOTAL} files."
