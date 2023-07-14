@@ -57,14 +57,17 @@ alias grep="rg -g '!.git'"
 alias diff='diff --color=always'
 alias copy="xclip -sel clipboard"
 alias pacman="sudo pacman"
-alias genpass="cat /dev/urandom | tr -dc 'A-Za-z0-9!@#$%^&*()-_=+[]{};:,.<>/?' | head -c 50"
 
-if [ -f $HOME/.bashrc.local ]; then
-	source $HOME/.bashrc.local
+# Enable bash completion in interactive shells.
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
 fi
 
-if [ -d /etc/bash_completion.d ]; then
-	for completion in /etc/bash_completion.d/* ; do
-		source $completion
-	done
+# Source local system config.
+if [ -f $HOME/.bashrc.local ]; then
+	source $HOME/.bashrc.local
 fi
