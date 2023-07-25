@@ -16,8 +16,6 @@
 	prune = true
 [pull]
 	rebase = false
-[commit]
-	gpgSign = false
 [color]
     ui = auto
 [color "status"]
@@ -26,4 +24,4 @@
 	defaultBranch = main
 [alias]
 	cm = commit -am
-	csm = commit -asm
+	csm = commit -asS -m

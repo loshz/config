@@ -50,7 +50,6 @@ alias bashconf="$EDITOR $HOME/.bashrc"
 alias nvimconf="$EDITOR $HOME/.config/nvim/init.vim"
 alias i3conf="$EDITOR $HOME/.config/i3/config"
 alias cat='bat --paging=never'
-alias rm="rm -i"
 alias vim=$EDITOR
 alias ls="ls -ahl --color=auto"
 alias grep="rg -g '!.git'"
