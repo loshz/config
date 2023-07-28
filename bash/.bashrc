@@ -56,6 +56,7 @@ alias grep="rg -g '!.git'"
 alias diff='diff --color=always'
 alias copy="xclip -sel clipboard"
 alias pacman="sudo pacman"
+alias dnf="sudo dnf"
 
 # Enable bash completion in interactive shells.
 if ! shopt -oq posix; then
