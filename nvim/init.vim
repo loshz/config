@@ -17,7 +17,6 @@ Plug 'rhysd/vim-clang-format'
 Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline'
 Plug 'ziglang/zig.vim'
 call plug#end()
 
@@ -114,8 +113,39 @@ let g:signify_sign_change='~'
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
 
-" ============= vim-airline =============
-if !exists('g:airline_symbols')
-	let g:airline_symbols = {}
-endif
-let g:airline_symbols.branch=''
+" ============= statusline =============
+set laststatus=2
+set statusline=
+set statusline+=%F
+set statusline+=\ 
+set statusline+=%m
+set statusline+=%h
+set statusline+=%r
+set statusline+=%=
+set statusline+=%{b:gitbranch}
+set statusline+=\|
+set statusline+=\ 
+set statusline+=%l
+set statusline+=:
+set statusline+=%L
+set statusline+=\ 
+set statusline+=%y
+
+function! StatuslineGitBranch()
+  let b:gitbranch=""
+  if &modifiable
+    try
+      let l:dir=expand('%:p:h')
+      let l:gitrevparse = system("git -C ".l:dir." rev-parse --abbrev-ref HEAD")
+      if !v:shell_error
+        let b:gitbranch="(".substitute(l:gitrevparse, '\n', '', 'g').") "
+      endif
+    catch
+    endtry
+  endif
+endfunction
+
+augroup GetGitBranch
+  autocmd!
+  autocmd VimEnter,WinEnter,BufEnter * call StatuslineGitBranch()
+augroup END
