@@ -26,7 +26,6 @@ set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 set signcolumn=yes
 
-
 " ============= statusline =============
 set laststatus=2
 set statusline=
@@ -41,9 +40,10 @@ set statusline+=\
 set statusline+=\|
 set statusline+=\ 
 set statusline+=%l
-set statusline+=\/
+set statusline+=:
 set statusline+=%L
 set statusline+=\ 
+set statusline+=%{strlen(&fenc)?&fenc:'none'}
 set statusline+=%y
 
 " ============= UI =============
