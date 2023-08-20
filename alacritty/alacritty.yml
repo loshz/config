@@ -1,13 +1,11 @@
 window:
   padding:
-    x: 3
-    y: 3
+    x: 5
+    y: 5
 
-  # Neither borders nor title bar
-  decorations: full
-
-  # Allow terminal applications to change Alacritty's window title.
+  decorations: none
   dynamic_title: true
+  startup_mode: Maximized
 
 scrolling:
   history: 10000
@@ -21,7 +19,7 @@ font:
   normal:
     family: Hack
 
-  size: 9
+  size: 10
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
