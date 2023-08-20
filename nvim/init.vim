@@ -26,6 +26,26 @@ set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 set signcolumn=yes
 
+
+" ============= statusline =============
+set laststatus=2
+set statusline=
+set statusline+=%F
+set statusline+=\ 
+set statusline+=%m
+set statusline+=%h
+set statusline+=%r
+set statusline+=%=
+set statusline+=%{FugitiveStatusline()}
+set statusline+=\ 
+set statusline+=\|
+set statusline+=\ 
+set statusline+=%l
+set statusline+=\/
+set statusline+=%L
+set statusline+=\ 
+set statusline+=%y
+
 " ============= UI =============
 colorscheme dark
 
@@ -112,40 +132,3 @@ let g:signify_sign_change='~'
 " ============= vim-terraform =============
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
-
-" ============= statusline =============
-set laststatus=2
-set statusline=
-set statusline+=%F
-set statusline+=\ 
-set statusline+=%m
-set statusline+=%h
-set statusline+=%r
-set statusline+=%=
-set statusline+=%{b:gitbranch}
-set statusline+=\|
-set statusline+=\ 
-set statusline+=%l
-set statusline+=:
-set statusline+=%L
-set statusline+=\ 
-set statusline+=%y
-
-function! StatuslineGitBranch()
-  let b:gitbranch=""
-  if &modifiable
-    try
-      let l:dir=expand('%:p:h')
-      let l:gitrevparse = system("git -C ".l:dir." rev-parse --abbrev-ref HEAD")
-      if !v:shell_error
-        let b:gitbranch="(".substitute(l:gitrevparse, '\n', '', 'g').") "
-      endif
-    catch
-    endtry
-  endif
-endfunction
-
-augroup GetGitBranch
-  autocmd!
-  autocmd VimEnter,WinEnter,BufEnter * call StatuslineGitBranch()
-augroup END
