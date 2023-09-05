@@ -32,7 +32,7 @@ set show-all-if-unmodified on
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
-export TERM="alacritty"
+export TERM="xterm-256color"
 export EDITOR="nvim"
 export DEVPATH="$HOME/dev"
 export PATH="$HOME/.cargo/bin:$HOME/go/bin:/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin"
@@ -56,7 +56,6 @@ alias grep="rg -g '!.git'"
 alias diff='diff --color=always'
 alias copy="xclip -sel clipboard"
 alias pacman="sudo pacman"
-alias dnf="sudo dnf"
 
 # Enable bash completion in interactive shells.
 if ! shopt -oq posix; then
