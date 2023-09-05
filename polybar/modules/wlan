@@ -17,7 +17,6 @@ if [[ -z ${WLAN} ]]; then
 fi
 
 WLAN_STRENGTH=$(iw dev ${WLAN_INTERFACE} link | grep signal | awk '{print substr($2,2)}')
-TUNNELS=$(ip link | grep -E "tun|proton")
 if [ $? -ne 0 ]; then
 	if [ "${WLAN_STRENGTH}" == 100 ]; then
 		echo "󰤨 ${WLAN}"

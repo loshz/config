@@ -17,6 +17,7 @@ FILES["i3"]="$HOME/.config/i3"
 FILES["polybar"]="$HOME/.config/polybar"
 FILES["nvim"]="$HOME/.config/nvim"
 FILES["rofi"]="$HOME/.config/rofi"
+FILES["sway"]="$HOME/.config/sway"
 
 COUNT=0
 TOTAL=${#FILES[@]}
