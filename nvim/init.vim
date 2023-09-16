@@ -21,7 +21,7 @@ Plug 'ziglang/zig.vim'
 call plug#end()
 
 " ============= General =============
-set clipboard^=unnamed,unnamedplus
+set clipboard=unnamedplus
 set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 set signcolumn=yes
