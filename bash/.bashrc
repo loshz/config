@@ -14,6 +14,7 @@ PROMPT_COMMAND=__prompt
 
 shopt -s direxpand
 shopt -s checkwinsize
+shopt -s histappend
 
 set show-all-if-unmodified on
 
