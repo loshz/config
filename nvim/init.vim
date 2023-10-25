@@ -35,7 +35,7 @@ set statusline+=%m
 set statusline+=%h
 set statusline+=%r
 set statusline+=%=
-set statusline+=%{FugitiveStatusline()}
+set statusline+=%{substitute(substitute(FugitiveStatusline(),'\[Git\(','',''),'\)\]','','')}
 set statusline+=\ 
 set statusline+=\|
 set statusline+=\ 
