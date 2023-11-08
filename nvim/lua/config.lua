@@ -1,31 +1,35 @@
+local api = vim.api
+local cmd = vim.cmd
+local glob = vim.g
+local opts = vim.opt
+
 -- General
-vim.opt.clipboard = 'unnamedplus'
-vim.opt.completeopt = 'menuone,noinsert,noselect'
-vim.opt.shortmess:append('c')
-vim.opt.signcolumn = 'yes'
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+opts.clipboard:append('unnamed', 'unnamedplus')
+opts.completeopt = 'menuone,noinsert,noselect'
+opts.shortmess:append('c')
+opts.signcolumn = 'yes'
+opts.ignorecase = true
+opts.smartcase = true
 
 -- UI
-vim.cmd('colorscheme dark')
-vim.opt.number = true
-vim.opt.cursorline = true
-vim.opt.showmatch = true
-vim.opt.matchtime = 2
-vim.opt.mouse = 'a'
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+cmd('colorscheme dark')
+opts.number = true
+opts.cursorline = true
+opts.showmatch = true
+opts.matchtime = 2
+opts.mouse = 'a'
+opts.tabstop = 4
+opts.softtabstop = 4
+opts.shiftwidth = 4
 
 -- Mappings
-vim.g.mapleader = ','
+glob.mapleader = ','
 
-vim.api.nvim_set_keymap('n', '<leader>c', ':Commentary<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>g', ':GitFiles<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>f', ':Files<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>n', ':Lexplore<CR>', { noremap = true })
+api.nvim_set_keymap('n', '<leader>c', ':Commentary<CR>', { noremap = true })
+api.nvim_set_keymap('n', '<leader>g', ':GitFiles<CR>', { noremap = true })
+api.nvim_set_keymap('n', '<leader>f', ':Files<CR>', { noremap = true })
 
-vim.api.nvim_command([[
+api.nvim_command([[
 augroup go
   autocmd FileType go nmap <silent> <Leader>x <Plug>(go-doc-vertical)
   autocmd FileType go nmap <silent> <leader>t <Plug>(go-test)
@@ -48,43 +52,36 @@ augroup proto
 augroup END
 ]])
 
--- netrw
-vim.g.netrw_altv=1
-vim.g.netrw_banner=0
-vim.g.netrw_browse_split=4
-vim.g.netrw_liststyle=3
-vim.g.netrw_winsize=15
-
 -- clang
-vim.g['clang_format#auto_filetypes'] = ['c', 'cpp']
-vim.g['clang_format#auto_format'] = 1
-vim.g['clang_format#detect_style_file'] = 1
+glob['clang_format#auto_filetypes'] = { 'c', 'cpp' }
+glob['clang_format#auto_format'] = 1
+glob['clang_format#detect_style_file'] = 1
 
 -- go
-vim.g.go_fmt_command='goimports'
-vim.g.go_highlight_fields=1
-vim.g.go_highlight_functions=1
-vim.g.go_highlight_methods=1
-vim.g.go_highlight_structs=1
-vim.g.go_highlight_types=1
-vim.g.go_highlight_operators=1
-vim.g.go_highlight_extra_types=1
-vim.g.go_highlight_build_constraints=1
-vim.g.go_highlight_generate_tags=1
-vim.g.go_metalinter_autosave=1
-vim.g.go_jump_to_error=0
-vim.g.go_template_autocreate=0
+glob.go_fmt_command = 'goimports'
+glob.go_highlight_fields = 1
+glob.go_highlight_functions = 1
+glob.go_highlight_methods = 1
+glob.go_highlight_structs = 1
+glob.go_highlight_types = 1
+glob.go_highlight_operators = 1
+glob.go_highlight_extra_types = 1
+glob.go_highlight_build_constraints = 1
+glob.go_highlight_generate_tags = 1
+glob.go_metalinter_autosave = 1
+glob.go_jump_to_error = 0
+glob.go_template_autocreate = 0
 
 -- rust
-vim.g.rustfmt_autosave=1
+glob.rustfmt_autosave = 1
 
 -- signify
-vim.g.signify_vcs_list=['git']
-vim.g.signify_sign_change='~'
+glob.signify_vcs_list = { 'git' }
+glob.signify_sign_change = '~'
 
 -- vim-terraform
-vim.g.terraform_align=1
-vim.g.terraform_fmt_on_save=1
+glob.terraform_align = 1
+glob.terraform_fmt_on_save = 1
 
 -- LSP
 require('lsp')

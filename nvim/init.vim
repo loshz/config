@@ -21,7 +21,7 @@ Plug 'ziglang/zig.vim'
 call plug#end()
 
 " ============= General =============
-set clipboard=unnamedplus
+set clipboard^=unnamed,unnamedplus
 set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 set signcolumn=yes
@@ -63,15 +63,14 @@ set ignorecase
 set smartcase
 
 " ============= LSP =============
-lua require ('lsp_config')
+lua require ('lsp')
 
 " ============= Mappings =============
 let mapleader=','
 
-map <leader>c <Plug>CommentaryLine
+map <leader>c :Commentary<CR>
 map <leader>g :GitFiles<CR>
 map <leader>f :Files<CR>
-map <leader>n :Lexplore<CR>
 
 augroup go
   autocmd FileType go nmap <silent> <Leader>x <Plug>(go-doc-vertical)
@@ -93,13 +92,6 @@ augroup END
 augroup proto
   autocmd BufWritePost *.proto silent !buf format -w
 augroup END
-
-" ============= netrw =============
-let g:netrw_altv=1
-let g:netrw_banner=0
-let g:netrw_browse_split=4
-let g:netrw_liststyle=3
-let g:netrw_winsize=15
 
 " ============= clang =============
 let g:clang_format#auto_filetypes=['c', 'cpp']
@@ -123,7 +115,6 @@ let g:go_template_autocreate=0
 
 " ============= rust =============
 let g:rustfmt_autosave=1
-let g:rust_clip_command='xclip -selection clipboard'
 
 " ============= signify =============
 let g:signify_vcs_list=['git']
