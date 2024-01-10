@@ -1,0 +1,67 @@
+live_config_reload = true
+
+[bell]
+duration = 0
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "0x24292E"
+blue = "0x6479FF"
+cyan = "0x53D3FB"
+green = "0x00FF00"
+magenta = "0xAF5FFF"
+red = "0xDF0000"
+white = "0xFFFFFF"
+yellow = "0xFFD75F"
+
+[colors.normal]
+black = "0x24292E"
+blue = "0x6479FF"
+cyan = "0x53D3FB"
+green = "0x00FF00"
+magenta = "0xAF5FFF"
+red = "0xD70000"
+white = "0xFFFFFF"
+yellow = "0xFFD75F"
+
+[colors.primary]
+background = "0x121212"
+foreground = "0x9F9FA1"
+
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
+[font]
+size = 10
+
+[font.normal]
+family = "Hack"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Control|Shift"
+
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Middle"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+[window]
+decorations = "none"
+dynamic_title = true
+# startup_mode = "Maximized"
+
+[window.padding]
+x = 5
+y = 5
