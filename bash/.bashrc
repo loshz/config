@@ -34,7 +34,7 @@ export FZF_DEFAULT_COMMAND='fd --type file --hidden --no-ignore --exclude .git/'
 
 alias ..="cd .."
 alias bashconf="$EDITOR $HOME/.bashrc"
-alias nvimconf="$EDITOR $HOME/.config/nvim/init.vim"
+alias nvimconf="$EDITOR $HOME/.config/nvim/lua/config.lua"
 alias cat='bat --paging=never'
 alias vim=$EDITOR
 alias ls="ls -ahl --color=auto"

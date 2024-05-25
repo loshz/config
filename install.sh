@@ -45,7 +45,7 @@ for i in "${!FILES[@]}"; do
 		echo "Skipping..."
 		continue
 	fi
-	
+
 	# Remove any existing symlinks.
 	rm -rf "${FILE}"
 
