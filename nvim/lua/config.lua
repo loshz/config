@@ -6,33 +6,35 @@ local opt = vim.opt
 
 -- Plugins
 -- https://github.com/junegunn/vim-plug
-local plug = vim.fn['plug#']
-vim.call('plug#begin', '~/.config/nvim/plugged')
-plug 'fatih/vim-go'
-plug 'hashivim/vim-terraform'
-plug 'hrsh7th/cmp-buffer'
-plug 'hrsh7th/cmp-path'
-plug 'hrsh7th/cmp-nvim-lsp'
-plug 'hrsh7th/cmp-vsnip'
-plug 'hrsh7th/nvim-cmp'
-plug 'hrsh7th/vim-vsnip'
-plug 'junegunn/fzf'
-plug 'junegunn/fzf.vim'
-plug 'mhinz/vim-signify'
-plug 'neovim/nvim-lspconfig'
-plug 'ntpeters/vim-better-whitespace'
-plug 'rhysd/vim-clang-format'
-plug 'rust-lang/rust.vim'
-plug 'tpope/vim-commentary'
-plug 'tpope/vim-fugitive'
-plug 'ziglang/zig.vim'
-vim.call('plug#end')
+local plug = vim.fn["plug#"]
+vim.call("plug#begin", "~/.vim/plugged")
+plug "fatih/vim-go"
+plug "hashivim/vim-terraform"
+plug "hrsh7th/cmp-buffer"
+plug "hrsh7th/cmp-path"
+plug "hrsh7th/cmp-nvim-lsp"
+plug "hrsh7th/cmp-vsnip"
+plug "hrsh7th/nvim-cmp"
+plug "hrsh7th/vim-vsnip"
+plug "junegunn/fzf"
+plug "junegunn/fzf.vim"
+plug "mhinz/vim-signify"
+plug "neovim/nvim-lspconfig"
+plug "nvim-treesitter/nvim-treesitter"
+plug "ntpeters/vim-better-whitespace"
+plug "p00f/alabaster.nvim"
+plug "rhysd/vim-clang-format"
+plug "rust-lang/rust.vim"
+plug "tpope/vim-commentary"
+plug "tpope/vim-fugitive"
+plug "ziglang/zig.vim"
+vim.call("plug#end")
 
 -- General
-opt.clipboard = 'unnamedplus'
-opt.completeopt = 'menuone,noinsert,noselect'
-opt.shortmess:append('c')
-opt.signcolumn = 'yes'
+opt.clipboard = "unnamedplus"
+opt.completeopt = "menuone,noinsert,noselect"
+opt.shortmess:append("c")
+opt.signcolumn = "yes"
 opt.ignorecase = true
 opt.smartcase = true
 
@@ -42,24 +44,25 @@ opt.statusline = '%F %m%h%r%= %{trim(system("git branch --show-current 2>/dev/nu
 
 -- UI
 opt.termguicolors = true
-cmd('colorscheme dark')
 opt.number = true
 opt.cursorline = true
 opt.showmatch = true
 opt.matchtime = 2
-opt.mouse = 'a'
+opt.mouse = "a"
 opt.tabstop = 4
 opt.softtabstop = 4
 opt.shiftwidth = 4
+cmd("colorscheme alabaster")
 
 -- Mappings
-g.mapleader = ','
+g.mapleader = ","
 
-api.nvim_set_keymap('n', '<leader>c', ':Commentary<CR>', { noremap = true })
-api.nvim_set_keymap('n', '<leader>g', ':GitFiles<CR>', { noremap = true })
-api.nvim_set_keymap('n', '<leader>f', ':Files<CR>', { noremap = true })
+api.nvim_set_keymap("n", "<leader>c", ":Commentary<CR>", {noremap = true})
+api.nvim_set_keymap("n", "<leader>g", ":GitFiles<CR>", {noremap = true})
+api.nvim_set_keymap("n", "<leader>f", ":Files<CR>", {noremap = true})
 
-api.nvim_command([[
+api.nvim_command(
+    [[
 augroup go
   autocmd FileType go nmap <silent> <Leader>x <Plug>(go-doc-vertical)
   autocmd FileType go nmap <silent> <leader>t <Plug>(go-test)
@@ -76,22 +79,26 @@ augroup rust
   autocmd FileType rust nmap <silent> <leader>t :belowright 16RustTest<CR>
   autocmd FileType rust nmap <silent> <leader>tt :belowright 16RustTest!<CR>
 augroup END
-]])
+]]
+)
 
-local proto = api.nvim_create_augroup('proto', { clear = false })
-api.nvim_create_autocmd({ 'BufWritePost' }, {
-  pattern = '*.proto',
-  group = proto,
-  command = 'silent !buf format -w',
-})
+local proto = api.nvim_create_augroup("proto", {clear = false})
+api.nvim_create_autocmd(
+    {"BufWritePost"},
+    {
+        pattern = "*.proto",
+        group = proto,
+        command = "silent !buf format -w"
+    }
+)
 
 -- clang
-g['clang_format#auto_filetypes'] = { 'c', 'cpp' }
-g['clang_format#auto_format'] = 1
-g['clang_format#detect_style_file'] = 1
+g["clang_format#auto_filetypes"] = {"c", "cpp"}
+g["clang_format#auto_format"] = 1
+g["clang_format#detect_style_file"] = 1
 
 -- go
-g.go_fmt_command = 'goimports'
+g.go_fmt_command = "goimports"
 g.go_highlight_fields = 1
 g.go_highlight_functions = 1
 g.go_highlight_methods = 1
@@ -109,9 +116,21 @@ g.go_template_autocreate = 0
 g.rustfmt_autosave = 1
 
 -- signify
-g.signify_vcs_list = { 'git' }
-g.signify_sign_change = '~'
+g.signify_vcs_list = {"git"}
+g.signify_sign_change = "~"
 
 -- vim-terraform
 g.terraform_align = 1
 g.terraform_fmt_on_save = 1
+
+-- tree-sitter
+require("nvim-treesitter.configs").setup {
+    ensure_installed = {"bash", "c", "go", "lua", "rust", "vim", "vimdoc", "query"},
+    sync_install = false,
+    auto_install = false,
+    ignore_install = {"all"},
+    highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false
+    }
+}
