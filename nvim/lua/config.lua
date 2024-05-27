@@ -2,7 +2,7 @@
 local api = vim.api
 local cmd = vim.cmd
 local g = vim.g
-local opts = vim.opt
+local opt = vim.opt
 
 -- Plugins
 -- https://github.com/junegunn/vim-plug
@@ -29,27 +29,28 @@ plug 'ziglang/zig.vim'
 vim.call('plug#end')
 
 -- General
-opts.clipboard:append('unnamedplus')
-opts.completeopt = 'menuone,noinsert,noselect'
-opts.shortmess:append('c')
-opts.signcolumn = 'yes'
-opts.ignorecase = true
-opts.smartcase = true
+opt.clipboard = 'unnamedplus'
+opt.completeopt = 'menuone,noinsert,noselect'
+opt.shortmess:append('c')
+opt.signcolumn = 'yes'
+opt.ignorecase = true
+opt.smartcase = true
 
 -- Statusline
-opts.laststatus = 2
-opts.statusline = '%F %m%h%r%= %{trim(system("git branch --show-current 2>/dev/null"))} | %l:%L %{&fenc}%y'
+opt.laststatus = 2
+opt.statusline = '%F %m%h%r%= %{trim(system("git branch --show-current 2>/dev/null"))} | %l:%L %{&fenc}%y'
 
 -- UI
+opt.termguicolors = true
 cmd('colorscheme dark')
-opts.number = true
-opts.cursorline = true
-opts.showmatch = true
-opts.matchtime = 2
-opts.mouse = 'a'
-opts.tabstop = 4
-opts.softtabstop = 4
-opts.shiftwidth = 4
+opt.number = true
+opt.cursorline = true
+opt.showmatch = true
+opt.matchtime = 2
+opt.mouse = 'a'
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
 
 -- Mappings
 g.mapleader = ','
