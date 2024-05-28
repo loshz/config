@@ -30,18 +30,18 @@ export HISTCONTROL=ignoreboth:erasedups
 export HISTTIMEFORMAT="%d/%m/%y %T  "
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/library"
 export GPG_TTY=$(tty)
-export FZF_DEFAULT_COMMAND='fd --type file --hidden --no-ignore --exclude .git/'
+export FZF_DEFAULT_COMMAND="fd --type file --hidden --no-ignore --exclude .git/"
 
 alias ..="cd .."
 alias bashconf="$EDITOR $HOME/.bashrc"
 alias nvimconf="$EDITOR $HOME/.config/nvim/lua/config.lua"
-alias cat='bat --paging=never'
+alias cat="bat --paging=never --color=never"
 alias vim=$EDITOR
 alias ls="ls -ahl --color=auto"
 alias grep="rg -g '!.git'"
-alias diff='diff --color=always'
+alias diff="diff --color=always"
 alias dnf="sudo dnf"
-alias tmpd='cd $(mktemp -d)'
+alias tmpd="cd $(mktemp -d)"
 
 # Enable bash completion in interactive shells.
 if ! shopt -oq posix; then
