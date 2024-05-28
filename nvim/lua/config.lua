@@ -57,34 +57,34 @@ cmd("colorscheme alabaster")
 -- Mappings
 g.mapleader = ","
 
-api.nvim_set_keymap("n", "<leader>c", ":Commentary<CR>", {noremap = true})
-api.nvim_set_keymap("n", "<leader>g", ":GitFiles<CR>", {noremap = true})
-api.nvim_set_keymap("n", "<leader>f", ":Files<CR>", {noremap = true})
+api.nvim_set_keymap("n", "<leader>g", ":GitFiles<CR>", { noremap = true })
+api.nvim_set_keymap("n", "<leader>f", ":Files<CR>", { noremap = true })
 
-api.nvim_command(
-    [[
-augroup go
-  autocmd FileType go nmap <silent> <Leader>x <Plug>(go-doc-vertical)
-  autocmd FileType go nmap <silent> <leader>t <Plug>(go-test)
-  autocmd FileType go nmap <silent> <leader>tf <Plug>(go-test-func)
-  autocmd FileType go nmap <silent> <Leader>tc <Plug>(go-coverage-toggle)
-  autocmd FileType go nmap <silent> <leader>r <Plug>(go-referrers)
-  autocmd FileType go nmap <silent> <leader>c <Plug>(go-callers)
-  autocmd FileType go nmap <leader>d <Plug>(go-def)
-  autocmd FileType go imap <buffer> . .<C-x><C-o>
-  autocmd FileType go let b:go_fmt_options = {'goimports': '-local ' . trim(system('go list -m'))}
-augroup END
+local go = api.nvim_create_augroup("go", {clear = false})
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "go",
+	group = go,
+	callback = function ()
+		vim.keymap.set("n", "<leader>x", "<Plug>(go-doc-vertical)", { silent = true, noremap = true })
+		vim.keymap.set("n", "<leader>t", "<Plug>(go-test)", { silent = true, noremap = true })
+		vim.keymap.set("n", "<leader>tf", "<Plug>(go-test-func)", { silent = true, noremap = true })
+		vim.keymap.set("n", "<leader>tc", "<Plug>(go-coverage-toggle)", { silent = true, noremap = true })
+	end,
+})
+cmd("autocmd FileType go let b:go_fmt_options = {'goimports': '-local ' . trim(system('go list -m'))}")
 
-augroup rust
-  autocmd FileType rust nmap <silent> <leader>t :belowright 16RustTest<CR>
-  autocmd FileType rust nmap <silent> <leader>tt :belowright 16RustTest!<CR>
-augroup END
-]]
-)
+local rust = api.nvim_create_augroup("rust", {clear = false})
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "rust",
+	group = rust,
+	callback = function ()
+		vim.keymap.set("n", '<leader>t', ':belowright 16RustTest<CR>', { silent = true, noremap = true })
+		vim.keymap.set("n", '<leader>tt', ':belowright 16RustTest!<CR>', { silent = true, noremap = true })
+	end,
+})
 
 local proto = api.nvim_create_augroup("proto", {clear = false})
-api.nvim_create_autocmd(
-    {"BufWritePost"},
+api.nvim_create_autocmd({"BufWritePost"},
     {
         pattern = "*.proto",
         group = proto,
@@ -96,6 +96,9 @@ api.nvim_create_autocmd(
 g["clang_format#auto_filetypes"] = {"c", "cpp"}
 g["clang_format#auto_format"] = 1
 g["clang_format#detect_style_file"] = 1
+
+-- fzf
+g.fzf_preview_window = ''
 
 -- go
 g.go_fmt_command = "goimports"

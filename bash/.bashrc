@@ -40,8 +40,6 @@ alias vim=$EDITOR
 alias ls="ls -ahl --color=auto"
 alias grep="rg -g '!.git'"
 alias diff='diff --color=always'
-alias copy="xclip -sel clipboard"
-alias pacman="sudo pacman"
 alias dnf="sudo dnf"
 alias tmpd='cd $(mktemp -d)'
 

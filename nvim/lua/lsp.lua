@@ -1,4 +1,4 @@
-local nvim_lsp = require("lspconfig")
+local lsp = require("lspconfig")
 
 local on_attach = function(client, bufnr)
     client.server_capabilities.semanticTokensProvider = nil
@@ -15,7 +15,7 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-nvim_lsp.rust_analyzer.setup(
+lsp.rust_analyzer.setup(
     {
         capabilities = capabilities,
         on_attach = on_attach,
@@ -40,7 +40,14 @@ nvim_lsp.rust_analyzer.setup(
     }
 )
 
-nvim_lsp.clangd.setup(
+lsp.clangd.setup(
+    {
+        capabilities = capabilities,
+        on_attach = on_attach
+    }
+)
+
+lsp.gopls.setup(
     {
         capabilities = capabilities,
         on_attach = on_attach
