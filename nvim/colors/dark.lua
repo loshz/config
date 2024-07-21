@@ -13,16 +13,16 @@ vim.g.colors_name = "dark"
 -- colors
 local colors = {
 	dark              = "#121212",
-	dark_alt          = "#303030",
+	dark_alt          = "#393939",
 	light             = "#FFFFFF",
 	red               = "#F66151",
 	green             = "#8FF0A4",
 	blue              = "#62A0EA",
-	yellow            = "#F9F06B",
+	yellow            = "#F2D620",
 	orange            = "#FFBE6F",
 	purple            = "#DC8ADD",
 	teal              = "#93DDC2",
-	violet            = "#7D8AC7",
+	violet            = "#F9C7E5",
 	popup             = "#282828",
 	comment           = "#AAAAAA"
 }
@@ -75,9 +75,9 @@ hl('ModeMsg', { fg = colors.light, bg = colors.dark_alt })
 hl('MoreMsg', { fg = colors.light, bg = colors.dark_alt })
 hl('NonText', { fg = colors.dark })
 hl('Pmenu', { fg = colors.light, bg = colors.popup })
-hl('PmenuSel', { fg = colors.light, bg = colors.red })
-hl('PmenuSbar', { bg = colors.dark })
-hl('PmenuThumb', { bg = colors.dark })
+hl('PmenuSel', { fg = colors.light, bg = colors.dark_alt })
+hl('PmenuSbar', { bg = colors.dark_alt })
+hl('PmenuThumb', { bg = "#504E55" })
 hl('Question', { fg = colors.blue, bg = colors.dark })
 hl('Search', { fg = colors.dark, bg = colors.yellow })
 hl('SpecialKey', { fg = colors.dark, bg = colors.dark })
