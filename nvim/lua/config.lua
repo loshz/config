@@ -20,9 +20,7 @@ plug "junegunn/fzf"
 plug "junegunn/fzf.vim"
 plug "mhinz/vim-signify"
 plug "neovim/nvim-lspconfig"
-plug "nvim-treesitter/nvim-treesitter"
 plug "ntpeters/vim-better-whitespace"
-plug "p00f/alabaster.nvim"
 plug "rhysd/vim-clang-format"
 plug "rust-lang/rust.vim"
 plug "tpope/vim-commentary"
@@ -52,7 +50,7 @@ opt.mouse = "a"
 opt.tabstop = 4
 opt.softtabstop = 4
 opt.shiftwidth = 4
-cmd("colorscheme alabaster")
+cmd("colorscheme dark")
 
 -- Mappings
 g.mapleader = ","
@@ -125,15 +123,3 @@ g.signify_sign_change = "~"
 -- vim-terraform
 g.terraform_align = 1
 g.terraform_fmt_on_save = 1
-
--- tree-sitter
-require("nvim-treesitter.configs").setup {
-    ensure_installed = {"bash", "c", "go", "lua", "rust", "vim", "vimdoc", "query"},
-    sync_install = false,
-    auto_install = false,
-    ignore_install = {"all"},
-    highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false
-    }
-}
