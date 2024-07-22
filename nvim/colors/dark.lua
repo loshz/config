@@ -1,29 +1,29 @@
 vim.cmd("hi clear")
 
 if vim.fn.exists("syntax_on") then
-  vim.cmd("syntax reset")
+	vim.cmd("syntax reset")
 end
 
 local hl = function(name, val)
-    vim.api.nvim_set_hl(0, name, val)
+	vim.api.nvim_set_hl(0, name, val)
 end
 
 vim.g.colors_name = "dark"
 
 -- colors
 local colors = {
-	dark              = "#121212",
-	dark_alt          = "#393939",
-	light             = "#FFFFFF",
-	red               = "#F66151",
-	green             = "#8FF0A4",
-	blue              = "#62A0EA",
-	yellow            = "#F9F06B",
-	orange            = "#FFA348",
-	purple            = "#DC8ADD",
-	teal              = "#93DDC2",
-	popup             = "#282828",
-	comment           = "#AAAAAA"
+	dark     = "#121212",
+	dark_alt = "#393939",
+	light    = "#FFFFFF",
+	red      = "#F66151",
+	green    = "#8FF0A4",
+	blue     = "#62A0EA",
+	yellow   = "#F9F06B",
+	orange   = "#FFA348",
+	purple   = "#DC8ADD",
+	teal     = "#93DDC2",
+	popup    = "#282828",
+	comment  = "#AAAAAA"
 }
 
 -- terminal colors
