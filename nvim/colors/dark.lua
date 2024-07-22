@@ -18,8 +18,8 @@ local colors = {
 	red               = "#F66151",
 	green             = "#8FF0A4",
 	blue              = "#62A0EA",
-	yellow            = "#F2D620",
-	orange            = "#FFBE6F",
+	yellow            = "#F9F06B",
+	orange            = "#FFA348",
 	purple            = "#DC8ADD",
 	teal              = "#93DDC2",
 	popup             = "#282828",
@@ -96,26 +96,26 @@ hl('Comment', { fg = colors.comment })
 hl('Constant', { fg = colors.light })
 hl('String', { fg = colors.teal })
 hl('Character', { fg = colors.light })
-hl('Boolean', { fg = colors.orange, bold = true })
-hl('Number', { fg = colors.orange })
-hl('Float', { fg = colors.orange })
+hl('Boolean', { fg = colors.purple, bold = true })
+hl('Number', { fg = colors.purple })
+hl('Float', { fg = colors.purple })
 hl('Identifier', { fg = colors.light })
 hl('Function', { fg = colors.light })
-hl('Statement', { fg = colors.purple, bold = true })
-hl('Conditional', { fg = colors.purple, bold = true })
-hl('Repeat', { fg = colors.purple, bold = true })
+hl('Statement', { fg = colors.orange, bold = true })
+hl('Conditional', { fg = colors.orange, bold = true })
+hl('Repeat', { fg = colors.red, bold = true })
 hl('Label', { fg = colors.light })
-hl('Operator', { fg = colors.purple })
-hl('Keyword', { fg = colors.purple, bold = true })
-hl('Exception', { fg = colors.purple, bold = true })
-hl('PreProc', { fg = colors.purple })
+hl('Operator', { fg = colors.red })
+hl('Keyword', { fg = colors.orange, bold = true })
+hl('Exception', { fg = colors.red, bold = true })
+hl('PreProc', { fg = colors.light })
 hl('Include', { fg = colors.light })
-hl('Define', { fg = colors.purple, bold = true })
-hl('Macro', { fg = colors.purple, bold = true })
-hl('PreCondit', { fg = colors.purple, bold = true })
+hl('Define', { fg = colors.red, bold = true })
+hl('Macro', { fg = colors.red, bold = true })
+hl('PreCondit', { fg = colors.red, bold = true })
 hl('Type', { fg = colors.light })
-hl('StorageClass', { fg = colors.purple, bold = true })
-hl('Structure', { fg = colors.purple, bold = true })
+hl('StorageClass', { fg = colors.orange, bold = true })
+hl('Structure', { fg = colors.orange, bold = true })
 hl('TypeDef', { fg = colors.teal, bold = true })
 hl('Special', { fg = colors.blue })
 hl('SpecialChar', { fg = colors.blue })
