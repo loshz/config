@@ -6,6 +6,7 @@ local on_attach = function(client, bufnr)
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     local bufopts = {noremap = true, silent = true, buffer = bufnr}
     vim.keymap.set("n", "<Leader>d", vim.lsp.buf.definition, bufopts)
+    vim.keymap.set("n", "<Leader>e", vim.diagnostic.open_float, bufopts)
     vim.keymap.set("n", "<Leader>h", vim.lsp.buf.hover, bufopts)
     vim.keymap.set("n", "<Leader>rn", vim.lsp.buf.rename, bufopts)
     vim.keymap.set("n", "<Leader>td", vim.lsp.buf.type_definition, bufopts)
