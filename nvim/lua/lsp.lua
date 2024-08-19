@@ -23,19 +23,20 @@ lsp.rust_analyzer.setup(
         settings = {
             -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
             ["rust-analyzer"] = {
-                assist = {
-                    importGranularity = "crate",
-                    importGroup = true
-                },
                 autoimport = {
                     enable = true
                 },
-                cargo = {
-                    loadOutDirsFromCheck = true
+				cargo = {
+                    buildScripts = {
+                        enable = true,
+                    },
                 },
                 checkOnSave = {
                     command = "clippy"
-                }
+                },
+				procMacro = {
+                    enable = true
+                },
             }
         }
     }
