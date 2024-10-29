@@ -12,6 +12,11 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "<Leader>td", vim.lsp.buf.type_definition, bufopts)
 end
 
+-- Disable inline LSP errors.
+vim.diagnostic.config({
+	virtual_text = false,
+})
+
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)

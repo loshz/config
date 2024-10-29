@@ -50,13 +50,15 @@ opt.mouse = "a"
 opt.tabstop = 4
 opt.softtabstop = 4
 opt.shiftwidth = 4
-cmd("colorscheme dark")
+cmd("colorscheme wildcharm")
+cmd("hi Normal guibg=#121212")
 
 -- Mappings
 g.mapleader = ","
 
 api.nvim_set_keymap("n", "<leader>g", ":GitFiles<CR>", { noremap = true })
 api.nvim_set_keymap("n", "<leader>f", ":Files<CR>", { noremap = true })
+api.nvim_set_keymap("n", "<leader>r", ":Rg<CR>", { noremap = true })
 
 local go = api.nvim_create_augroup("go", {clear = false})
 vim.api.nvim_create_autocmd("FileType", {
