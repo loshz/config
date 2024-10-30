@@ -8,13 +8,14 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "<Leader>d", vim.lsp.buf.definition, bufopts)
     vim.keymap.set("n", "<Leader>e", vim.diagnostic.open_float, bufopts)
     vim.keymap.set("n", "<Leader>h", vim.lsp.buf.hover, bufopts)
+    vim.keymap.set("n", "<Leader>r", vim.lsp.buf.references, bufopts)
     vim.keymap.set("n", "<Leader>rn", vim.lsp.buf.rename, bufopts)
     vim.keymap.set("n", "<Leader>td", vim.lsp.buf.type_definition, bufopts)
 end
 
 -- Disable inline LSP errors.
 vim.diagnostic.config({
-	virtual_text = false,
+    virtual_text = false,
 })
 
 -- Add additional capabilities supported by nvim-cmp
