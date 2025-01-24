@@ -21,7 +21,6 @@ set show-all-if-unmodified on
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
-export TERM="xterm-256color"
 export EDITOR="nvim"
 export PATH="$HOME/.cargo/bin:$HOME/go/bin:/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin"
 export HISTSIZE=2500
