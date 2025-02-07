@@ -1,15 +1,13 @@
 [user]
-	email = danbond@protonmail.com
+	email = dan@loshz.com
 	name = Dan Bond
-	signingkey = FEAC7C1EA83DE88F!
+	signingkey = ~/.ssh/id_ed25519_sk.pub
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
 [push]
 	default = simple
-[url "git@github.com:"]
-	insteadOf = https://github.com/
 [fetch]
 	prune = true
 [remote "origin"]
@@ -23,5 +21,6 @@
 [init]
 	defaultBranch = main
 [alias]
-	cm = commit -am
 	csm = commit -asS -m
+[gpg]
+	format = ssh
