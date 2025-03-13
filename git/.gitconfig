@@ -15,12 +15,14 @@
 [pull]
 	rebase = false
 [color]
-    ui = auto
+	ui = auto
 [color "status"]
-    branch = white
+	branch = white
 [init]
 	defaultBranch = main
 [alias]
 	csm = commit -asS -m
+	smd = submodule deinit -f .
+	smu = submodule update --init --recursive --checkout
 [gpg]
 	format = ssh
