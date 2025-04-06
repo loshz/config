@@ -4,7 +4,7 @@ function __prompt {
 	local RED="\[\e[1;31m\]"
 	local GREEN="\[\e[1;32m\]"
 
-	PS1="${GREEN}[\u@\h] \W \\$ ${RESET}"
+	PS1="${GREEN}\u@\h:\W\\$ ${RESET}"
 	if [ "${EXIT}" -ne 0 ]; then
 		PS1="${RED}${EXIT}${RESET} ${PS1}"
 	fi
@@ -28,7 +28,6 @@ export HISTFILESIZE=2500
 export HISTCONTROL=ignoreboth:erasedups
 export HISTTIMEFORMAT="%d/%m/%y %T  "
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/library"
-export GPG_TTY=$(tty)
 export FZF_DEFAULT_COMMAND="fd --type file --hidden --no-ignore --exclude .git/"
 
 alias ..="cd .."
