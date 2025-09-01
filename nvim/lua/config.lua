@@ -9,7 +9,6 @@ local opt = vim.opt
 local plug = vim.fn["plug#"]
 vim.call("plug#begin", "~/.vim/plugged")
 plug "fatih/vim-go"
-plug "hashivim/vim-terraform"
 plug "hrsh7th/cmp-buffer"
 plug "hrsh7th/cmp-path"
 plug "hrsh7th/cmp-nvim-lsp"
@@ -25,7 +24,6 @@ plug "rhysd/vim-clang-format"
 plug "rust-lang/rust.vim"
 plug "tpope/vim-commentary"
 plug "tpope/vim-fugitive"
-plug "ziglang/zig.vim"
 vim.call("plug#end")
 
 -- General
