@@ -1,7 +1,8 @@
-local lsp = require("lspconfig")
-
-local on_attach = function(client, bufnr)
+local function on_lsp_attach(event)
+	local client = vim.lsp.get_client_by_id(event.data.client_id)
     client.server_capabilities.semanticTokensProvider = nil
+	local bufnr = event.buf
+
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     local bufopts = {noremap = true, silent = true, buffer = bufnr}
@@ -18,49 +19,49 @@ vim.diagnostic.config({
     virtual_text = false,
 })
 
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = vim.api.nvim_create_augroup('user_lsp_attach', { clear = true }),
+  callback = on_lsp_attach,
+  desc = 'Setup LSP keymaps on attach',
+})
+
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-lsp.rust_analyzer.setup(
-    {
-        capabilities = capabilities,
-        on_attach = on_attach,
-        settings = {
-            -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
-            ["rust-analyzer"] = {
-                autoimport = {
-                    enable = true
-                },
-				cargo = {
-                    buildScripts = {
-                        enable = true,
-                    },
-                },
-                checkOnSave = {
-                    command = "clippy"
-                },
-				procMacro = {
-                    enable = true
-                },
-            }
-        }
-    }
-)
+vim.lsp.config('clangd', {
+	capabilities = capabilities,
+})
 
-lsp.clangd.setup(
-    {
-        capabilities = capabilities,
-        on_attach = on_attach
-    }
-)
+vim.lsp.config('gopls', {
+	capabilities = capabilities,
+})
 
-lsp.gopls.setup(
-    {
-        capabilities = capabilities,
-        on_attach = on_attach
-    }
-)
+vim.lsp.config('rust_analyzer', {
+	capabilities = capabilities,
+	settings = {
+		-- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
+		["rust-analyzer"] = {
+			autoimport = {
+				enable = true
+			},
+			cargo = {
+				buildScripts = {
+					enable = true,
+				},
+			},
+			procMacro = {
+				enable = true
+			},
+		}
+	}
+})
+
+vim.lsp.enable({
+  'clangd',
+  'gopls',
+  'rust_analyzer',
+})
 
 local cmp = require("cmp")
 cmp.setup(
