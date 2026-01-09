@@ -12,6 +12,19 @@ local function on_lsp_attach(event)
     vim.keymap.set("n", "<Leader>r", vim.lsp.buf.references, bufopts)
     vim.keymap.set("n", "<Leader>rn", vim.lsp.buf.rename, bufopts)
     vim.keymap.set("n", "<Leader>td", vim.lsp.buf.type_definition, bufopts)
+
+	-- Checks if the active client (e.g., clangd) supports formatting
+    if client.supports_method("textDocument/formatting") then
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            callback = function()
+                vim.lsp.buf.format({
+                    bufnr = bufnr,
+                    id = client.id  -- Ensures only this specific client formats the buffer
+                })
+            end,
+        })
+    end
 end
 
 -- Disable inline LSP errors.
@@ -34,6 +47,10 @@ vim.lsp.config('clangd', {
 })
 
 vim.lsp.config('gopls', {
+	capabilities = capabilities,
+})
+
+vim.lsp.config('ruff', {
 	capabilities = capabilities,
 })
 
@@ -60,6 +77,7 @@ vim.lsp.config('rust_analyzer', {
 vim.lsp.enable({
   'clangd',
   'gopls',
+  'ruff',
   'rust_analyzer',
 })
 
