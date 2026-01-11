@@ -22,7 +22,6 @@ plug "neovim/nvim-lspconfig"
 plug "ntpeters/vim-better-whitespace"
 plug "rhysd/vim-clang-format"
 plug "rust-lang/rust.vim"
-plug "tpope/vim-commentary"
 plug "tpope/vim-fugitive"
 vim.call("plug#end")
 
