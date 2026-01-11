@@ -22,7 +22,7 @@ bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
 export EDITOR="nvim"
-export PATH="$HOME/.cargo/bin:$HOME/go/bin:/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin"
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/go/bin:/usr/local/bin:/bin:/usr/bin:/usr/sbin:/sbin"
 export HISTSIZE=2500
 export HISTFILESIZE=2500
 export HISTCONTROL=ignoreboth:erasedups
