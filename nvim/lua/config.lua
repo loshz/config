@@ -32,6 +32,8 @@ opt.shortmess:append("c")
 opt.signcolumn = "yes"
 opt.ignorecase = true
 opt.smartcase = true
+opt.spell = true
+opt.spelllang = { 'en_us' }
 
 -- Statusline
 opt.laststatus = 2
